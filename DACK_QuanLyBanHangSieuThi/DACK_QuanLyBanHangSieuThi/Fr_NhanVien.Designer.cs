@@ -39,29 +39,29 @@ namespace DACK_QuanLyBanHangSieuThi
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dg_nhanvien = new System.Windows.Forms.DataGridView();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtmanv = new System.Windows.Forms.TextBox();
-            this.cbgioitinh = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.datengaysinh = new System.Windows.Forms.DateTimePicker();
-            this.txtsdt = new System.Windows.Forms.TextBox();
-            this.txttennv = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbmanv = new System.Windows.Forms.Label();
-            this.txtmatkhau = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txttentk = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
+            this.cbGioiTinh = new System.Windows.Forms.ComboBox();
+            this.lbGioiTinh = new System.Windows.Forms.Label();
+            this.lbSDT = new System.Windows.Forms.Label();
+            this.dateNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtTenNV = new System.Windows.Forms.TextBox();
+            this.lbNgaySinh = new System.Windows.Forms.Label();
+            this.lbTenNhanVien = new System.Windows.Forms.Label();
+            this.lbMaNhanVien = new System.Windows.Forms.Label();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
+            this.lbMatKhau = new System.Windows.Forms.Label();
+            this.txtTenTK = new System.Windows.Forms.TextBox();
+            this.lbTenTaiKhoan = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_nhanvien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label12
@@ -199,16 +199,16 @@ namespace DACK_QuanLyBanHangSieuThi
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.txtmanv);
-            this.groupBox1.Controls.Add(this.cbgioitinh);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.datengaysinh);
-            this.groupBox1.Controls.Add(this.txtsdt);
-            this.groupBox1.Controls.Add(this.txttennv);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.lbmanv);
+            this.groupBox1.Controls.Add(this.txtMaNV);
+            this.groupBox1.Controls.Add(this.cbGioiTinh);
+            this.groupBox1.Controls.Add(this.lbGioiTinh);
+            this.groupBox1.Controls.Add(this.lbSDT);
+            this.groupBox1.Controls.Add(this.dateNgaySinh);
+            this.groupBox1.Controls.Add(this.txtSDT);
+            this.groupBox1.Controls.Add(this.txtTenNV);
+            this.groupBox1.Controls.Add(this.lbNgaySinh);
+            this.groupBox1.Controls.Add(this.lbTenNhanVien);
+            this.groupBox1.Controls.Add(this.lbMaNhanVien);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.ForeColor = System.Drawing.Color.Red;
             this.groupBox1.Location = new System.Drawing.Point(7, 14);
@@ -220,180 +220,180 @@ namespace DACK_QuanLyBanHangSieuThi
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhân viên";
             // 
-            // txtmanv
+            // txtMaNV
             // 
-            this.txtmanv.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtmanv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtmanv.Location = new System.Drawing.Point(212, 46);
-            this.txtmanv.Margin = new System.Windows.Forms.Padding(4);
-            this.txtmanv.Multiline = true;
-            this.txtmanv.Name = "txtmanv";
-            this.txtmanv.Size = new System.Drawing.Size(501, 37);
-            this.txtmanv.TabIndex = 0;
+            this.txtMaNV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMaNV.Location = new System.Drawing.Point(212, 46);
+            this.txtMaNV.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaNV.Multiline = true;
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Size = new System.Drawing.Size(501, 37);
+            this.txtMaNV.TabIndex = 0;
             // 
-            // cbgioitinh
+            // cbGioiTinh
             // 
-            this.cbgioitinh.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.cbgioitinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbgioitinh.FormattingEnabled = true;
-            this.cbgioitinh.Items.AddRange(new object[] {
+            this.cbGioiTinh.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.cbGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbGioiTinh.FormattingEnabled = true;
+            this.cbGioiTinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cbgioitinh.Location = new System.Drawing.Point(214, 294);
-            this.cbgioitinh.Margin = new System.Windows.Forms.Padding(4);
-            this.cbgioitinh.Name = "cbgioitinh";
-            this.cbgioitinh.Size = new System.Drawing.Size(171, 33);
-            this.cbgioitinh.TabIndex = 4;
+            this.cbGioiTinh.Location = new System.Drawing.Point(214, 294);
+            this.cbGioiTinh.Margin = new System.Windows.Forms.Padding(4);
+            this.cbGioiTinh.Name = "cbGioiTinh";
+            this.cbGioiTinh.Size = new System.Drawing.Size(171, 33);
+            this.cbGioiTinh.TabIndex = 4;
             // 
-            // label5
+            // lbGioiTinh
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(12, 296);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(143, 27);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Giới tính:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbGioiTinh.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbGioiTinh.Location = new System.Drawing.Point(12, 296);
+            this.lbGioiTinh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbGioiTinh.Name = "lbGioiTinh";
+            this.lbGioiTinh.Size = new System.Drawing.Size(143, 27);
+            this.lbGioiTinh.TabIndex = 8;
+            this.lbGioiTinh.Text = "Giới tính:";
+            this.lbGioiTinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label3
+            // lbSDT
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(13, 248);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 26);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Số điện thoại:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbSDT.AutoSize = true;
+            this.lbSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbSDT.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbSDT.Location = new System.Drawing.Point(13, 248);
+            this.lbSDT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbSDT.Name = "lbSDT";
+            this.lbSDT.Size = new System.Drawing.Size(159, 26);
+            this.lbSDT.TabIndex = 3;
+            this.lbSDT.Text = "Số điện thoại:";
+            this.lbSDT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // datengaysinh
+            // dateNgaySinh
             // 
-            this.datengaysinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.datengaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datengaysinh.Location = new System.Drawing.Point(214, 181);
-            this.datengaysinh.Margin = new System.Windows.Forms.Padding(4);
-            this.datengaysinh.Name = "datengaysinh";
-            this.datengaysinh.Size = new System.Drawing.Size(171, 36);
-            this.datengaysinh.TabIndex = 2;
+            this.dateNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dateNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateNgaySinh.Location = new System.Drawing.Point(214, 181);
+            this.dateNgaySinh.Margin = new System.Windows.Forms.Padding(4);
+            this.dateNgaySinh.Name = "dateNgaySinh";
+            this.dateNgaySinh.Size = new System.Drawing.Size(171, 36);
+            this.dateNgaySinh.TabIndex = 2;
             // 
-            // txtsdt
+            // txtSDT
             // 
-            this.txtsdt.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtsdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtsdt.Location = new System.Drawing.Point(214, 248);
-            this.txtsdt.Margin = new System.Windows.Forms.Padding(4);
-            this.txtsdt.Multiline = true;
-            this.txtsdt.Name = "txtsdt";
-            this.txtsdt.Size = new System.Drawing.Size(501, 30);
-            this.txtsdt.TabIndex = 3;
+            this.txtSDT.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtSDT.Location = new System.Drawing.Point(214, 248);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSDT.Multiline = true;
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(501, 30);
+            this.txtSDT.TabIndex = 3;
             // 
-            // txttennv
+            // txtTenNV
             // 
-            this.txttennv.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txttennv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txttennv.Location = new System.Drawing.Point(212, 129);
-            this.txttennv.Margin = new System.Windows.Forms.Padding(4);
-            this.txttennv.Multiline = true;
-            this.txttennv.Name = "txttennv";
-            this.txttennv.Size = new System.Drawing.Size(501, 31);
-            this.txttennv.TabIndex = 1;
+            this.txtTenNV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtTenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTenNV.Location = new System.Drawing.Point(212, 129);
+            this.txtTenNV.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenNV.Multiline = true;
+            this.txtTenNV.Name = "txtTenNV";
+            this.txtTenNV.Size = new System.Drawing.Size(501, 31);
+            this.txtTenNV.TabIndex = 1;
             // 
-            // label4
+            // lbNgaySinh
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(14, 181);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(160, 31);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Ngày sinh:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbNgaySinh.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbNgaySinh.Location = new System.Drawing.Point(14, 181);
+            this.lbNgaySinh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNgaySinh.Name = "lbNgaySinh";
+            this.lbNgaySinh.Size = new System.Drawing.Size(160, 31);
+            this.lbNgaySinh.TabIndex = 2;
+            this.lbNgaySinh.Text = "Ngày sinh:";
+            this.lbNgaySinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // lbTenNhanVien
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(12, 120);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 39);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tên nhân viên:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbTenNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbTenNhanVien.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbTenNhanVien.Location = new System.Drawing.Point(12, 120);
+            this.lbTenNhanVien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTenNhanVien.Name = "lbTenNhanVien";
+            this.lbTenNhanVien.Size = new System.Drawing.Size(192, 39);
+            this.lbTenNhanVien.TabIndex = 1;
+            this.lbTenNhanVien.Text = "Tên nhân viên:";
+            this.lbTenNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbmanv
+            // lbMaNhanVien
             // 
-            this.lbmanv.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbmanv.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbmanv.Location = new System.Drawing.Point(13, 35);
-            this.lbmanv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbmanv.Name = "lbmanv";
-            this.lbmanv.Size = new System.Drawing.Size(191, 48);
-            this.lbmanv.TabIndex = 0;
-            this.lbmanv.Text = "Mã nhân viên:";
-            this.lbmanv.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbMaNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbMaNhanVien.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbMaNhanVien.Location = new System.Drawing.Point(13, 35);
+            this.lbMaNhanVien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbMaNhanVien.Name = "lbMaNhanVien";
+            this.lbMaNhanVien.Size = new System.Drawing.Size(191, 48);
+            this.lbMaNhanVien.TabIndex = 0;
+            this.lbMaNhanVien.Text = "Mã nhân viên:";
+            this.lbMaNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtmatkhau
+            // txtMatKhau
             // 
-            this.txtmatkhau.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtmatkhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtmatkhau.Location = new System.Drawing.Point(204, 151);
-            this.txtmatkhau.Margin = new System.Windows.Forms.Padding(4);
-            this.txtmatkhau.Multiline = true;
-            this.txtmatkhau.Name = "txtmatkhau";
-            this.txtmatkhau.Size = new System.Drawing.Size(297, 38);
-            this.txtmatkhau.TabIndex = 2;
-            this.txtmatkhau.UseSystemPasswordChar = true;
+            this.txtMatKhau.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMatKhau.Location = new System.Drawing.Point(204, 151);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMatKhau.Multiline = true;
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Size = new System.Drawing.Size(297, 38);
+            this.txtMatKhau.TabIndex = 2;
+            this.txtMatKhau.UseSystemPasswordChar = true;
             // 
-            // label7
+            // lbMatKhau
             // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(13, 140);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(173, 53);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Mật khẩu:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbMatKhau.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbMatKhau.Location = new System.Drawing.Point(13, 140);
+            this.lbMatKhau.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbMatKhau.Name = "lbMatKhau";
+            this.lbMatKhau.Size = new System.Drawing.Size(173, 53);
+            this.lbMatKhau.TabIndex = 18;
+            this.lbMatKhau.Text = "Mật khẩu:";
+            this.lbMatKhau.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txttentk
+            // txtTenTK
             // 
-            this.txttentk.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txttentk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txttentk.Location = new System.Drawing.Point(202, 75);
-            this.txttentk.Margin = new System.Windows.Forms.Padding(4);
-            this.txttentk.Multiline = true;
-            this.txttentk.Name = "txttentk";
-            this.txttentk.Size = new System.Drawing.Size(299, 36);
-            this.txttentk.TabIndex = 0;
+            this.txtTenTK.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtTenTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTenTK.Location = new System.Drawing.Point(202, 75);
+            this.txtTenTK.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenTK.Multiline = true;
+            this.txtTenTK.Name = "txtTenTK";
+            this.txtTenTK.Size = new System.Drawing.Size(299, 36);
+            this.txtTenTK.TabIndex = 0;
             // 
-            // label6
+            // lbTenTaiKhoan
             // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(8, 62);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(187, 57);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Tên tài khoản:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbTenTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbTenTaiKhoan.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbTenTaiKhoan.Location = new System.Drawing.Point(8, 62);
+            this.lbTenTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTenTaiKhoan.Name = "lbTenTaiKhoan";
+            this.lbTenTaiKhoan.Size = new System.Drawing.Size(187, 57);
+            this.lbTenTaiKhoan.TabIndex = 16;
+            this.lbTenTaiKhoan.Text = "Tên tài khoản:";
+            this.lbTenTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.Transparent;
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.label12);
-            this.groupBox5.Controls.Add(this.txtmatkhau);
-            this.groupBox5.Controls.Add(this.label7);
-            this.groupBox5.Controls.Add(this.txttentk);
-            this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.Controls.Add(this.txtMatKhau);
+            this.groupBox5.Controls.Add(this.lbMatKhau);
+            this.groupBox5.Controls.Add(this.txtTenTK);
+            this.groupBox5.Controls.Add(this.lbTenTaiKhoan);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox5.ForeColor = System.Drawing.Color.Red;
             this.groupBox5.Location = new System.Drawing.Point(7, 354);
@@ -427,11 +427,11 @@ namespace DACK_QuanLyBanHangSieuThi
             this.groupBox6.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dg_nhanvien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,20 +446,20 @@ namespace DACK_QuanLyBanHangSieuThi
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtmanv;
-        private System.Windows.Forms.ComboBox cbgioitinh;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker datengaysinh;
-        private System.Windows.Forms.TextBox txtsdt;
-        private System.Windows.Forms.TextBox txttennv;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lbmanv;
-        private System.Windows.Forms.TextBox txtmatkhau;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txttentk;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtMaNV;
+        private System.Windows.Forms.ComboBox cbGioiTinh;
+        private System.Windows.Forms.Label lbGioiTinh;
+        private System.Windows.Forms.DateTimePicker dateNgaySinh;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtTenNV;
+        private System.Windows.Forms.Label lbSDT;
+        private System.Windows.Forms.Label lbNgaySinh;
+        private System.Windows.Forms.Label lbTenNhanVien;
+        private System.Windows.Forms.Label lbMaNhanVien;
+        private System.Windows.Forms.TextBox txtMatKhau;
+        private System.Windows.Forms.Label lbMatKhau;
+        private System.Windows.Forms.TextBox txtTenTK;
+        private System.Windows.Forms.Label lbTenTaiKhoan;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.DataGridView dg_nhanvien;
