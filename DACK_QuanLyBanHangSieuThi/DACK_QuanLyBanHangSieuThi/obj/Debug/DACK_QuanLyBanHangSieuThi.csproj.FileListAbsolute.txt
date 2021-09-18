@@ -8,3 +8,14 @@ C:\Users\HuynhVi\source\repos\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuTh
 C:\Users\HuynhVi\source\repos\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\obj\Debug\DACK_QuanLyBanHangSieuThi.csproj.CoreCompileInputs.cache
 C:\Users\HuynhVi\source\repos\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\obj\Debug\DACK_QuanLyBanHangSieuThi.exe
 C:\Users\HuynhVi\source\repos\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\obj\Debug\DACK_QuanLyBanHangSieuThi.pdb
+C:\Users\DiepHoangPhi\Documents\.git\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\bin\Debug\DACK_QuanLyBanHangSieuThi.exe.config
+C:\Users\DiepHoangPhi\Documents\.git\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\bin\Debug\DACK_QuanLyBanHangSieuThi.exe
+C:\Users\DiepHoangPhi\Documents\.git\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\bin\Debug\DACK_QuanLyBanHangSieuThi.pdb
+C:\Users\DiepHoangPhi\Documents\.git\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\obj\Debug\DACK_QuanLyBanHangSieuThi.csprojAssemblyReference.cache
+C:\Users\DiepHoangPhi\Documents\.git\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\obj\Debug\DACK_QuanLyBanHangSieuThi.Fr_Main.resources
+C:\Users\DiepHoangPhi\Documents\.git\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\obj\Debug\DACK_QuanLyBanHangSieuThi.Fr_NhanVien.resources
+C:\Users\DiepHoangPhi\Documents\.git\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\obj\Debug\DACK_QuanLyBanHangSieuThi.Properties.Resources.resources
+C:\Users\DiepHoangPhi\Documents\.git\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\obj\Debug\DACK_QuanLyBanHangSieuThi.csproj.GenerateResource.cache
+C:\Users\DiepHoangPhi\Documents\.git\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\obj\Debug\DACK_QuanLyBanHangSieuThi.csproj.CoreCompileInputs.cache
+C:\Users\DiepHoangPhi\Documents\.git\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\obj\Debug\DACK_QuanLyBanHangSieuThi.exe
+C:\Users\DiepHoangPhi\Documents\.git\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\DACK_QuanLyBanHangSieuThi\obj\Debug\DACK_QuanLyBanHangSieuThi.pdb

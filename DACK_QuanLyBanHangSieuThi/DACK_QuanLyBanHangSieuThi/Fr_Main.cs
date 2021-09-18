@@ -30,5 +30,12 @@ namespace DACK_QuanLyBanHangSieuThi
             f1.StartPosition = FormStartPosition.CenterScreen;
             f1.Show();
         }
+
+        private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Fr_LogIn f = new Fr_LogIn();
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.Show();
+        }
     }
 }

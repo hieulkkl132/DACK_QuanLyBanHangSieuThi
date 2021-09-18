@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fr_LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr_LogIn.Designer.cs">
+      <DependentUpon>Fr_LogIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fr_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,12 @@
     </Compile>
     <Compile Include="Fr_SanPham.Designer.cs">
       <DependentUpon>Fr_SanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr_SignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr_SignIn.Designer.cs">
+      <DependentUpon>Fr_SignIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
