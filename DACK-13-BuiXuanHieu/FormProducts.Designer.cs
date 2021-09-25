@@ -208,11 +208,6 @@ namespace DACK_13_BuiXuanHieu
             0,
             0,
             0});
-            this.nudUnitPrice.Minimum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
             this.nudUnitPrice.Name = "nudUnitPrice";
             this.nudUnitPrice.Size = new System.Drawing.Size(260, 34);
             this.nudUnitPrice.TabIndex = 24;
