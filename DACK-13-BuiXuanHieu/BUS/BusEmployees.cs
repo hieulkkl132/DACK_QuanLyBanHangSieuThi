@@ -19,7 +19,12 @@ namespace DACK_13_BuiXuanHieu.BUS
 
         public void displayTableEmployees(DataGridView dgvEmployees)
         {
+            //
             dgvEmployees.DataSource = daoEmployees.loadTableEmployees();
+
+            //
+            dgvEmployees.Columns["EmployeeID"].Visible = false;
+            dgvEmployees.Columns["LoginID"].Width = (int)(0.08 * dgvEmployees.Width);
         }
         public void displayComboboxPositions(ComboBox cb)
         {

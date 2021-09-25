@@ -20,6 +20,7 @@ namespace DACK_13_BuiXuanHieu.DAO
             var ds = supmar.Employees.Select(s => new
             {
                 s.EmployeeID,
+                s.LoginID,
                 s.LastName,
                 s.FirstName,
                 s.Position.PositionName,
@@ -87,6 +88,32 @@ namespace DACK_13_BuiXuanHieu.DAO
             }
             catch
             {
+                return false;
+            }
+        }
+
+        public Employee loadEmployeeByID(int employeeID)
+        {
+            // 1851010015 - DuongTanBuu
+            dynamic employee = supmar.Employees.Where(e => e.EmployeeID == employeeID).ToList();
+
+            return employee[0];
+        }
+
+        public bool assignLogin(int employeeID, Login login)
+        {
+            //
+            try
+            {
+                Employee employee = supmar.Employees.First(s => s.EmployeeID == employeeID);
+                employee.Login = login;
+
+                supmar.SaveChanges();
+                return true;
+            }
+            catch //(Exception e)
+            {
+                //MessageBox.Show(e.Message.ToString());
                 return false;
             }
         }

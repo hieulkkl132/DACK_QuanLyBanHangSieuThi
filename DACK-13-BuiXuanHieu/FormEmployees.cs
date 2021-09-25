@@ -15,7 +15,9 @@ namespace DACK_13_BuiXuanHieu
     {
         //
         Panel pnlLoadForm;
+        FormMain formMain;
         BusEmployees busEmployees;
+
         //
         public FormEmployees()
         {
@@ -31,6 +33,15 @@ namespace DACK_13_BuiXuanHieu
             busEmployees = new BusEmployees();
         }
 
+        public FormEmployees(Panel pnlLoadForm, FormMain formMain)
+        {
+            //
+            InitializeComponent();
+            this.pnlLoadForm = pnlLoadForm;
+            this.formMain = formMain;
+            busEmployees = new BusEmployees();
+        }
+
         private void FormEmployees_Load(object sender, EventArgs e)
         {
             busEmployees.displayTableEmployees(dgvEmployees);
@@ -41,7 +52,7 @@ namespace DACK_13_BuiXuanHieu
         {
             //
             this.pnlLoadForm.Controls.Clear();
-            FormManage formManage = new FormManage(pnlLoadForm) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormManage formManage = new FormManage(pnlLoadForm, formMain) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formManage.FormBorderStyle = FormBorderStyle.None;
             this.pnlLoadForm.Controls.Add(formManage);
             formManage.Show();
@@ -111,6 +122,13 @@ namespace DACK_13_BuiXuanHieu
             busEmployees.displayTableEmployees(dgvEmployees);
             btnAdd.Enabled = false;
             btnAdd.FlatAppearance.BorderSize = 1;
+        }
+
+        private void btnManageLogin_Click(object sender, EventArgs e)
+        {
+            //
+            FormManageLogins formManageLogins = new FormManageLogins(formMain, dgvEmployees);
+            formManageLogins.Show();
         }
     }
 }

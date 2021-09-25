@@ -65,7 +65,7 @@ namespace DACK_13_BuiXuanHieu
         {
             //
             this.pnlLoadForm.Controls.Clear();
-            FormManage formManage = new FormManage(pnlLoadForm) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormManage formManage = new FormManage(pnlLoadForm, this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formManage.FormBorderStyle = FormBorderStyle.None;
             this.pnlLoadForm.Controls.Add(formManage);
             formManage.Show();

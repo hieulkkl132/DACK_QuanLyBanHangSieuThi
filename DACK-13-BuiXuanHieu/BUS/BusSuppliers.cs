@@ -20,10 +20,10 @@ namespace DACK_13_BuiXuanHieu.BUS
             daoSuppliers = new DaoSuppliers();
         }
 
-        public void displayTableSuppliers(DataGridView dgvOrders)
+        public void displayTableSuppliers(DataGridView dgvSuppliers)
         {
             //
-            dgvOrders.DataSource = daoSuppliers.loadTableSuppliers();
+            dgvSuppliers.DataSource = daoSuppliers.loadTableSuppliers();
 
             //
             //dgvOrders.Columns[0].Width = (int)(0.2 * dgvOrders.Width);

@@ -56,7 +56,7 @@ namespace DACK_13_BuiXuanHieu
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAssignLogin = new System.Windows.Forms.Button();
+            this.btnManageLogin = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
@@ -345,20 +345,21 @@ namespace DACK_13_BuiXuanHieu
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // btnAssignLogin
+            // btnManageLogin
             // 
-            this.btnAssignLogin.BackColor = System.Drawing.Color.LightCyan;
-            this.btnAssignLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAssignLogin.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnAssignLogin.FlatAppearance.BorderSize = 2;
-            this.btnAssignLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAssignLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAssignLogin.Location = new System.Drawing.Point(950, 60);
-            this.btnAssignLogin.Name = "btnAssignLogin";
-            this.btnAssignLogin.Size = new System.Drawing.Size(250, 60);
-            this.btnAssignLogin.TabIndex = 27;
-            this.btnAssignLogin.Text = "Assign Login";
-            this.btnAssignLogin.UseVisualStyleBackColor = false;
+            this.btnManageLogin.BackColor = System.Drawing.Color.LightCyan;
+            this.btnManageLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnManageLogin.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnManageLogin.FlatAppearance.BorderSize = 2;
+            this.btnManageLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageLogin.Location = new System.Drawing.Point(950, 60);
+            this.btnManageLogin.Name = "btnManageLogin";
+            this.btnManageLogin.Size = new System.Drawing.Size(250, 60);
+            this.btnManageLogin.TabIndex = 27;
+            this.btnManageLogin.Text = "Manage Login";
+            this.btnManageLogin.UseVisualStyleBackColor = false;
+            this.btnManageLogin.Click += new System.EventHandler(this.btnManageLogin_Click);
             // 
             // panel1
             // 
@@ -391,7 +392,7 @@ namespace DACK_13_BuiXuanHieu
             this.ClientSize = new System.Drawing.Size(1280, 953);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnAssignLogin);
+            this.Controls.Add(this.btnManageLogin);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
@@ -459,7 +460,7 @@ namespace DACK_13_BuiXuanHieu
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnAssignLogin;
+        private System.Windows.Forms.Button btnManageLogin;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnBack;
     }

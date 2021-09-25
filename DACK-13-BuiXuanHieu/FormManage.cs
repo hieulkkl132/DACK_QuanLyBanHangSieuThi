@@ -14,6 +14,7 @@ namespace DACK_13_BuiXuanHieu
     {
         //
         Panel pnlLoadForm;
+        FormMain formMain;
 
         public FormManage()
         {
@@ -24,6 +25,13 @@ namespace DACK_13_BuiXuanHieu
         {
             InitializeComponent();
             pnlLoadForm = pnlReceiveFromMainForm;
+        }
+
+        public FormManage(Panel pnlReceiveFromMainForm, FormMain formMain)
+        {
+            InitializeComponent();
+            pnlLoadForm = pnlReceiveFromMainForm;
+            this.formMain = formMain;
         }
 
         private void Manage_Load(object sender, EventArgs e)
@@ -40,7 +48,7 @@ namespace DACK_13_BuiXuanHieu
         {
             //
             this.pnlLoadForm.Controls.Clear();
-            FormEmployees formEmployees = new FormEmployees(pnlLoadForm) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormEmployees formEmployees = new FormEmployees(pnlLoadForm, formMain) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formEmployees.FormBorderStyle = FormBorderStyle.None;
             this.pnlLoadForm.Controls.Add(formEmployees);
             formEmployees.Show();
