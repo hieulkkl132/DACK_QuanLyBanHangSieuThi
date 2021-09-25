@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\BusEmployees.cs" />
+    <Compile Include="BUS\BusProducts.cs" />
     <Compile Include="BUS\BusSuppliers.cs" />
     <Compile Include="Category.cs">
       <DependentUpon>Supermarket.tt</DependentUpon>
@@ -64,6 +65,7 @@
       <DependentUpon>Supermarket.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\DaoEmployees.cs" />
+    <Compile Include="DAO\DaoProducts.cs" />
     <Compile Include="DAO\DaoSuppliers.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>Supermarket.tt</DependentUpon>

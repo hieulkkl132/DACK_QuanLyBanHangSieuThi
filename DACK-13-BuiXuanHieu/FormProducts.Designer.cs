@@ -66,6 +66,7 @@ namespace DACK_13_BuiXuanHieu
             this.dgvProducts.RowTemplate.Height = 24;
             this.dgvProducts.Size = new System.Drawing.Size(1070, 490);
             this.dgvProducts.TabIndex = 1;
+            this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellClick);
             // 
             // label2
             // 
@@ -250,6 +251,7 @@ namespace DACK_13_BuiXuanHieu
             this.btnEdit.TabIndex = 30;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnRemove
             // 
@@ -265,6 +267,7 @@ namespace DACK_13_BuiXuanHieu
             this.btnRemove.TabIndex = 29;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnAdd
             // 
@@ -280,6 +283,7 @@ namespace DACK_13_BuiXuanHieu
             this.btnAdd.TabIndex = 28;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnClear
             // 
@@ -295,6 +299,7 @@ namespace DACK_13_BuiXuanHieu
             this.btnClear.TabIndex = 27;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // panel1
             // 

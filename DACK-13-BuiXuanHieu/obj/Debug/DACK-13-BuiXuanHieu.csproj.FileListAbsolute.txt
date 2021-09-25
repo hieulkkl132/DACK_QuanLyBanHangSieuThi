@@ -30,7 +30,6 @@ C:\Users\HuynhVi\OneDrive\Desktop\DACK_QuanLyBanHangSieuThi\DACK-13-BuiXuanHieu\
 C:\Users\HuynhVi\OneDrive\Desktop\DACK_QuanLyBanHangSieuThi\DACK-13-BuiXuanHieu\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\HuynhVi\OneDrive\Desktop\DACK_QuanLyBanHangSieuThi\DACK-13-BuiXuanHieu\bin\Debug\EntityFramework.xml
 C:\Users\HuynhVi\OneDrive\Desktop\DACK_QuanLyBanHangSieuThi\DACK-13-BuiXuanHieu\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\HuynhVi\OneDrive\Desktop\DACK_QuanLyBanHangSieuThi\DACK-13-BuiXuanHieu\obj\Debug\DACK-13-BuiXuanHieu.csproj.AssemblyReference.cache
 C:\Users\HuynhVi\OneDrive\Desktop\DACK_QuanLyBanHangSieuThi\DACK-13-BuiXuanHieu\obj\Debug\DACK_13_BuiXuanHieu.FormAbout.resources
 C:\Users\HuynhVi\OneDrive\Desktop\DACK_QuanLyBanHangSieuThi\DACK-13-BuiXuanHieu\obj\Debug\DACK_13_BuiXuanHieu.FormCustomers.resources
 C:\Users\HuynhVi\OneDrive\Desktop\DACK_QuanLyBanHangSieuThi\DACK-13-BuiXuanHieu\obj\Debug\DACK_13_BuiXuanHieu.FormEmployees.resources
