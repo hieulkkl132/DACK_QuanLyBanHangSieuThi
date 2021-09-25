@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BusEmployees.cs" />
     <Compile Include="BUS\BusSuppliers.cs" />
     <Compile Include="Category.cs">
       <DependentUpon>Supermarket.tt</DependentUpon>
@@ -62,6 +63,7 @@
     <Compile Include="Customer.cs">
       <DependentUpon>Supermarket.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\DaoEmployees.cs" />
     <Compile Include="DAO\DaoSuppliers.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>Supermarket.tt</DependentUpon>
