@@ -24,7 +24,7 @@ namespace DACK_13_BuiXuanHieu.DAO
                 s.LoginID,
                 s.LastName,
                 s.FirstName,
-                s.PositionID,
+                s.Position.PositionName,
                 s.BirthDate,
                 s.Address,
                 s.City,

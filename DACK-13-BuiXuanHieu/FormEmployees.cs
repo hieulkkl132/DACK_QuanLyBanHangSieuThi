@@ -87,7 +87,7 @@ namespace DACK_13_BuiXuanHieu
                     tbLoginID.Text = dgvEmployees.Rows[e.RowIndex].Cells["LoginID"].Value.ToString();
                 tbLastName.Text = dgvEmployees.Rows[e.RowIndex].Cells["LastName"].Value.ToString();
                 tbFirstName.Text = dgvEmployees.Rows[e.RowIndex].Cells["FirstName"].Value.ToString();
-                cbPosition.Text = dgvEmployees.Rows[e.RowIndex].Cells["PositionID"].Value.ToString();
+                cbPosition.Text = dgvEmployees.Rows[e.RowIndex].Cells[4].Value.ToString();
                 dtpBirthDate.Text = dgvEmployees.Rows[e.RowIndex].Cells["BirthDate"].Value.ToString();
                 tbAddress.Text = dgvEmployees.Rows[e.RowIndex].Cells["Address"].Value.ToString();
                 tbCity.Text = dgvEmployees.Rows[e.RowIndex].Cells["City"].Value.ToString();
