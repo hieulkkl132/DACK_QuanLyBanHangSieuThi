@@ -93,7 +93,7 @@ namespace DACK_13_BuiXuanHieu
             {
                 //
                 int employeeID = int.Parse(dgvEmployees.CurrentRow.Cells["EmployeeID"].Value.ToString());
-                busLogins.assignLogin(employeeID, tbUsername, cbLoginType, tbPassword, tbRetype);
+                busLogins.assignLogin(this, employeeID, tbUsername, cbLoginType, tbPassword, tbRetype);
 
                 //
                 dgvEmployees.Columns.Clear();
@@ -101,7 +101,13 @@ namespace DACK_13_BuiXuanHieu
             }
             else if (rdbtnEdit.Checked)
             {
+                //
+                int employeeID = int.Parse(dgvEmployees.CurrentRow.Cells["EmployeeID"].Value.ToString());
+                busLogins.editLogin(this, employeeID, tbUsername, cbLoginType, tbPassword, tbRetype);
 
+                //
+                dgvEmployees.Columns.Clear();
+                busEmployees.displayTableEmployees(dgvEmployees);
             }
             else if (rdbtnRemove.Checked)
             { 

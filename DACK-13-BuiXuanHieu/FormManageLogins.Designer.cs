@@ -255,7 +255,6 @@ namespace DACK_13_BuiXuanHieu
             this.Name = "FormManageLogins";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormManageLogins";
-            this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormManageLogins_FormClosed);
             this.Load += new System.EventHandler(this.FormManageLogins_Load);
             this.ResumeLayout(false);

@@ -43,7 +43,7 @@ namespace DACK_13_BuiXuanHieu.BUS
             tbPassword.Text = login.Password;
         }
 
-        public bool assignLogin(int employeeID, TextBox tbUsername, ComboBox cbLoginType, TextBox tbPassword, TextBox tbRetype)
+        public bool assignLogin(FormManageLogins formManageLogins, int employeeID, TextBox tbUsername, ComboBox cbLoginType, TextBox tbPassword, TextBox tbRetype)
         {
             //
             String username = tbUsername.Text.Trim(),
@@ -84,6 +84,69 @@ namespace DACK_13_BuiXuanHieu.BUS
                             MessageBox.Show("Successfully !", "Announcement",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Information);
+                            formManageLogins.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                            return false;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message.ToString());
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+        }
+
+        public bool editLogin(FormManageLogins formManageLogins, int employeeID, TextBox tbUsername, ComboBox cbLoginType, TextBox tbPassword, TextBox tbRetype)
+        {
+            //
+            String username = tbUsername.Text.Trim(),
+                   loginType = cbLoginType.SelectedValue.ToString(),
+                   password = tbPassword.Text,
+                   retype = tbRetype.Text;
+            //
+            if (username == "" || loginType == "" || password == "" || retype == "")
+            {
+                MessageBox.Show("Please, fill up ALL attributes !");
+                return false;
+            }
+            else if (password != retype)
+            {
+                MessageBox.Show("Password doesn't match !");
+                return false;
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("A login will be EDITED! Continue ?", "Action confirm",
+                                                  MessageBoxButtons.OKCancel,
+                                                  MessageBoxIcon.Question);
+                if (dr == DialogResult.Cancel)
+                {
+                    return false;
+                }
+                else
+                {
+                    try
+                    {
+                        Login editedLogin = new Login();
+                        editedLogin.Username = username;
+                        editedLogin.LoginTypeID = int.Parse(loginType);
+                        editedLogin.Password = password;
+
+                        if (daoEmployees.editLogin(employeeID, editedLogin))
+                        {
+                            MessageBox.Show("Successfully !", "Announcement",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                            formManageLogins.Close();
                         }
                         else
                         {

@@ -117,5 +117,25 @@ namespace DACK_13_BuiXuanHieu.DAO
             }
             return true;
         }
+
+        public bool editLogin(int employeeID, Login editedLogin)
+        {
+            //
+            try
+            {
+                Employee employee = supmar.Employees.First(s => s.EmployeeID == employeeID);
+                employee.Login.Username = editedLogin.Username;
+                employee.Login.LoginTypeID = editedLogin.LoginTypeID;
+                employee.Login.Password = editedLogin.Password;
+
+                supmar.SaveChanges();
+            }
+            catch //(Exception e)
+            {
+                //MessageBox.Show(e.Message.ToString());
+                return false;
+            }
+            return true;
+        }
     }
 }
