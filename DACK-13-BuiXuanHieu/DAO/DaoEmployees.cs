@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DACK_13_BuiXuanHieu.DAO
 {
@@ -120,7 +121,7 @@ namespace DACK_13_BuiXuanHieu.DAO
 
         public bool editLogin(int employeeID, Login editedLogin)
         {
-            //
+            // 1851010015 - DuongTanBuu
             try
             {
                 Employee employee = supmar.Employees.First(s => s.EmployeeID == employeeID);
@@ -136,6 +137,24 @@ namespace DACK_13_BuiXuanHieu.DAO
                 return false;
             }
             return true;
+        }
+
+        public int removeLogin(int employeeID)
+        {
+            // 1851010015 - DuongTanBuu
+            int loginID = 0;
+            try
+            {
+                Employee employee = supmar.Employees.First(s => s.EmployeeID == employeeID);
+                loginID = (int)employee.LoginID;
+                employee.LoginID = null;
+                supmar.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString());
+            }
+            return loginID;
         }
     }
 }

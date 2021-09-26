@@ -166,5 +166,44 @@ namespace DACK_13_BuiXuanHieu.BUS
                 return true;
             }
         }
+
+        public bool removeLogin(FormManageLogins formManageLogins, int employeeID)
+        {
+            DialogResult dr = MessageBox.Show("A login will be REMOVED! Continue ?", "Action confirm",
+                                                MessageBoxButtons.OKCancel,
+                                                MessageBoxIcon.Question);
+            if (dr == DialogResult.Cancel)
+            {
+                return false;
+            }
+            else
+            {
+                try
+                {
+                    int loginID = daoEmployees.removeLogin(employeeID);
+                    if (daoLogins.removeRecord(loginID))
+                    {
+                        MessageBox.Show("Successfully !", "Announcement",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                        formManageLogins.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message.ToString());
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 }

@@ -43,13 +43,13 @@ namespace DACK_13_BuiXuanHieu.DAO
             {
                 supmar.Suppliers.Add(s);
                 supmar.SaveChanges();
-                return true;
             }
             catch //(Exception e)
             {
                 //MessageBox.Show(e.Message.ToString());
                 return false;
             }
+            return true;
         }
 
         public bool editRecord(Supplier newRecord)
@@ -68,13 +68,13 @@ namespace DACK_13_BuiXuanHieu.DAO
                 oldRecord.Fax = newRecord.Fax;
 
                 supmar.SaveChanges();
-                return true;
             }
             catch //(Exception e)
             {
                 //MessageBox.Show(e.Message.ToString());
                 return false;
             }
+            return true;
         }
 
         public bool removeRecord(int supplierID)
@@ -85,13 +85,13 @@ namespace DACK_13_BuiXuanHieu.DAO
                 Supplier chosenRecord = supmar.Suppliers.First(s => s.SupplierID == supplierID);
                 supmar.Suppliers.Remove(chosenRecord);
                 supmar.SaveChanges();
-                return true;
             }
             catch //(Exception e)
             {
                 //MessageBox.Show(e.Message.ToString());
                 return false;
             }
+            return true;
         }
     }
 }

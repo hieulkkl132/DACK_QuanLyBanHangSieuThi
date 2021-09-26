@@ -46,5 +46,22 @@ namespace DACK_13_BuiXuanHieu.DAO
 
             return login;
         }
+
+        public bool removeRecord(int loginID)
+        {
+            //
+            try
+            {
+                Login chosenRecord = supmar.Logins.First(s => s.LoginID == loginID);
+                supmar.Logins.Remove(chosenRecord);
+                supmar.SaveChanges();
+            }
+            catch //(Exception e)
+            {
+                //MessageBox.Show(e.Message.ToString());
+                return false;
+            }
+            return true;
+        }
     }
 }

@@ -110,8 +110,14 @@ namespace DACK_13_BuiXuanHieu
                 busEmployees.displayTableEmployees(dgvEmployees);
             }
             else if (rdbtnRemove.Checked)
-            { 
-                
+            {
+                //
+                int employeeID = int.Parse(dgvEmployees.CurrentRow.Cells["EmployeeID"].Value.ToString());
+                busLogins.removeLogin(this, employeeID);
+
+                //
+                dgvEmployees.Columns.Clear();
+                busEmployees.displayTableEmployees(dgvEmployees);
             }
         }
     }
