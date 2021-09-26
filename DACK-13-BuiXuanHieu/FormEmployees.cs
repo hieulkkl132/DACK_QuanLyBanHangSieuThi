@@ -81,10 +81,13 @@ namespace DACK_13_BuiXuanHieu
             tbLoginID.Enabled = false;
             if (e.RowIndex >= 0 && e.RowIndex < dgvEmployees.Rows.Count)
             {
-                tbLoginID.Text = dgvEmployees.Rows[e.RowIndex].Cells["EmployeeID"].Value.ToString();
+                if (dgvEmployees.Rows[e.RowIndex].Cells["LoginID"].Value == null)
+                    tbLoginID.Text = "";
+                else
+                    tbLoginID.Text = dgvEmployees.Rows[e.RowIndex].Cells["LoginID"].Value.ToString();
                 tbLastName.Text = dgvEmployees.Rows[e.RowIndex].Cells["LastName"].Value.ToString();
                 tbFirstName.Text = dgvEmployees.Rows[e.RowIndex].Cells["FirstName"].Value.ToString();
-                cbPosition.Text = dgvEmployees.Rows[e.RowIndex].Cells[3].Value.ToString();
+                cbPosition.Text = dgvEmployees.Rows[e.RowIndex].Cells["PositionID"].Value.ToString();
                 dtpBirthDate.Text = dgvEmployees.Rows[e.RowIndex].Cells["BirthDate"].Value.ToString();
                 tbAddress.Text = dgvEmployees.Rows[e.RowIndex].Cells["Address"].Value.ToString();
                 tbCity.Text = dgvEmployees.Rows[e.RowIndex].Cells["City"].Value.ToString();

@@ -23,7 +23,7 @@ namespace DACK_13_BuiXuanHieu.DAO
                 s.LoginID,
                 s.LastName,
                 s.FirstName,
-                s.Position.PositionName,
+                s.PositionID,
                 s.BirthDate,
                 s.Address,
                 s.City,
@@ -109,13 +109,13 @@ namespace DACK_13_BuiXuanHieu.DAO
                 employee.Login = login;
 
                 supmar.SaveChanges();
-                return true;
             }
             catch //(Exception e)
             {
                 //MessageBox.Show(e.Message.ToString());
                 return false;
             }
+            return true;
         }
     }
 }

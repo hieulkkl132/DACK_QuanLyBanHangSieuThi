@@ -15,6 +15,7 @@ namespace DACK_13_BuiXuanHieu
     {
         //
         BusLogins busLogins;
+        BusEmployees busEmployees;
         FormMain formMain;
         DataGridView dgvEmployees;
 
@@ -28,6 +29,7 @@ namespace DACK_13_BuiXuanHieu
             //
             InitializeComponent();
             busLogins = new BusLogins();
+            busEmployees = new BusEmployees();
             this.formMain = formMain;
             this.dgvEmployees = dgvEmployees;
         }
@@ -89,8 +91,13 @@ namespace DACK_13_BuiXuanHieu
             //
             if (rdbtnAssign.Checked)
             {
+                //
                 int employeeID = int.Parse(dgvEmployees.CurrentRow.Cells["EmployeeID"].Value.ToString());
                 busLogins.assignLogin(employeeID, tbUsername, cbLoginType, tbPassword, tbRetype);
+
+                //
+                dgvEmployees.Columns.Clear();
+                busEmployees.displayTableEmployees(dgvEmployees);
             }
             else if (rdbtnEdit.Checked)
             {

@@ -46,21 +46,5 @@ namespace DACK_13_BuiXuanHieu.DAO
 
             return login;
         }
-
-        public bool addRecord(Login l)
-        {
-            //
-            try
-            {
-                supmar.Logins.Add(l);
-                supmar.SaveChanges();
-                return true;
-            }
-            catch //(Exception e)
-            {
-                //MessageBox.Show(e.Message.ToString());
-                return false;
-            }
-        }
     }
 }
