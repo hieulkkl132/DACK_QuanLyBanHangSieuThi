@@ -78,9 +78,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(23, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 29);
+            this.label2.Size = new System.Drawing.Size(117, 29);
             this.label2.TabIndex = 42;
-            this.label2.Text = "CustomerID";
+            this.label2.Text = "Customer";
             // 
             // btnAssign
             // 

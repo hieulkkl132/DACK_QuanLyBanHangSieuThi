@@ -50,27 +50,18 @@ namespace DACK_13_BuiXuanHieu
 
         //Hiển thị danh sách khách hàng
         private void showListCustomer()
-        {
-            
+        {         
             dgvCustomers.DataSource = null;
             bCustomer.getListCustomer(dgvCustomers);
-            dgvCustomers.Columns[0].Width = (int)(dgvCustomers.Width * 0.25);
-            dgvCustomers.Columns[1].Width = (int)(dgvCustomers.Width * 0.25);
-            dgvCustomers.Columns[2].Width = (int)(dgvCustomers.Width * 0.25);
-            dgvCustomers.Columns[3].Width = (int)(dgvCustomers.Width * 0.25);
-            dgvCustomers.Columns[4].Width = (int)(dgvCustomers.Width * 0.25);
-            dgvCustomers.Columns[5].Width = (int)(dgvCustomers.Width * 0.25);
-            dgvCustomers.Columns[6].Width = (int)(dgvCustomers.Width * 0.25);
-            dgvCustomers.Columns[7].Width = (int)(dgvCustomers.Width * 0.25);
-            dgvCustomers.Columns[8].Width = (int)(dgvCustomers.Width * 0.25);
         }
 
         // hiển thị lên textbox
-        private void dgvCustomers_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        private void dgvCustomers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //
-            btnAdd.Enabled = true;
-            btnAdd.FlatAppearance.BorderSize = 2;
+            btnAdd.Enabled = false;
+            btnAdd.FlatAppearance.BorderSize = 1;
+            tbMemberID.Enabled = false;
 
             //           
             if (e.RowIndex >= 0 && e.RowIndex < dgvCustomers.Rows.Count)
@@ -121,14 +112,13 @@ namespace DACK_13_BuiXuanHieu
             tbMemberID.Clear();
             tbLastName.Clear();
             tbFIrstName.Clear();
+            dtpBirthDate.ResetText();
             tbAddress.Clear();
             tbCity.Clear();
             tbDistrict.Clear();
             tbEmail.Clear();
             tbPhone.Clear();
-
-
-            
+            btnAdd.Enabled = true;
             btnAdd.FlatAppearance.BorderSize = 2;
         }
 

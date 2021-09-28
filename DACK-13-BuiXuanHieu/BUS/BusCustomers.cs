@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DACK_13_BuiXuanHieu.DAO;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace DACK_13_BuiXuanHieu.BUS
 {
@@ -17,15 +18,37 @@ namespace DACK_13_BuiXuanHieu.BUS
         }
 
         
-        public void getListCustomer(DataGridView dgv) 
+        public void getListCustomer(DataGridView dgvCustomers) 
         {
-            dgv.DataSource = dCustomer.getListCustomer();
+            dgvCustomers.DataSource = dCustomer.getListCustomer();
+            dgvCustomers.Columns["CustomerID"].Visible = false;
+            dgvCustomers.Columns[0].Width = (int)(dgvCustomers.Width * 0.13);
+            dgvCustomers.Columns[1].Width = (int)(dgvCustomers.Width * 0.14);
+            dgvCustomers.Columns[2].Width = (int)(dgvCustomers.Width * 0.15);
+            dgvCustomers.Columns[3].Width = (int)(dgvCustomers.Width * 0.16);
+            dgvCustomers.Columns[4].Width = (int)(dgvCustomers.Width * 0.16);
+            dgvCustomers.Columns[5].Width = (int)(dgvCustomers.Width * 0.16);
+            dgvCustomers.Columns[6].Width = (int)(dgvCustomers.Width * 0.16);
+            dgvCustomers.Columns[7].Width = (int)(dgvCustomers.Width * 0.16);
+            dgvCustomers.Columns[8].Width = (int)(dgvCustomers.Width * 0.16);
         }
 
         //
         public void getMemberList(DataGridView dgv)
         {
             dgv.DataSource = dCustomer.getMemberList();
+        }
+        //
+        public static bool isValidEmail(string inputEmail)
+        {
+            string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                  @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                  @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+            Regex re = new Regex(strRegex);
+            if (re.IsMatch(inputEmail))
+                return (true);
+            else
+                return (false);
         }
         //
         public bool addRecord(TextBox tbLastName, TextBox tbFirstName, DateTimePicker dtpBirthDate,TextBox tbAddress, TextBox tbCity, TextBox tbDistrict,TextBox tbPhone, TextBox tbEmail)
@@ -48,6 +71,11 @@ namespace DACK_13_BuiXuanHieu.BUS
             else if (int.TryParse(phone, out int phoneNumeric) == false)
             {
                 MessageBox.Show("Please, check your PHONE number again !");
+                return false;
+            }
+            else if (isValidEmail(email) == false)
+            {
+                MessageBox.Show("Please, check your Email again !");
                 return false;
             }
             else
