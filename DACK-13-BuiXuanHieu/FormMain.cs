@@ -12,6 +12,7 @@ namespace DACK_13_BuiXuanHieu
 {
     public partial class FormMain : Form
     {
+        
         public FormMain()
         {
             //
@@ -110,7 +111,21 @@ namespace DACK_13_BuiXuanHieu
 
         private void btnSignOut_Click(object sender, EventArgs e)
         {
-
+            DialogResult dr = MessageBox.Show("Are you sure you want to SIGN OUT ?", "Action confirm",
+                                                  MessageBoxButtons.OKCancel,
+                                                  MessageBoxIcon.Question);
+            if (dr==DialogResult.Cancel)
+            {
+                
+            }
+            else
+            {
+                
+                MessageBox.Show("Your login successfully!" , "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();
+            }
         }
 
         private void btnSignOut_MouseHover(object sender, EventArgs e)

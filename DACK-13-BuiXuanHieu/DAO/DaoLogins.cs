@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace DACK_13_BuiXuanHieu.DAO
 {
     class DaoLogins
@@ -62,6 +63,13 @@ namespace DACK_13_BuiXuanHieu.DAO
                 return false;
             }
             return true;
+        }
+/////////////////////
+
+        public Login account(/*int loginID, int logintypeID,*/string userName, string passWord)
+        {
+            Login acc = supmar.Logins.FirstOrDefault(l => /*l.LoginTypeID == logintypeID && l.LoginID == loginID &&*/ l.Username == userName && l.Password == passWord);
+            return acc;
         }
     }
 }

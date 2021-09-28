@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BusCustomers.cs" />
     <Compile Include="BUS\BusEmployees.cs" />
     <Compile Include="BUS\BusLogins.cs" />
     <Compile Include="BUS\BusProducts.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Customer.cs">
       <DependentUpon>Supermarket.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\DaoCustomers.cs" />
     <Compile Include="DAO\DaoEmployees.cs" />
     <Compile Include="DAO\DaoLogins.cs" />
     <Compile Include="DAO\DaoProducts.cs" />
@@ -80,6 +82,12 @@
     </Compile>
     <Compile Include="FormAbout.Designer.cs">
       <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAssignMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAssignMember.Designer.cs">
+      <DependentUpon>FormAssignMember.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCustomers.cs">
       <SubType>Form</SubType>
@@ -202,6 +210,9 @@
     </Compile>
     <EmbeddedResource Include="FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAssignMember.resx">
+      <DependentUpon>FormAssignMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCustomers.resx">
       <DependentUpon>FormCustomers.cs</DependentUpon>

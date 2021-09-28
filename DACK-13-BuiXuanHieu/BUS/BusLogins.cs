@@ -205,5 +205,28 @@ namespace DACK_13_BuiXuanHieu.BUS
 
             return true;
         }
+
+
+   /////    /// ///
+        public bool checkAccount( TextBox tbUsername, TextBox tbPassword)
+        {
+            string userName = tbUsername.Text.Trim(),
+                   passWord = tbPassword.Text.Trim();
+            
+            Login l = new Login();
+            
+            if ( daoLogins.account(userName,passWord)!=null)
+            {
+                if (true)
+                {
+                    MessageBox.Show("Your login successfully!" + "  Welcome " + userName, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;  
+                }            
+            }
+            else
+            {
+                return false;
+            }                                          
+        }
     }
 }

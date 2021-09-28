@@ -37,7 +37,7 @@ namespace DACK_13_BuiXuanHieu
         private void FormManageLogins_Load(object sender, EventArgs e)
         {
             //
-            formMain.Enabled = false;
+            formMain.Enabled = true;
 
             //
             String lastName = dgvEmployees.CurrentRow.Cells["LastName"].Value.ToString();
