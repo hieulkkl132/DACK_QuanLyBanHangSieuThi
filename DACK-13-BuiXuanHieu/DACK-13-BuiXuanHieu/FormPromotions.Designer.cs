@@ -55,8 +55,9 @@ namespace DACK_13_BuiXuanHieu
             this.nudLimitQuantity = new System.Windows.Forms.NumericUpDown();
             this.nudDiscount = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
-            this.tbtnManageEvents = new DACK_13_BuiXuanHieu.ToggleButton();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btRemove = new System.Windows.Forms.Button();
+            this.tbtnManageEvents = new DACK_13_BuiXuanHieu.ToggleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPromotions)).BeginInit();
@@ -68,40 +69,46 @@ namespace DACK_13_BuiXuanHieu
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Location = new System.Drawing.Point(140, 10);
+            this.panel1.Location = new System.Drawing.Point(105, 8);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 100);
+            this.panel1.Size = new System.Drawing.Size(225, 81);
             this.panel1.TabIndex = 57;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(60, 30);
+            this.label10.Location = new System.Drawing.Point(45, 24);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(192, 38);
+            this.label10.Size = new System.Drawing.Size(161, 31);
             this.label10.TabIndex = 1;
             this.label10.Text = "Promotions";
             // 
             // dgvEvents
             // 
             this.dgvEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEvents.Location = new System.Drawing.Point(440, 450);
+            this.dgvEvents.Location = new System.Drawing.Point(328, 354);
+            this.dgvEvents.Margin = new System.Windows.Forms.Padding(2);
             this.dgvEvents.Name = "dgvEvents";
             this.dgvEvents.RowHeadersWidth = 51;
             this.dgvEvents.RowTemplate.Height = 24;
-            this.dgvEvents.Size = new System.Drawing.Size(650, 490);
+            this.dgvEvents.Size = new System.Drawing.Size(488, 398);
             this.dgvEvents.TabIndex = 58;
+            this.dgvEvents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEvents_CellClick);
             // 
             // dgvPromotions
             // 
             this.dgvPromotions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPromotions.Location = new System.Drawing.Point(20, 450);
+            this.dgvPromotions.Location = new System.Drawing.Point(11, 354);
+            this.dgvPromotions.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPromotions.Name = "dgvPromotions";
             this.dgvPromotions.RowHeadersWidth = 51;
             this.dgvPromotions.RowTemplate.Height = 24;
-            this.dgvPromotions.Size = new System.Drawing.Size(400, 490);
+            this.dgvPromotions.Size = new System.Drawing.Size(300, 398);
             this.dgvPromotions.TabIndex = 59;
+            this.dgvPromotions.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPromotions_CellClick);
             // 
             // label2
             // 
@@ -109,9 +116,10 @@ namespace DACK_13_BuiXuanHieu
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(50, 150);
+            this.label2.Location = new System.Drawing.Point(38, 122);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 29);
+            this.label2.Size = new System.Drawing.Size(61, 24);
             this.label2.TabIndex = 62;
             this.label2.Text = "Name";
             // 
@@ -120,9 +128,10 @@ namespace DACK_13_BuiXuanHieu
             this.tbPromotionName.BackColor = System.Drawing.Color.White;
             this.tbPromotionName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPromotionName.ForeColor = System.Drawing.Color.Black;
-            this.tbPromotionName.Location = new System.Drawing.Point(200, 150);
+            this.tbPromotionName.Location = new System.Drawing.Point(150, 122);
+            this.tbPromotionName.Margin = new System.Windows.Forms.Padding(2);
             this.tbPromotionName.Name = "tbPromotionName";
-            this.tbPromotionName.Size = new System.Drawing.Size(350, 34);
+            this.tbPromotionName.Size = new System.Drawing.Size(264, 28);
             this.tbPromotionName.TabIndex = 71;
             // 
             // label1
@@ -131,9 +140,10 @@ namespace DACK_13_BuiXuanHieu
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(50, 210);
+            this.label1.Location = new System.Drawing.Point(38, 171);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 29);
+            this.label1.Size = new System.Drawing.Size(104, 24);
             this.label1.TabIndex = 72;
             this.label1.Text = "Description";
             // 
@@ -142,10 +152,11 @@ namespace DACK_13_BuiXuanHieu
             this.tbDescription.BackColor = System.Drawing.Color.White;
             this.tbDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDescription.ForeColor = System.Drawing.Color.Black;
-            this.tbDescription.Location = new System.Drawing.Point(200, 210);
+            this.tbDescription.Location = new System.Drawing.Point(150, 171);
+            this.tbDescription.Margin = new System.Windows.Forms.Padding(2);
             this.tbDescription.Multiline = true;
             this.tbDescription.Name = "tbDescription";
-            this.tbDescription.Size = new System.Drawing.Size(350, 200);
+            this.tbDescription.Size = new System.Drawing.Size(264, 163);
             this.tbDescription.TabIndex = 73;
             // 
             // label3
@@ -154,9 +165,10 @@ namespace DACK_13_BuiXuanHieu
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(700, 90);
+            this.label3.Location = new System.Drawing.Point(525, 73);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 29);
+            this.label3.Size = new System.Drawing.Size(96, 24);
             this.label3.TabIndex = 74;
             this.label3.Text = "Promotion";
             // 
@@ -166,9 +178,10 @@ namespace DACK_13_BuiXuanHieu
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(700, 150);
+            this.label4.Location = new System.Drawing.Point(525, 122);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 29);
+            this.label4.Size = new System.Drawing.Size(75, 24);
             this.label4.TabIndex = 75;
             this.label4.Text = "Product";
             // 
@@ -178,9 +191,10 @@ namespace DACK_13_BuiXuanHieu
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(700, 210);
+            this.label5.Location = new System.Drawing.Point(525, 171);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 29);
+            this.label5.Size = new System.Drawing.Size(84, 24);
             this.label5.TabIndex = 76;
             this.label5.Text = "StartDate";
             // 
@@ -190,9 +204,10 @@ namespace DACK_13_BuiXuanHieu
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(700, 270);
+            this.label6.Location = new System.Drawing.Point(525, 219);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 29);
+            this.label6.Size = new System.Drawing.Size(83, 24);
             this.label6.TabIndex = 77;
             this.label6.Text = "EndDate";
             // 
@@ -202,9 +217,10 @@ namespace DACK_13_BuiXuanHieu
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(700, 330);
+            this.label7.Location = new System.Drawing.Point(525, 268);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(151, 29);
+            this.label7.Size = new System.Drawing.Size(116, 24);
             this.label7.TabIndex = 78;
             this.label7.Text = "LimitQuantity";
             // 
@@ -214,9 +230,10 @@ namespace DACK_13_BuiXuanHieu
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(700, 390);
+            this.label8.Location = new System.Drawing.Point(525, 317);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 29);
+            this.label8.Size = new System.Drawing.Size(83, 24);
             this.label8.TabIndex = 79;
             this.label8.Text = "Discount";
             // 
@@ -228,12 +245,14 @@ namespace DACK_13_BuiXuanHieu
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.Black;
-            this.btnEdit.Location = new System.Drawing.Point(1110, 650);
+            this.btnEdit.Location = new System.Drawing.Point(832, 540);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(150, 80);
+            this.btnEdit.Size = new System.Drawing.Size(112, 65);
             this.btnEdit.TabIndex = 83;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnRemove
             // 
@@ -243,9 +262,10 @@ namespace DACK_13_BuiXuanHieu
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.ForeColor = System.Drawing.Color.OrangeRed;
-            this.btnRemove.Location = new System.Drawing.Point(1110, 880);
+            this.btnRemove.Location = new System.Drawing.Point(832, 715);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(150, 60);
+            this.btnRemove.Size = new System.Drawing.Size(112, 49);
             this.btnRemove.TabIndex = 82;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
@@ -258,12 +278,14 @@ namespace DACK_13_BuiXuanHieu
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(1110, 550);
+            this.btnAdd.Location = new System.Drawing.Point(832, 452);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(150, 80);
+            this.btnAdd.Size = new System.Drawing.Size(112, 65);
             this.btnAdd.TabIndex = 81;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnClear
             // 
@@ -273,22 +295,26 @@ namespace DACK_13_BuiXuanHieu
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.Location = new System.Drawing.Point(1110, 450);
+            this.btnClear.Location = new System.Drawing.Point(832, 366);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(150, 80);
+            this.btnClear.Size = new System.Drawing.Size(112, 65);
             this.btnClear.TabIndex = 80;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // cbPromotion
             // 
             this.cbPromotion.BackColor = System.Drawing.Color.White;
+            this.cbPromotion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPromotion.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPromotion.ForeColor = System.Drawing.Color.Black;
             this.cbPromotion.FormattingEnabled = true;
-            this.cbPromotion.Location = new System.Drawing.Point(850, 90);
+            this.cbPromotion.Location = new System.Drawing.Point(638, 73);
+            this.cbPromotion.Margin = new System.Windows.Forms.Padding(2);
             this.cbPromotion.Name = "cbPromotion";
-            this.cbPromotion.Size = new System.Drawing.Size(350, 37);
+            this.cbPromotion.Size = new System.Drawing.Size(264, 30);
             this.cbPromotion.TabIndex = 84;
             // 
             // cbProduct
@@ -298,27 +324,30 @@ namespace DACK_13_BuiXuanHieu
             this.cbProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbProduct.ForeColor = System.Drawing.Color.Black;
             this.cbProduct.FormattingEnabled = true;
-            this.cbProduct.Location = new System.Drawing.Point(850, 150);
+            this.cbProduct.Location = new System.Drawing.Point(638, 122);
+            this.cbProduct.Margin = new System.Windows.Forms.Padding(2);
             this.cbProduct.Name = "cbProduct";
-            this.cbProduct.Size = new System.Drawing.Size(350, 37);
+            this.cbProduct.Size = new System.Drawing.Size(264, 30);
             this.cbProduct.TabIndex = 85;
             // 
             // dtpStartDate
             // 
             this.dtpStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStartDate.Location = new System.Drawing.Point(850, 210);
+            this.dtpStartDate.Location = new System.Drawing.Point(638, 171);
+            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(350, 34);
+            this.dtpStartDate.Size = new System.Drawing.Size(264, 28);
             this.dtpStartDate.TabIndex = 86;
             // 
             // dtpEndDate
             // 
             this.dtpEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEndDate.Location = new System.Drawing.Point(850, 270);
+            this.dtpEndDate.Location = new System.Drawing.Point(638, 219);
+            this.dtpEndDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(350, 34);
+            this.dtpEndDate.Size = new System.Drawing.Size(264, 28);
             this.dtpEndDate.TabIndex = 87;
             // 
             // nudLimitQuantity
@@ -331,14 +360,15 @@ namespace DACK_13_BuiXuanHieu
             0,
             0,
             0});
-            this.nudLimitQuantity.Location = new System.Drawing.Point(940, 330);
+            this.nudLimitQuantity.Location = new System.Drawing.Point(705, 268);
+            this.nudLimitQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.nudLimitQuantity.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.nudLimitQuantity.Name = "nudLimitQuantity";
-            this.nudLimitQuantity.Size = new System.Drawing.Size(260, 34);
+            this.nudLimitQuantity.Size = new System.Drawing.Size(195, 28);
             this.nudLimitQuantity.TabIndex = 88;
             // 
             // nudDiscount
@@ -352,14 +382,15 @@ namespace DACK_13_BuiXuanHieu
             0,
             0,
             131072});
-            this.nudDiscount.Location = new System.Drawing.Point(940, 390);
+            this.nudDiscount.Location = new System.Drawing.Point(705, 317);
+            this.nudDiscount.Margin = new System.Windows.Forms.Padding(2);
             this.nudDiscount.Maximum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudDiscount.Name = "nudDiscount";
-            this.nudDiscount.Size = new System.Drawing.Size(260, 34);
+            this.nudDiscount.Size = new System.Drawing.Size(195, 28);
             this.nudDiscount.TabIndex = 89;
             // 
             // label9
@@ -368,25 +399,12 @@ namespace DACK_13_BuiXuanHieu
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(950, 20);
+            this.label9.Location = new System.Drawing.Point(712, 16);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(234, 36);
+            this.label9.Size = new System.Drawing.Size(191, 29);
             this.label9.TabIndex = 91;
             this.label9.Text = "Manage Events";
-            // 
-            // tbtnManageEvents
-            // 
-            this.tbtnManageEvents.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tbtnManageEvents.Location = new System.Drawing.Point(850, 20);
-            this.tbtnManageEvents.MinimumSize = new System.Drawing.Size(45, 22);
-            this.tbtnManageEvents.Name = "tbtnManageEvents";
-            this.tbtnManageEvents.OffBackColor = System.Drawing.Color.Gray;
-            this.tbtnManageEvents.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.tbtnManageEvents.OnBackColor = System.Drawing.Color.Green;
-            this.tbtnManageEvents.OnToggleColor = System.Drawing.Color.White;
-            this.tbtnManageEvents.Size = new System.Drawing.Size(80, 40);
-            this.tbtnManageEvents.TabIndex = 90;
-            this.tbtnManageEvents.UseVisualStyleBackColor = true;
             // 
             // btnBack
             // 
@@ -395,19 +413,55 @@ namespace DACK_13_BuiXuanHieu
             this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(30, 30);
+            this.btnBack.Location = new System.Drawing.Point(22, 24);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(70, 70);
+            this.btnBack.Size = new System.Drawing.Size(52, 57);
             this.btnBack.TabIndex = 92;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btRemove
+            // 
+            this.btRemove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btRemove.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btRemove.FlatAppearance.BorderSize = 2;
+            this.btRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRemove.ForeColor = System.Drawing.Color.Black;
+            this.btRemove.Location = new System.Drawing.Point(832, 631);
+            this.btRemove.Margin = new System.Windows.Forms.Padding(2);
+            this.btRemove.Name = "btRemove";
+            this.btRemove.Size = new System.Drawing.Size(112, 65);
+            this.btRemove.TabIndex = 93;
+            this.btRemove.Text = "Remove";
+            this.btRemove.UseVisualStyleBackColor = true;
+            this.btRemove.Click += new System.EventHandler(this.btRemove_Click);
+            // 
+            // tbtnManageEvents
+            // 
+            this.tbtnManageEvents.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tbtnManageEvents.Location = new System.Drawing.Point(638, 16);
+            this.tbtnManageEvents.Margin = new System.Windows.Forms.Padding(2);
+            this.tbtnManageEvents.MinimumSize = new System.Drawing.Size(34, 18);
+            this.tbtnManageEvents.Name = "tbtnManageEvents";
+            this.tbtnManageEvents.OffBackColor = System.Drawing.Color.Gray;
+            this.tbtnManageEvents.OffToggleColor = System.Drawing.Color.Gainsboro;
+            this.tbtnManageEvents.OnBackColor = System.Drawing.Color.Green;
+            this.tbtnManageEvents.OnToggleColor = System.Drawing.Color.White;
+            this.tbtnManageEvents.Size = new System.Drawing.Size(60, 32);
+            this.tbtnManageEvents.TabIndex = 90;
+            this.tbtnManageEvents.UseVisualStyleBackColor = true;
+            this.tbtnManageEvents.CheckedChanged += new System.EventHandler(this.tbtnManageEvents_CheckedChanged);
+            // 
             // FormPromotions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1280, 953);
+            this.ClientSize = new System.Drawing.Size(960, 707);
+            this.Controls.Add(this.btRemove);
+            this.Controls.Add(this.dgvPromotions);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tbtnManageEvents);
@@ -431,14 +485,15 @@ namespace DACK_13_BuiXuanHieu
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbPromotionName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dgvPromotions);
             this.Controls.Add(this.dgvEvents);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(1280, 953);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(960, 590);
             this.Name = "FormPromotions";
             this.Text = "FormPromotions";
+            this.Load += new System.EventHandler(this.FormPromotions_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).EndInit();
@@ -479,5 +534,6 @@ namespace DACK_13_BuiXuanHieu
         private ToggleButton tbtnManageEvents;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btRemove;
     }
 }
