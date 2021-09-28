@@ -57,7 +57,7 @@ namespace DACK_13_BuiXuanHieu.DAO
             //
             try
             {
-                Customer oldRecord = supmar.Customers.First(s => s.MemberID == newRecord.CustomerID);
+                Customer oldRecord = supmar.Customers.First(s => s.CustomerID == newRecord.CustomerID);
                 oldRecord.LastName = newRecord.LastName;
                 oldRecord.FirstName = newRecord.FirstName;
                 oldRecord.BirthDate = newRecord.BirthDate;

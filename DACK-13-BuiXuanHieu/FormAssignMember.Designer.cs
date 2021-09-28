@@ -35,7 +35,7 @@
             this.btnAssign = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbCustomerID = new System.Windows.Forms.TextBox();
+            this.tbCustomer = new System.Windows.Forms.TextBox();
             this.numPoint = new System.Windows.Forms.NumericUpDown();
             this.dtpJoinDate = new System.Windows.Forms.DateTimePicker();
             this.tbRank = new System.Windows.Forms.TextBox();
@@ -125,16 +125,16 @@
             this.label1.TabIndex = 38;
             this.label1.Text = "Assign Member";
             // 
-            // tbCustomerID
+            // tbCustomer
             // 
-            this.tbCustomerID.BackColor = System.Drawing.Color.White;
-            this.tbCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCustomerID.ForeColor = System.Drawing.Color.Black;
-            this.tbCustomerID.Location = new System.Drawing.Point(172, 93);
-            this.tbCustomerID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbCustomerID.Name = "tbCustomerID";
-            this.tbCustomerID.Size = new System.Drawing.Size(351, 34);
-            this.tbCustomerID.TabIndex = 41;
+            this.tbCustomer.BackColor = System.Drawing.Color.White;
+            this.tbCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCustomer.ForeColor = System.Drawing.Color.Black;
+            this.tbCustomer.Location = new System.Drawing.Point(172, 93);
+            this.tbCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbCustomer.Name = "tbCustomer";
+            this.tbCustomer.Size = new System.Drawing.Size(351, 34);
+            this.tbCustomer.TabIndex = 41;
             // 
             // numPoint
             // 
@@ -181,7 +181,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.tbCustomerID);
+            this.Controls.Add(this.tbCustomer);
             this.Controls.Add(this.btnAssign);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label1);
@@ -205,7 +205,7 @@
         private System.Windows.Forms.Button btnAssign;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbCustomerID;
+        private System.Windows.Forms.TextBox tbCustomer;
         private System.Windows.Forms.NumericUpDown numPoint;
         private System.Windows.Forms.DateTimePicker dtpJoinDate;
         private System.Windows.Forms.TextBox tbRank;

@@ -128,21 +128,21 @@ namespace DACK_13_BuiXuanHieu.BUS
 
         }
 
-        public bool editRecord(DataGridView dgvCustomers,TextBox tbCustomerID,TextBox tbLastName, TextBox tbFirstName,DateTimePicker dtpBirthDate, TextBox tbAddress,
+        public bool editRecord(DataGridView dgvCustomers,TextBox tbLastName, TextBox tbFirstName,DateTimePicker dtpBirthDate, TextBox tbAddress,
                               TextBox tbCity, TextBox tbDistrict, TextBox tbPhone, TextBox tbEmail)
         {
             //
-            DateTime birthDate = dtpBirthDate.Value;
-            string customerID= tbCustomerID.Text.Trim(),
-                lastName = tbLastName.Text.Trim(),
+            String CustomerID = dgvCustomers.CurrentRow.Cells["CustomerID"].Value.ToString();
+            String lastName = tbLastName.Text.Trim(),
                    firstName = tbFirstName.Text.Trim(),
                    address = tbAddress.Text.Trim(),
+                   birthdate = dtpBirthDate.Value.ToString(),
                    city = tbCity.Text.Trim(),
                    district = tbDistrict.Text.Trim(),
                    phone = tbPhone.Text.Trim(),
                    email = tbEmail.Text.Trim();
             //
-            DialogResult dr = MessageBox.Show("Record [ " + customerID + " ] will be EDITED! Continue ?", "Action confirm",
+            DialogResult dr = MessageBox.Show("Record [ " + CustomerID + " ] will be EDITED! Continue ?", "Action confirm",
                                             MessageBoxButtons.OKCancel,
                                             MessageBoxIcon.Question);
             if (dr == DialogResult.OK)
@@ -150,10 +150,10 @@ namespace DACK_13_BuiXuanHieu.BUS
                 try
                 {
                     Customer c = new Customer();
-                    c.CustomerID = Int32.Parse(customerID);
+                    c.CustomerID = Int32.Parse(CustomerID);
                     c.LastName = lastName;
                     c.FirstName = firstName;
-                    c.BirthDate = birthDate;
+                    c.BirthDate = DateTime.Parse(birthdate);
                     c.Address = address;
                     c.City = city;
                     c.District = district;

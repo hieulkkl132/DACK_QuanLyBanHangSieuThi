@@ -126,7 +126,7 @@ namespace DACK_13_BuiXuanHieu
         private void btnEdit_Click(object sender, EventArgs e)
         {
             //
-            bCustomer.editRecord(dgvCustomers, tbMemberID, tbLastName, tbFIrstName,dtpBirthDate, tbAddress, tbCity, tbDistrict, tbPhone, tbEmail);
+            bCustomer.editRecord(dgvCustomers, tbLastName, tbFIrstName,dtpBirthDate, tbAddress, tbCity, tbDistrict, tbPhone, tbEmail);
             //
             dgvCustomers.Columns.Clear();
             bCustomer.getListCustomer(dgvCustomers);

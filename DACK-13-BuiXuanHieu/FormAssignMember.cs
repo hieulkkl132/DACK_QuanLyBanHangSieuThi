@@ -31,10 +31,11 @@ namespace DACK_13_BuiXuanHieu
         }
 
         private void FormAssignMember_Load(object sender, EventArgs e)
-        {        
+        {
+            tbCustomer.Enabled = false;
             String lastName = dgvCustomers.CurrentRow.Cells["LastName"].Value.ToString();
             String firstName = dgvCustomers.CurrentRow.Cells["FirstName"].Value.ToString();
-            tbCustomerID.Text = lastName + " " + firstName;
+            tbCustomer.Text = lastName + " " + firstName;
             //
             if (dgvCustomers.CurrentRow.Cells["MemberID"].Value == null)
             {
