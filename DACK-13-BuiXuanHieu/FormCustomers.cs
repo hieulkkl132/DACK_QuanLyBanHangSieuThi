@@ -67,11 +67,8 @@ namespace DACK_13_BuiXuanHieu
             if (e.RowIndex >= 0 && e.RowIndex < dgvCustomers.Rows.Count)
             {
                 if (dgvCustomers.Rows[e.RowIndex].Cells["MemberID"].Value == null)
-                {
                     tbMemberID.Text = "";
-                }
                 else
-                {
                     tbMemberID.Text = dgvCustomers.Rows[e.RowIndex].Cells["MemberID"].Value.ToString();
                     tbLastName.Text = dgvCustomers.Rows[e.RowIndex].Cells["LastName"].Value.ToString();
                     tbFIrstName.Text = dgvCustomers.Rows[e.RowIndex].Cells["FirstName"].Value.ToString();
@@ -81,7 +78,6 @@ namespace DACK_13_BuiXuanHieu
                     tbDistrict.Text = dgvCustomers.Rows[e.RowIndex].Cells["District"].Value.ToString();
                     tbPhone.Text = dgvCustomers.Rows[e.RowIndex].Cells["Phone"].Value.ToString();
                     tbEmail.Text = dgvCustomers.Rows[e.RowIndex].Cells["Email"].Value.ToString();
-                }
             }    
         }
 
