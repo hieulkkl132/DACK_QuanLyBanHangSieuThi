@@ -183,3 +183,4 @@ C:\Users\HuynhThaoVi\Downloads\DACK_QuanLyBanHangSieuThi\DACK-13-BuiXuanHieu\obj
 C:\Users\HuynhThaoVi\Downloads\DACK_QuanLyBanHangSieuThi\DACK-13-BuiXuanHieu\obj\Debug\DACK-13-BuiXuanHieu.exe
 C:\Users\HuynhThaoVi\Downloads\DACK_QuanLyBanHangSieuThi\DACK-13-BuiXuanHieu\obj\Debug\DACK-13-BuiXuanHieu.pdb
 C:\Users\HuynhThaoVi\Downloads\DACK_QuanLyBanHangSieuThi\DACK-13-BuiXuanHieu\obj\Debug\DACK-13-BuiXuanHieu.csproj.AssemblyReference.cache
+D:\MyLaboratory\C__C++__C#\DACK-13-BuiXuanHieu_GITHUB\DACK_QuanLyBanHangSieuThi\DACK-13-BuiXuanHieu\obj\Debug\DACK_13_BuiXuanHieu.FormAssignMember.resources

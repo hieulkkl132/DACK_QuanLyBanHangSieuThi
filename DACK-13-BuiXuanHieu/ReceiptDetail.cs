@@ -21,5 +21,6 @@ namespace DACK_13_BuiXuanHieu
         public Nullable<double> Discount { get; set; }
     
         public virtual Product Product { get; set; }
+        public virtual Receipt Receipt { get; set; }
     }
 }

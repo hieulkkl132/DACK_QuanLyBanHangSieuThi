@@ -64,10 +64,18 @@ namespace DACK_13_BuiXuanHieu.DAO
             }
             return true;
         }
-/////////////////////
+
+        public int? checkExistedUsername(String username)
+        {
+            //
+            int? result = supmar.spCheckExistedUsername(username).FirstOrDefault();
+
+            return result;
+        }
 
         public Login account(/*int loginID, int logintypeID,*/string userName, string passWord)
         {
+            // 1851010097 - DiepHoangPhi
             Login acc = supmar.Logins.FirstOrDefault(l => /*l.LoginTypeID == logintypeID && l.LoginID == loginID &&*/ l.Username == userName && l.Password == passWord);
             return acc;
         }

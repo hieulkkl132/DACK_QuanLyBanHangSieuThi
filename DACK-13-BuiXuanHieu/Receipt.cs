@@ -14,6 +14,12 @@ namespace DACK_13_BuiXuanHieu
     
     public partial class Receipt
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Receipt()
+        {
+            this.ReceiptDetails = new HashSet<ReceiptDetail>();
+        }
+    
         public int ReceiptID { get; set; }
         public int EmployeeID { get; set; }
         public int CustomerID { get; set; }
@@ -22,5 +28,7 @@ namespace DACK_13_BuiXuanHieu
     
         public virtual Customer Customer { get; set; }
         public virtual Employee Employee { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReceiptDetail> ReceiptDetails { get; set; }
     }
 }

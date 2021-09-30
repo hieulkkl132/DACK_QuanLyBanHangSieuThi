@@ -173,5 +173,6 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="DPromotion" FunctionName="SupermarketModel.Store.DPromotion" />
+    <FunctionImportMapping FunctionImportName="spCheckExistedUsername" FunctionName="SupermarketModel.Store.spCheckExistedUsername" />
   </EntityContainerMapping>
 </Mapping>

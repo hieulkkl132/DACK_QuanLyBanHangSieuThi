@@ -18,6 +18,7 @@ namespace DACK_13_BuiXuanHieu
         BusEmployees busEmployees;
         FormMain formMain;
         DataGridView dgvEmployees;
+        int employeeID;
 
         public FormManageLogins()
         {
@@ -32,6 +33,7 @@ namespace DACK_13_BuiXuanHieu
             busEmployees = new BusEmployees();
             this.formMain = formMain;
             this.dgvEmployees = dgvEmployees;
+            employeeID = int.Parse(dgvEmployees.CurrentRow.Cells["EmployeeID"].Value.ToString());
         }
 
         private void FormManageLogins_Load(object sender, EventArgs e)
@@ -92,7 +94,7 @@ namespace DACK_13_BuiXuanHieu
             if (rdbtnAssign.Checked)
             {
                 //
-                int employeeID = int.Parse(dgvEmployees.CurrentRow.Cells["EmployeeID"].Value.ToString());
+                //int employeeID = int.Parse(dgvEmployees.CurrentRow.Cells["EmployeeID"].Value.ToString());
                 busLogins.assignLogin(this, employeeID, tbUsername, cbLoginType, tbPassword, tbRetype);
 
                 //

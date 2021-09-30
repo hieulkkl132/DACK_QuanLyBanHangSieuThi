@@ -51,5 +51,14 @@ namespace DACK_13_BuiXuanHieu
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("DPromotion", promotion_IDParameter);
         }
+    
+        public virtual ObjectResult<Nullable<int>> spCheckExistedUsername(string username)
+        {
+            var usernameParameter = username != null ?
+                new ObjectParameter("username", username) :
+                new ObjectParameter("username", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("spCheckExistedUsername", usernameParameter);
+        }
     }
 }
