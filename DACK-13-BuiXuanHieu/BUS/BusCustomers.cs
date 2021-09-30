@@ -73,6 +73,11 @@ namespace DACK_13_BuiXuanHieu.BUS
                 MessageBox.Show("Please, check your Email again !");
                 return false;
             }
+            else if (dtpBirthDate.Value > System.DateTime.Today || dtpBirthDate.Value == System.DateTime.Today)
+            {
+                MessageBox.Show("Please, Don't chose today and future day !");
+                return false;
+            }
             else
             {
                 DialogResult dr = MessageBox.Show("A record will be ADDED! Continue ?", "Action confirm",
@@ -139,42 +144,65 @@ namespace DACK_13_BuiXuanHieu.BUS
                    phone = tbPhone.Text.Trim(),
                    email = tbEmail.Text.Trim();
             //
-            DialogResult dr = MessageBox.Show("Record [ " + CustomerID + " ] will be EDITED! Continue ?", "Action confirm",
-                                            MessageBoxButtons.OKCancel,
-                                            MessageBoxIcon.Question);
-            if (dr == DialogResult.OK)
+            if (lastName == "" || firstName == "" || address == "" || city == "" || district == "" || phone == "" || email == "")
             {
-                try
+                MessageBox.Show("Please, fill up ALL attributes !");
+                return false;
+            }
+            else if (int.TryParse(phone, out int phoneNumeric) == false)
+            {
+                MessageBox.Show("Please, check your PHONE number again !");
+                return false;
+            }
+            else if (isValidEmail(email) == false)
+            {
+                MessageBox.Show("Please, check your Email again !");
+                return false;
+            }
+            else if (dtpBirthDate.Value > System.DateTime.Today || dtpBirthDate.Value == System.DateTime.Today)
+            {
+                MessageBox.Show("Please, Don't chose today and future day !");
+                return false;
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Record [ " + CustomerID + " ] will be EDITED! Continue ?", "Action confirm",
+                                MessageBoxButtons.OKCancel,
+                                MessageBoxIcon.Question);
+                if (dr == DialogResult.OK)
                 {
-                    Customer c = new Customer();
-                    c.CustomerID = Int32.Parse(CustomerID);
-                    c.LastName = lastName;
-                    c.FirstName = firstName;
-                    c.BirthDate = DateTime.Parse(birthdate);
-                    c.Address = address;
-                    c.City = city;
-                    c.District = district;
-                    c.Phone = phone;
-                    c.Email = email;
+                    try
+                    {
+                        Customer c = new Customer();
+                        c.CustomerID = Int32.Parse(CustomerID);
+                        c.LastName = lastName;
+                        c.FirstName = firstName;
+                        c.BirthDate = DateTime.Parse(birthdate);
+                        c.Address = address;
+                        c.City = city;
+                        c.District = district;
+                        c.Phone = phone;
+                        c.Email = email;
 
-                    if (dCustomer.editRecord(c))
-                    {
-                        MessageBox.Show("Successfully !", "Announcement",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement",
+                        if (dCustomer.editRecord(c))
+                        {
+                            MessageBox.Show("Successfully !", "Announcement",
                                         MessageBoxButtons.OK,
-                                        MessageBoxIcon.Error);
+                                        MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                            return false;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message.ToString());
                         return false;
                     }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message.ToString());
-                    return false;
                 }
             }
             return true;

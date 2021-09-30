@@ -113,41 +113,56 @@ namespace DACK_13_BuiXuanHieu.BUS
             unitsInStock = nudUnitsInStock.Value.ToString(),
             active = tbActive.Text.Trim();
 
-            DialogResult dr = MessageBox.Show("Record [ " + productID + " ] will be EDITED! Continue ?", "Action confirm",
-                                           MessageBoxButtons.OKCancel,
-                                           MessageBoxIcon.Question);
-
-            if (dr == DialogResult.OK)
+            if (productName == "" || category == "" || quantityperunit == "" || unitPrice == "" ||
+               unitsInStock == "" || active == "")
             {
-                try
-                {
-                    Product p = new Product();
-                    p.ProductID = int.Parse(productID);
-                    p.ProductName = productName;
-                    p.CategoryID = int.Parse(cbCategory.SelectedValue.ToString());
-                    p.QuantityPerUnit = int.Parse(quantityperunit);
-                    p.UnitPrice = int.Parse(unitPrice);
-                    p.UnitsInStock = int.Parse(unitsInStock);
-                    p.Active = short.Parse(active);
+                MessageBox.Show("Please, fill up ALL attributes !");
+                return false;
+            }
+            else if (int.TryParse(active, out int activeNumeric) == false)
+            {
+                MessageBox.Show("Please, check your ACTIVE number again !");
+                return false;
+            }
+            else 
+            {
 
-                    if (daoProduct.editRecord(p))
+                DialogResult dr = MessageBox.Show("Record [ " + productID + " ] will be EDITED! Continue ?", "Action confirm",
+                                               MessageBoxButtons.OKCancel,
+                                               MessageBoxIcon.Question);
+
+                if (dr == DialogResult.OK)
+                {
+                    try
                     {
-                        MessageBox.Show("Successfully !", "Announcement",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement",
+                        Product p = new Product();
+                        p.ProductID = int.Parse(productID);
+                        p.ProductName = productName;
+                        p.CategoryID = int.Parse(cbCategory.SelectedValue.ToString());
+                        p.QuantityPerUnit = int.Parse(quantityperunit);
+                        p.UnitPrice = int.Parse(unitPrice);
+                        p.UnitsInStock = int.Parse(unitsInStock);
+                        p.Active = short.Parse(active);
+
+                        if (daoProduct.editRecord(p))
+                        {
+                            MessageBox.Show("Successfully !", "Announcement",
                                         MessageBoxButtons.OK,
-                                        MessageBoxIcon.Error);
+                                        MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                            return false;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message.ToString());
                         return false;
                     }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message.ToString());
-                    return false;
                 }
             }
             return true;

@@ -73,11 +73,11 @@ namespace DACK_13_BuiXuanHieu.BUS
                 return false;
             }
             else if (dtpBirthdate.Value > System.DateTime.Today || dtpBirthdate.Value == System.DateTime.Today)
-                {
+            {
                     MessageBox.Show("Please, Don't chose today and future day  !");
                     return false;
-                }
-                else
+            }
+            else
             {
                 DialogResult dr = MessageBox.Show("A record will be ADDED! Continue ?", "Action confirm",
                                   MessageBoxButtons.OKCancel,
@@ -128,8 +128,8 @@ namespace DACK_13_BuiXuanHieu.BUS
                               DateTimePicker dtpBirthdate, TextBox tbAddress, TextBox tbCity, TextBox tbDistrict,
                               TextBox tbPhone, TextBox tbEmail)
         {
-            String EmployeeID = dgvEmployees.CurrentRow.Cells["EmployeeID"].Value.ToString(),
-                   lastName = tbLastName.Text.Trim(),
+            String EmployeeID = dgvEmployees.CurrentRow.Cells["EmployeeID"].Value.ToString();
+            String lastName = tbLastName.Text.Trim(),
                    firstName = tbFirstName.Text.Trim(),
                    position = cbPosition.Text.Trim(),
                    birthdate = dtpBirthdate.Value.ToString(),
@@ -138,15 +138,32 @@ namespace DACK_13_BuiXuanHieu.BUS
                    district = tbDistrict.Text.Trim(),
                    phone = tbPhone.Text.Trim(),
                    email = tbEmail.Text.Trim();
-            if (dtpBirthdate.Value > System.DateTime.Today || dtpBirthdate.Value == System.DateTime.Today)
+            if (lastName == "" || firstName == "" || position == "" || birthdate == "" || address == "" ||
+                 city == "" || district == "" || phone == "" || email == "")
+            {
+                MessageBox.Show("Please, fill up ALL attributes !");
+                return false;
+            }
+            else if (int.TryParse(phone, out int phoneNumeric) == false)
+            {
+                MessageBox.Show("Please, check your PHONE number again !");
+                return false;
+            }
+            else if (isValidEmail(email) == false)
+            {
+                MessageBox.Show("Please, check your Email again !");
+                return false;
+            }
+            else if (dtpBirthdate.Value > System.DateTime.Today || dtpBirthdate.Value == System.DateTime.Today)
             {
                 MessageBox.Show("Please, Don't chose today and future day !");
                 return false;
             }
-
-            DialogResult dr = MessageBox.Show("Record [ " + EmployeeID + " ] will be EDITED! Continue ?", "Action confirm",
-                                    MessageBoxButtons.OKCancel,
-                                    MessageBoxIcon.Question);
+            else 
+            {
+                DialogResult dr = MessageBox.Show("Record [ " + EmployeeID + " ] will be EDITED! Continue ?", "Action confirm",
+                        MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Question);
                 if (dr == DialogResult.OK)
                 {
                     try
@@ -183,7 +200,8 @@ namespace DACK_13_BuiXuanHieu.BUS
                         return false;
                     }
                 }
-                return true;
+            }
+            return true;
         }
         public bool removeRecord(DataGridView dgvEmployees)
         {
