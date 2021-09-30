@@ -252,7 +252,7 @@ BEGIN
 	WHERE
 		Username = @username
 
-	RETURN @result
+	SELECT @result
 END
 GO
 
