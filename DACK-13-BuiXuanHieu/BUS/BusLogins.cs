@@ -128,6 +128,11 @@ namespace DACK_13_BuiXuanHieu.BUS
                 MessageBox.Show("Password doesn't match !");
                 return false;
             }
+            else if (daoLogins.checkExistedUsername(username) != 0)
+            {
+                MessageBox.Show("Username already EXISTED !");
+                return false;
+            }
             else
             {
                 DialogResult dr = MessageBox.Show("A login will be EDITED! Continue ?", "Action confirm",

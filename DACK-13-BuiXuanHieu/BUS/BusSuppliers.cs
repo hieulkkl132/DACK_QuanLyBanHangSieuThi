@@ -118,44 +118,58 @@ namespace DACK_13_BuiXuanHieu.BUS
                    phone = tbPhone.Text.Trim(),
                    fax = tbFax.Text.Trim();
             //
-            DialogResult dr = MessageBox.Show("Record [ "+ supplierID + " ] will be EDITED! Continue ?", "Action confirm",
+            if (companyName == "" || contact == "" || contactTitle == "" || address == "" ||
+                city == "" || district == "" || phone == "" || fax == "")
+            {
+                MessageBox.Show("Please, fill up ALL attributes !");
+                return false;
+            }
+            else if (int.TryParse(phone, out int phoneNumeric) == false || int.TryParse(fax, out int faxNumeric) == false)
+            {
+                MessageBox.Show("Please, check your PHONE or FAX number again !");
+                return false;
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Record [ " + supplierID + " ] will be EDITED! Continue ?", "Action confirm",
                                             MessageBoxButtons.OKCancel,
                                             MessageBoxIcon.Question);
-            if (dr == DialogResult.OK)
-            {
-                try
+                if (dr == DialogResult.OK)
                 {
-                    Supplier s = new Supplier();
-                    s.SupplierID = int.Parse(supplierID);
-                    s.CompanyName = companyName;
-                    s.Contact = contact;
-                    s.ContactTitle = contactTitle;
-                    s.Address = address;
-                    s.City = city;
-                    s.District = district;
-                    s.Phone = phone;
-                    s.Fax = fax;
+                    try
+                    {
+                        Supplier s = new Supplier();
+                        s.SupplierID = int.Parse(supplierID);
+                        s.CompanyName = companyName;
+                        s.Contact = contact;
+                        s.ContactTitle = contactTitle;
+                        s.Address = address;
+                        s.City = city;
+                        s.District = district;
+                        s.Phone = phone;
+                        s.Fax = fax;
 
-                    if (daoSuppliers.editRecord(s))
-                    {
-                        MessageBox.Show("Successfully !", "Announcement",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement",
+                        if (daoSuppliers.editRecord(s))
+                        {
+                            MessageBox.Show("Successfully !", "Announcement",
                                         MessageBoxButtons.OK,
-                                        MessageBoxIcon.Error);
+                                        MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                            return false;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message.ToString());
                         return false;
                     }
                 }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message.ToString());
-                    return false;
-                }
-            }
+            }    
             return true;
         }
 
