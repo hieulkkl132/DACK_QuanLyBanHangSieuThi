@@ -137,9 +137,7 @@ namespace DACK_13_BuiXuanHieu
                 
             }
             else
-            {
-                
-                MessageBox.Show("Your login successfully!" , "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            {                
                 this.Close();
                 FormLogin formLogin = new FormLogin();
                 formLogin.Show();

@@ -219,7 +219,6 @@ namespace DACK_13_BuiXuanHieu.BUS
             {
                 if (true)
                 {
-                    MessageBox.Show("Your login successfully!" + "  Welcome " + userName, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;  
                 }            
             }
