@@ -190,6 +190,7 @@ CREATE TABLE ReceiptDetails (
 	Discount float,
 
 	PRIMARY KEY(ReceiptID, ProductID),
+        FOREIGN KEY(ReceiptID) REFERENCES Receipts(ReceiptID),
 	FOREIGN KEY(ProductID) REFERENCES Products(ProductID)
 )
 GO
