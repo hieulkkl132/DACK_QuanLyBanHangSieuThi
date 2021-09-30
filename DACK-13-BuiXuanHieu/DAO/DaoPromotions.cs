@@ -15,7 +15,6 @@ namespace DACK_13_BuiXuanHieu.DAO
         }
         public dynamic loadTablePromotions()
         {
-            //
             dynamic promotions = supmar.Promotions.Select(s => new
             {
                 s.PromotionID,
@@ -27,22 +26,19 @@ namespace DACK_13_BuiXuanHieu.DAO
         }
         public bool addRecord(Promotion s)
         {
-            //
             try
             {
                 supmar.Promotions.Add(s);
                 supmar.SaveChanges();
                 return true;
             }
-            catch //(Exception e)
+            catch
             {
-                //MessageBox.Show(e.Message.ToString());
                 return false;
             }
         }
         public bool editRecord(Promotion newRecord)
         {
-            //
             try
             {
                 Promotion oldRecord = supmar.Promotions.First(s => s.PromotionID == newRecord.PromotionID);
@@ -53,18 +49,10 @@ namespace DACK_13_BuiXuanHieu.DAO
                 supmar.SaveChanges();
                 return true;
             }
-            catch //(Exception e)
+            catch
             {
-                //MessageBox.Show(e.Message.ToString());
                 return false;
             }
-        }
-        public void removeRecord(Promotion PromotionID)
-        {            
-                //Promotion chosenRecord = supmar.Promotions.First(s => s.PromotionID == PromotionID);
-                Promotion chosenRecord = supmar.Promotions.Find(PromotionID.PromotionID);
-                supmar.Promotions.Remove(chosenRecord);
-                supmar.SaveChanges();                                                 
         }
         public bool Check(Promotion d)
         {
@@ -75,6 +63,18 @@ namespace DACK_13_BuiXuanHieu.DAO
             }
             else
                 return false;
+        }
+        public bool removeRecord(Promotion p)
+        {
+            int? sl;
+            sl = supmar.DPromotion(p.PromotionID).FirstOrDefault();
+            supmar.SaveChanges();
+            if (sl != 0)
+
+                return true;
+            else
+                return false;
+            
         }
     }
 }

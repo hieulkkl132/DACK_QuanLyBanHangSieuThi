@@ -25,11 +25,11 @@ namespace DACK_13_BuiXuanHieu
         {
             dgvReceipts.DataSource = null;
             busReceipts.displayTableReceipts(dgvReceipts);
-            dgvReceipts.Columns[0].Width = (int)(0.1 * dgvReceipts.Width);
-            dgvReceipts.Columns[1].Width = (int)(0.1 * dgvReceipts.Width);
-            dgvReceipts.Columns[2].Width = (int)(0.1 * dgvReceipts.Width);
-            dgvReceipts.Columns[3].Width = (int)(0.31 * dgvReceipts.Width);
-            dgvReceipts.Columns[4].Width = (int)(0.31 * dgvReceipts.Width);
+            dgvReceipts.Columns[0].Width = (int)(0.17 * dgvReceipts.Width);
+            dgvReceipts.Columns[1].Width = (int)(0.18 * dgvReceipts.Width);
+            dgvReceipts.Columns[2].Width = (int)(0.18 * dgvReceipts.Width);
+            dgvReceipts.Columns[3].Width = (int)(0.19 * dgvReceipts.Width);
+            dgvReceipts.Columns[4].Width = (int)(0.20 * dgvReceipts.Width);
         }
         public FormReceipts(Panel pnlLoadForm)
         {
@@ -75,12 +75,11 @@ namespace DACK_13_BuiXuanHieu
         {
             btnAdd.Enabled = false;
             btnAdd.FlatAppearance.BorderSize = 1;
-
             //
             if (e.RowIndex >= 0 && e.RowIndex < dgvReceipts.Rows.Count)
             {
-                tbEmployee.Text = dgvReceipts.Rows[e.RowIndex].Cells["EmployeeID"].Value.ToString();
-                tbCustomer.Text = dgvReceipts.Rows[e.RowIndex].Cells["CustomerID"].Value.ToString();
+                tbEmployee.Text = dgvReceipts.Rows[e.RowIndex].Cells["FirstName"].Value.ToString();
+                tbCustomer.Text = dgvReceipts.Rows[e.RowIndex].Cells["LastName"].Value.ToString();
                 tbReceiveMethod.Text = dgvReceipts.Rows[e.RowIndex].Cells["ReceiveMethod"].Value.ToString();
                 dtpReceiveDate.Text = dgvReceipts.Rows[e.RowIndex].Cells["ReceiveDate"].Value.ToString();
             }
@@ -102,14 +101,14 @@ namespace DACK_13_BuiXuanHieu
             tbCustomer.Clear();
             tbEmployee.Clear();
             tbReceiveMethod.Clear();
-           
+            dtpReceiveDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 5, 30, 0);
 
             //
             btnAdd.Enabled = true;
             btnAdd.FlatAppearance.BorderSize = 2;
         }
 
-        private void btRemove_Click(object sender, EventArgs e)
+        private void btnRemove_Click(object sender, EventArgs e)
         {
             busReceipts.removeRecord(dgvReceipts);
             //

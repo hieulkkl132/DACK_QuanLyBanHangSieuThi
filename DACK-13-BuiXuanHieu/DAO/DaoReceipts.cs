@@ -19,13 +19,32 @@ namespace DACK_13_BuiXuanHieu.DAO
             dynamic reciepts = supmar.Receipts.Select(s => new
             {
                 s.ReceiptID,
-                s.EmployeeID,
-                s.CustomerID,
+                s.Employee.FirstName,
+                s.Customer.LastName,
                 s.ReceiveDate,
                 s.ReceiveMethod
             }).ToList();
 
             return reciepts;
+        }
+
+        public dynamic loadComboboxEmployee()
+        {
+            var ds = supmar.Employees.Select(s => new
+            {
+                s.EmployeeID,
+                s.FirstName,
+            }).ToList();
+            return ds;
+        }
+        public dynamic loadComboboxCustomer()
+        {
+            var ds2 = supmar.Customers.Select(s => new
+            {
+                s.CustomerID,
+                s.LastName,
+            }).ToList();
+            return ds2;
         }
         public bool addRecord(Receipt s)
         {

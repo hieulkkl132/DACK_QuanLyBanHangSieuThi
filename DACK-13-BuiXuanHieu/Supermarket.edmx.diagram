@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a4710b24407e42029fcb63401ec358a4" Name="Diagram1" ZoomLevel="86">
+      <Diagram DiagramId="da85bf4118f4483984d615ba3be3257e" Name="Diagram1">
         <EntityTypeShape EntityType="SupermarketModel.Category" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SupermarketModel.Customer" Width="1.5" PointX="15.25" PointY="11.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SupermarketModel.Employee" Width="1.5" PointX="12.25" PointY="2.625" IsExpanded="true" />
@@ -20,19 +20,19 @@
         <EntityTypeShape EntityType="SupermarketModel.ReceiptDetail" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SupermarketModel.Receipt" Width="1.5" PointX="17.5" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SupermarketModel.Supplier" Width="1.5" PointX="12.25" PointY="8.125" IsExpanded="true" />
-        <AssociationConnector Association="SupermarketModel.FK__Products__Catego__30F848ED" ManuallyRouted="false" />
-        <AssociationConnector Association="SupermarketModel.FK__Customers__Membe__3E52440B" ManuallyRouted="false" />
-        <AssociationConnector Association="SupermarketModel.FK__Receipts__Custom__4222D4EF" ManuallyRouted="false" />
-        <AssociationConnector Association="SupermarketModel.FK__Employees__Login__2B3F6F97" ManuallyRouted="false" />
-        <AssociationConnector Association="SupermarketModel.FK__Employees__Posit__2C3393D0" ManuallyRouted="false" />
-        <AssociationConnector Association="SupermarketModel.FK__Importati__Emplo__36B12243" ManuallyRouted="false" />
-        <AssociationConnector Association="SupermarketModel.FK__Receipts__Employ__412EB0B6" ManuallyRouted="false" />
-        <AssociationConnector Association="SupermarketModel.FK__Events__ProductI__4AB81AF0" ManuallyRouted="false" />
-        <AssociationConnector Association="SupermarketModel.FK__Events__Promotio__49C3F6B7" ManuallyRouted="false" />
-        <AssociationConnector Association="SupermarketModel.FK__Importati__Produ__398D8EEE" ManuallyRouted="false" />
-        <AssociationConnector Association="SupermarketModel.FK__Importati__Suppl__35BCFE0A" ManuallyRouted="false" />
-        <AssociationConnector Association="SupermarketModel.FK__Logins__LoginTyp__267ABA7A" ManuallyRouted="false" />
-        <AssociationConnector Association="SupermarketModel.FK__ReceiptDe__Produ__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK__Products__Catego__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK__Customers__Membe__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK__Receipts__Custom__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK__Employees__Login__173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK__Employees__Posit__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK__Importati__Emplo__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK__Receipts__Employ__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK__Events__ProductI__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK__Events__Promotio__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK__Importati__Produ__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK__Importati__Suppl__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK__Logins__LoginTyp__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK__ReceiptDe__Produ__30F848ED" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -172,5 +172,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="DPromotion" FunctionName="SupermarketModel.Store.DPromotion" />
   </EntityContainerMapping>
 </Mapping>

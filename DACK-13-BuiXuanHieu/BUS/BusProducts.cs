@@ -52,6 +52,11 @@ namespace DACK_13_BuiXuanHieu.BUS
                 MessageBox.Show("Please, fill up ALL attributes !");
                 return false;
             }
+            else if (int.TryParse(active, out int activeNumeric) == false)
+            {
+                MessageBox.Show("Please, check your ACTIVE number again !");
+                return false;
+            }
             else
             {
                 DialogResult dr = MessageBox.Show("A record will be ADDED! Continue ?", "Action confirm",
@@ -107,9 +112,11 @@ namespace DACK_13_BuiXuanHieu.BUS
             unitPrice = nudUnitPrice.Value.ToString(),
             unitsInStock = nudUnitsInStock.Value.ToString(),
             active = tbActive.Text.Trim();
+
             DialogResult dr = MessageBox.Show("Record [ " + productID + " ] will be EDITED! Continue ?", "Action confirm",
                                            MessageBoxButtons.OKCancel,
                                            MessageBoxIcon.Question);
+
             if (dr == DialogResult.OK)
             {
                 try

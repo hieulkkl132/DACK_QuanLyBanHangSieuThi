@@ -78,6 +78,11 @@ namespace DACK_13_BuiXuanHieu.BUS
                 MessageBox.Show("Please, check your Email again !");
                 return false;
             }
+            else if (dtpBirthDate.Value > System.DateTime.Today || dtpBirthDate.Value == System.DateTime.Today)
+            {
+                MessageBox.Show("Please, Don't chose today and future day !");
+                return false;
+            }
             else
             {
                 DialogResult dr = MessageBox.Show("A record will be ADDED! Continue ?", "Action confirm",
@@ -141,6 +146,11 @@ namespace DACK_13_BuiXuanHieu.BUS
                    district = tbDistrict.Text.Trim(),
                    phone = tbPhone.Text.Trim(),
                    email = tbEmail.Text.Trim();
+           if (dtpBirthDate.Value > System.DateTime.Today || dtpBirthDate.Value == System.DateTime.Today)
+            {
+                MessageBox.Show("Please, Don't chose today and future day !");
+                return false;
+            }
             //
             DialogResult dr = MessageBox.Show("Record [ " + CustomerID + " ] will be EDITED! Continue ?", "Action confirm",
                                             MessageBoxButtons.OKCancel,

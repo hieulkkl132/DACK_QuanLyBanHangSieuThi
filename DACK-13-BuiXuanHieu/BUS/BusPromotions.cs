@@ -13,31 +13,20 @@ namespace DACK_13_BuiXuanHieu.BUS
     {
         DaoPromotions daoPromotions;
 
-        //
         public BusPromotions()
         {
-            //
             daoPromotions = new DaoPromotions();
         }
         public void displayTablePromotions(DataGridView dgvOrders)
         {
-            //
             dgvOrders.DataSource = daoPromotions.loadTablePromotions();
-
-            //
             dgvOrders.Columns[0].Width = (int)(0.25 * dgvOrders.Width);
             dgvOrders.Columns[1].Width = (int)(0.3 * dgvOrders.Width);
-            //dgvOrders.Columns[2].Width = (int)(0.31 * dgvOrders.Width);
-            //dgvOrders.Columns[3].Width = (int)(0.2 * dgvOrders.Width);
         }
         public bool addRecord(TextBox tbPromotionName, TextBox tbDescription)
         {
-            //
             String promotionName = tbPromotionName.Text.Trim(),
                    description = tbDescription.Text.Trim();
-
-
-            //
             if (promotionName == "" || description == "")
             {
                 MessageBox.Show("Please, fill up ALL attributes !");
@@ -60,10 +49,6 @@ namespace DACK_13_BuiXuanHieu.BUS
                         Promotion s = new Promotion();
                         s.Description = description;
                         s.PromotionName = promotionName;
-
-
-
-
                         if (daoPromotions.addRecord(s))
                         {
                             MessageBox.Show("Successfully !", "Announcement",
@@ -84,21 +69,14 @@ namespace DACK_13_BuiXuanHieu.BUS
                         return false;
                     }
                 }
-
                 return true;
             }
         }
         public bool editRecord(DataGridView dgvPromotions, TextBox tbPromotionName, TextBox tbDescription)
         {
-            //
             String promotionName = tbPromotionName.Text.Trim(),
                    description = tbDescription.Text.Trim();
-
-            //
             String promotionID = dgvPromotions.CurrentRow.Cells["PromotionID"].Value.ToString();
-
-
-            //
             DialogResult dr = MessageBox.Show("Record [ " + promotionID + " ] will be EDITED! Continue ?", "Action confirm",
                                             MessageBoxButtons.OKCancel,
                                             MessageBoxIcon.Question);
@@ -111,8 +89,6 @@ namespace DACK_13_BuiXuanHieu.BUS
                     s.Description = description;
                     s.PromotionName = promotionName;
                     s.PromotionID = int.Parse(promotionID);
-
-
                     if (daoPromotions.editRecord(s))
                     {
                         MessageBox.Show("Successfully !", "Announcement",
@@ -136,59 +112,24 @@ namespace DACK_13_BuiXuanHieu.BUS
             return true;
         }
         
-
-        public void removeRecord(Promotion p)
+       public void removeRecord(Promotion p)
         {
-
-            if (daoPromotions.Check(p))
+            if (daoPromotions.removeRecord(p))
             {
                 try
                 {
-                    daoPromotions.removeRecord(p);
-                    MessageBox.Show("Remove success");
+                   
+                    MessageBox.Show("Successfully !", "Announcement");
                 }
                 catch(DbUpdateException ex)
                 {
-                    MessageBox.Show("Remove fail\n" + ex.Message);
+                    MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement" + ex.Message);
                 }
             }
             else
             {
-                MessageBox.Show("Remove fail\n" );
+                MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement");
             }
-            //
-            //    //String promotionID = dgvPromotions.CurrentRow.Cells["PromotionID"].Value.ToString();
-
-
-            //    //
-            //    DialogResult dr = MessageBox.Show("Record [ " + promotionID + " ] will be REMOVED! Continue ?", "Action confrim",
-            //                            MessageBoxButtons.OKCancel,
-            //                            MessageBoxIcon.Question);
-            //    if (dr == DialogResult.OK)
-            //    {
-            //        try
-            //        {
-            //            if (daoPromotions.removeRecord(Promotion p)))
-            //            {
-            //                MessageBox.Show("Successfully !", "Announcement",
-            //                                MessageBoxButtons.OK,
-            //                                MessageBoxIcon.Information);
-            //            }
-            //            else
-            //            {
-            //                MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement",
-            //                                MessageBoxButtons.OK,
-            //                                MessageBoxIcon.Error);
-            //                return false;
-            //            }
-            //        }
-            //        catch (Exception e)
-            //        {
-            //            MessageBox.Show(e.Message.ToString());
-            //            return false;
-            //        }
-            //    }
-            //    return true;
         }
     }
 }

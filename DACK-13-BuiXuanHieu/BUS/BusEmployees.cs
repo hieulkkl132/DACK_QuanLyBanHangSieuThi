@@ -72,7 +72,12 @@ namespace DACK_13_BuiXuanHieu.BUS
                 MessageBox.Show("Please, check your Email again !");
                 return false;
             }
-            else
+            else if (dtpBirthdate.Value > System.DateTime.Today || dtpBirthdate.Value == System.DateTime.Today)
+                {
+                    MessageBox.Show("Please, Don't chose today and future day  !");
+                    return false;
+                }
+                else
             {
                 DialogResult dr = MessageBox.Show("A record will be ADDED! Continue ?", "Action confirm",
                                   MessageBoxButtons.OKCancel,
@@ -123,8 +128,8 @@ namespace DACK_13_BuiXuanHieu.BUS
                               DateTimePicker dtpBirthdate, TextBox tbAddress, TextBox tbCity, TextBox tbDistrict,
                               TextBox tbPhone, TextBox tbEmail)
         {
-            String EmployeeID = dgvEmployees.CurrentRow.Cells["EmployeeID"].Value.ToString();
-            String lastName = tbLastName.Text.Trim(),
+            String EmployeeID = dgvEmployees.CurrentRow.Cells["EmployeeID"].Value.ToString(),
+                   lastName = tbLastName.Text.Trim(),
                    firstName = tbFirstName.Text.Trim(),
                    position = cbPosition.Text.Trim(),
                    birthdate = dtpBirthdate.Value.ToString(),
@@ -133,46 +138,52 @@ namespace DACK_13_BuiXuanHieu.BUS
                    district = tbDistrict.Text.Trim(),
                    phone = tbPhone.Text.Trim(),
                    email = tbEmail.Text.Trim();
-            DialogResult dr = MessageBox.Show("Record [ " + EmployeeID + " ] will be EDITED! Continue ?", "Action confirm",
-                                MessageBoxButtons.OKCancel,
-                                MessageBoxIcon.Question);
-            if (dr == DialogResult.OK)
+            if (dtpBirthdate.Value > System.DateTime.Today || dtpBirthdate.Value == System.DateTime.Today)
             {
-                try
-                {
-                    Employee e = new Employee();
-                    e.EmployeeID = int.Parse(EmployeeID);
-                    e.LastName = lastName;
-                    e.FirstName = firstName;
-                    e.PositionID = int.Parse(cbPosition.SelectedValue.ToString());
-                    e.BirthDate = DateTime.Parse(birthdate);
-                    e.Address = address;
-                    e.City = city;
-                    e.District = district;
-                    e.Phone = phone;
-                    e.Email = email;
+                MessageBox.Show("Please, Don't chose today and future day !");
+                return false;
+            }
 
-                    if (daoEmployees.editRecord(e))
+            DialogResult dr = MessageBox.Show("Record [ " + EmployeeID + " ] will be EDITED! Continue ?", "Action confirm",
+                                    MessageBoxButtons.OKCancel,
+                                    MessageBoxIcon.Question);
+                if (dr == DialogResult.OK)
+                {
+                    try
                     {
-                        MessageBox.Show("Successfully !", "Announcement",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement",
+                        Employee e = new Employee();
+                        e.EmployeeID = int.Parse(EmployeeID);
+                        e.LastName = lastName;
+                        e.FirstName = firstName;
+                        e.PositionID = int.Parse(cbPosition.SelectedValue.ToString());
+                        e.BirthDate = DateTime.Parse(birthdate);
+                        e.Address = address;
+                        e.City = city;
+                        e.District = district;
+                        e.Phone = phone;
+                        e.Email = email;
+
+                        if (daoEmployees.editRecord(e))
+                        {
+                            MessageBox.Show("Successfully !", "Announcement",
                                         MessageBoxButtons.OK,
-                                        MessageBoxIcon.Error);
+                                        MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                            return false;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message.ToString());
                         return false;
                     }
                 }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message.ToString());
-                    return false;
-                }
-            }
-            return true;
+                return true;
         }
         public bool removeRecord(DataGridView dgvEmployees)
         {

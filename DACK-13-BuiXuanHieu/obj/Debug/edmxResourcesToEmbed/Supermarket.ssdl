@@ -161,7 +161,7 @@
     <Property Name="Phone" Type="nvarchar" MaxLength="10" />
     <Property Name="Fax" Type="nvarchar" MaxLength="100" />
   </EntityType>
-  <Association Name="FK__Customers__Membe__3E52440B">
+  <Association Name="FK__Customers__Membe__2A4B4B5E">
     <End Role="Members" Type="Self.Members" Multiplicity="0..1" />
     <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
     <ReferentialConstraint>
@@ -173,7 +173,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Employees__Login__2B3F6F97">
+  <Association Name="FK__Employees__Login__173876EA">
     <End Role="Logins" Type="Self.Logins" Multiplicity="0..1" />
     <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
     <ReferentialConstraint>
@@ -185,7 +185,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Employees__Posit__2C3393D0">
+  <Association Name="FK__Employees__Posit__182C9B23">
     <End Role="Positions" Type="Self.Positions" Multiplicity="0..1" />
     <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
     <ReferentialConstraint>
@@ -197,7 +197,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Events__ProductI__4AB81AF0">
+  <Association Name="FK__Events__ProductI__36B12243">
     <End Role="Products" Type="Self.Products" Multiplicity="1" />
     <End Role="Events" Type="Self.Events" Multiplicity="*" />
     <ReferentialConstraint>
@@ -209,7 +209,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Events__Promotio__49C3F6B7">
+  <Association Name="FK__Events__Promotio__35BCFE0A">
     <End Role="Promotions" Type="Self.Promotions" Multiplicity="1" />
     <End Role="Events" Type="Self.Events" Multiplicity="*" />
     <ReferentialConstraint>
@@ -221,7 +221,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Importati__Emplo__36B12243">
+  <Association Name="FK__Importati__Emplo__22AA2996">
     <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
     <End Role="Importations" Type="Self.Importations" Multiplicity="*" />
     <ReferentialConstraint>
@@ -233,7 +233,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Importati__Produ__398D8EEE">
+  <Association Name="FK__Importati__Produ__25869641">
     <End Role="Products" Type="Self.Products" Multiplicity="1" />
     <End Role="ImportationDetails" Type="Self.ImportationDetails" Multiplicity="*" />
     <ReferentialConstraint>
@@ -245,7 +245,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Importati__Suppl__35BCFE0A">
+  <Association Name="FK__Importati__Suppl__21B6055D">
     <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
     <End Role="Importations" Type="Self.Importations" Multiplicity="*" />
     <ReferentialConstraint>
@@ -257,7 +257,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Logins__LoginTyp__267ABA7A">
+  <Association Name="FK__Logins__LoginTyp__1273C1CD">
     <End Role="LoginTypes" Type="Self.LoginTypes" Multiplicity="1" />
     <End Role="Logins" Type="Self.Logins" Multiplicity="*" />
     <ReferentialConstraint>
@@ -269,7 +269,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Products__Catego__30F848ED">
+  <Association Name="FK__Products__Catego__1CF15040">
     <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
     <End Role="Products" Type="Self.Products" Multiplicity="*" />
     <ReferentialConstraint>
@@ -281,7 +281,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ReceiptDe__Produ__44FF419A">
+  <Association Name="FK__ReceiptDe__Produ__30F848ED">
     <End Role="Products" Type="Self.Products" Multiplicity="1" />
     <End Role="ReceiptDetails" Type="Self.ReceiptDetails" Multiplicity="*" />
     <ReferentialConstraint>
@@ -293,7 +293,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Receipts__Custom__4222D4EF">
+  <Association Name="FK__Receipts__Custom__2E1BDC42">
     <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
     <End Role="Receipts" Type="Self.Receipts" Multiplicity="*" />
     <ReferentialConstraint>
@@ -305,7 +305,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Receipts__Employ__412EB0B6">
+  <Association Name="FK__Receipts__Employ__2D27B809">
     <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
     <End Role="Receipts" Type="Self.Receipts" Multiplicity="*" />
     <ReferentialConstraint>
@@ -317,6 +317,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="DPromotion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Promotion_ID" Type="int" Mode="In" />
+  </Function>
   <EntityContainer Name="SupermarketModelStoreContainer">
     <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
@@ -333,55 +336,55 @@
     <EntitySet Name="ReceiptDetails" EntityType="Self.ReceiptDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Receipts" EntityType="Self.Receipts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Customers__Membe__3E52440B" Association="Self.FK__Customers__Membe__3E52440B">
+    <AssociationSet Name="FK__Customers__Membe__2A4B4B5E" Association="Self.FK__Customers__Membe__2A4B4B5E">
       <End Role="Members" EntitySet="Members" />
       <End Role="Customers" EntitySet="Customers" />
     </AssociationSet>
-    <AssociationSet Name="FK__Employees__Login__2B3F6F97" Association="Self.FK__Employees__Login__2B3F6F97">
+    <AssociationSet Name="FK__Employees__Login__173876EA" Association="Self.FK__Employees__Login__173876EA">
       <End Role="Logins" EntitySet="Logins" />
       <End Role="Employees" EntitySet="Employees" />
     </AssociationSet>
-    <AssociationSet Name="FK__Employees__Posit__2C3393D0" Association="Self.FK__Employees__Posit__2C3393D0">
+    <AssociationSet Name="FK__Employees__Posit__182C9B23" Association="Self.FK__Employees__Posit__182C9B23">
       <End Role="Positions" EntitySet="Positions" />
       <End Role="Employees" EntitySet="Employees" />
     </AssociationSet>
-    <AssociationSet Name="FK__Events__ProductI__4AB81AF0" Association="Self.FK__Events__ProductI__4AB81AF0">
+    <AssociationSet Name="FK__Events__ProductI__36B12243" Association="Self.FK__Events__ProductI__36B12243">
       <End Role="Products" EntitySet="Products" />
       <End Role="Events" EntitySet="Events" />
     </AssociationSet>
-    <AssociationSet Name="FK__Events__Promotio__49C3F6B7" Association="Self.FK__Events__Promotio__49C3F6B7">
+    <AssociationSet Name="FK__Events__Promotio__35BCFE0A" Association="Self.FK__Events__Promotio__35BCFE0A">
       <End Role="Promotions" EntitySet="Promotions" />
       <End Role="Events" EntitySet="Events" />
     </AssociationSet>
-    <AssociationSet Name="FK__Importati__Emplo__36B12243" Association="Self.FK__Importati__Emplo__36B12243">
+    <AssociationSet Name="FK__Importati__Emplo__22AA2996" Association="Self.FK__Importati__Emplo__22AA2996">
       <End Role="Employees" EntitySet="Employees" />
       <End Role="Importations" EntitySet="Importations" />
     </AssociationSet>
-    <AssociationSet Name="FK__Importati__Produ__398D8EEE" Association="Self.FK__Importati__Produ__398D8EEE">
+    <AssociationSet Name="FK__Importati__Produ__25869641" Association="Self.FK__Importati__Produ__25869641">
       <End Role="Products" EntitySet="Products" />
       <End Role="ImportationDetails" EntitySet="ImportationDetails" />
     </AssociationSet>
-    <AssociationSet Name="FK__Importati__Suppl__35BCFE0A" Association="Self.FK__Importati__Suppl__35BCFE0A">
+    <AssociationSet Name="FK__Importati__Suppl__21B6055D" Association="Self.FK__Importati__Suppl__21B6055D">
       <End Role="Suppliers" EntitySet="Suppliers" />
       <End Role="Importations" EntitySet="Importations" />
     </AssociationSet>
-    <AssociationSet Name="FK__Logins__LoginTyp__267ABA7A" Association="Self.FK__Logins__LoginTyp__267ABA7A">
+    <AssociationSet Name="FK__Logins__LoginTyp__1273C1CD" Association="Self.FK__Logins__LoginTyp__1273C1CD">
       <End Role="LoginTypes" EntitySet="LoginTypes" />
       <End Role="Logins" EntitySet="Logins" />
     </AssociationSet>
-    <AssociationSet Name="FK__Products__Catego__30F848ED" Association="Self.FK__Products__Catego__30F848ED">
+    <AssociationSet Name="FK__Products__Catego__1CF15040" Association="Self.FK__Products__Catego__1CF15040">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Products" EntitySet="Products" />
     </AssociationSet>
-    <AssociationSet Name="FK__ReceiptDe__Produ__44FF419A" Association="Self.FK__ReceiptDe__Produ__44FF419A">
+    <AssociationSet Name="FK__ReceiptDe__Produ__30F848ED" Association="Self.FK__ReceiptDe__Produ__30F848ED">
       <End Role="Products" EntitySet="Products" />
       <End Role="ReceiptDetails" EntitySet="ReceiptDetails" />
     </AssociationSet>
-    <AssociationSet Name="FK__Receipts__Custom__4222D4EF" Association="Self.FK__Receipts__Custom__4222D4EF">
+    <AssociationSet Name="FK__Receipts__Custom__2E1BDC42" Association="Self.FK__Receipts__Custom__2E1BDC42">
       <End Role="Customers" EntitySet="Customers" />
       <End Role="Receipts" EntitySet="Receipts" />
     </AssociationSet>
-    <AssociationSet Name="FK__Receipts__Employ__412EB0B6" Association="Self.FK__Receipts__Employ__412EB0B6">
+    <AssociationSet Name="FK__Receipts__Employ__2D27B809" Association="Self.FK__Receipts__Employ__2D27B809">
       <End Role="Employees" EntitySet="Employees" />
       <End Role="Receipts" EntitySet="Receipts" />
     </AssociationSet>

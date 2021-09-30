@@ -12,6 +12,8 @@ namespace DACK_13_BuiXuanHieu
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class SupermarketEntities : DbContext
     {
@@ -40,5 +42,14 @@ namespace DACK_13_BuiXuanHieu
         public virtual DbSet<ReceiptDetail> ReceiptDetails { get; set; }
         public virtual DbSet<Receipt> Receipts { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
+    
+        public virtual ObjectResult<Nullable<int>> DPromotion(Nullable<int> promotion_ID)
+        {
+            var promotion_IDParameter = promotion_ID.HasValue ?
+                new ObjectParameter("Promotion_ID", promotion_ID) :
+                new ObjectParameter("Promotion_ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("DPromotion", promotion_IDParameter);
+        }
     }
 }

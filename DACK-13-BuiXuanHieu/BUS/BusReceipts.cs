@@ -22,24 +22,35 @@ namespace DACK_13_BuiXuanHieu.BUS
         {
             //
             dgvOrders.DataSource = daoReceipts.loadTableReceipts();
-
-
-            
         }
-        public bool addRecord(TextBox tbEmployee , TextBox tbCustumer , TextBox tbMethod, DateTimePicker dtpReceiveDate)
+        public void displayComboboxEmployee(ComboBox cb)
         {
-            //
+            cb.DataSource = daoReceipts.loadComboboxEmployee();
+            cb.DisplayMember = "FirstName";
+            cb.ValueMember = "EmployeeID";
+        }
+        public void displayComboboxCustomer(ComboBox cb)
+        {
+            cb.DataSource = daoReceipts.loadComboboxCustomer();
+            cb.DisplayMember = "LastName";
+            cb.ValueMember = "CustomerID";
+        }
+        public bool addRecord(TextBox tbEmployee, TextBox tbCustumer, TextBox tbMethod, DateTimePicker dtpReceiveDate)
+        {
             String employee = tbEmployee.Text.Trim(),
                    custumer = tbCustumer.Text.Trim(),
                    method = tbMethod.Text.Trim();
-                  
-            //
-            if (employee == "" || custumer == "" || method == "" )
+            if (dtpReceiveDate.Value < System.DateTime.Now)
+            {
+                MessageBox.Show("Please, Don't chose past day !");
+                return false;
+            }
+            else if (employee == "" || custumer == "" || method == "")
             {
                 MessageBox.Show("Please, fill up ALL attributes !");
                 return false;
             }
-          
+
             else
             {
                 DialogResult dr = MessageBox.Show("A record will be ADDED! Continue ?", "Action confirm",
@@ -93,7 +104,7 @@ namespace DACK_13_BuiXuanHieu.BUS
                    employee = tbEmployee.Text.Trim(),
                    custumer = tbCustumer.Text.Trim(),
                    method = tbMethod.Text.Trim();
-            
+
             //
             DialogResult dr = MessageBox.Show("Record [ " + receiptID + " ] will be EDITED! Continue ?", "Action confirm",
                                             MessageBoxButtons.OKCancel,
@@ -168,5 +179,5 @@ namespace DACK_13_BuiXuanHieu.BUS
         }
 
     }
-    }
+}
 

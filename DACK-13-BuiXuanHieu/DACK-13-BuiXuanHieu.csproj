@@ -59,7 +59,10 @@
     <Compile Include="BUS\BusEmployees.cs" />
     <Compile Include="BUS\BusLogins.cs" />
     <Compile Include="BUS\BusProducts.cs" />
+    <Compile Include="BUS\BusPromotions.cs" />
+    <Compile Include="BUS\BusReceipts.cs" />
     <Compile Include="BUS\BusSuppliers.cs" />
+    <Compile Include="BUS\BusEvents.cs" />
     <Compile Include="Category.cs">
       <DependentUpon>Supermarket.tt</DependentUpon>
     </Compile>
@@ -68,8 +71,11 @@
     </Compile>
     <Compile Include="DAO\DaoCustomers.cs" />
     <Compile Include="DAO\DaoEmployees.cs" />
+    <Compile Include="DAO\DaoEvents.cs" />
     <Compile Include="DAO\DaoLogins.cs" />
     <Compile Include="DAO\DaoProducts.cs" />
+    <Compile Include="DAO\DaoPromotions.cs" />
+    <Compile Include="DAO\DaoReceipts.cs" />
     <Compile Include="DAO\DaoSuppliers.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>Supermarket.tt</DependentUpon>
@@ -278,6 +284,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="resources\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Supermarket.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Supermarket.edmx</DependentUpon>
@@ -288,12 +300,6 @@
       <DependentUpon>Supermarket.edmx</DependentUpon>
       <LastGenOutput>Supermarket.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
