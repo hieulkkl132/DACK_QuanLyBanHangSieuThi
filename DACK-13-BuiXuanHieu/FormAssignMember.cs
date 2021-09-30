@@ -47,7 +47,7 @@ namespace DACK_13_BuiXuanHieu
                 //
                 btnAssign.Enabled = false;
                 int memberID = int.Parse(dgvCustomers.CurrentRow.Cells["MemberID"].Value.ToString());
-                bCustomer.displayMemberInfo(memberID, tbRank, dtpJoinDate, numPoint);
+                bCustomer.displayMemberInfo(memberID, cbRank, dtpJoinDate, numPoint);
             }
 
             //
@@ -64,9 +64,16 @@ namespace DACK_13_BuiXuanHieu
         private void btnAssign_Click(object sender, EventArgs e)
         {
             int customerID = int.Parse(dgvCustomers.CurrentRow.Cells["CustomerID"].Value.ToString());
-            bCustomer.assignMember(this, customerID, tbRank, dtpJoinDate, numPoint);
-            dgvCustomers.Columns.Clear();
-            bCustomer.getListCustomer(dgvCustomers);
+            bool assign=bCustomer.assignMember(this, customerID, cbRank, dtpJoinDate, numPoint);
+
+            if (assign==false)
+            {
+                return;
+            }else
+            {
+                dgvCustomers.Columns.Clear();
+                bCustomer.getListCustomer(dgvCustomers);
+            }
         }
 
         private void cbRank_SelectedIndexChanged(object sender, EventArgs e)

@@ -38,7 +38,7 @@
             this.tbCustomer = new System.Windows.Forms.TextBox();
             this.numPoint = new System.Windows.Forms.NumericUpDown();
             this.dtpJoinDate = new System.Windows.Forms.DateTimePicker();
-            this.tbRank = new System.Windows.Forms.TextBox();
+            this.cbRank = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numPoint)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,14 +159,20 @@
             this.dtpJoinDate.Size = new System.Drawing.Size(351, 34);
             this.dtpJoinDate.TabIndex = 57;
             // 
-            // tbRank
+            // cbRank
             // 
-            this.tbRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.tbRank.Location = new System.Drawing.Point(648, 93);
-            this.tbRank.Multiline = true;
-            this.tbRank.Name = "tbRank";
-            this.tbRank.Size = new System.Drawing.Size(351, 34);
-            this.tbRank.TabIndex = 58;
+            this.cbRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.cbRank.FormattingEnabled = true;
+            this.cbRank.Items.AddRange(new object[] {
+            "economic",
+            "bronze",
+            "silver",
+            "gold",
+            "platinum"});
+            this.cbRank.Location = new System.Drawing.Point(648, 93);
+            this.cbRank.Name = "cbRank";
+            this.cbRank.Size = new System.Drawing.Size(351, 37);
+            this.cbRank.TabIndex = 58;
             // 
             // FormAssignMember
             // 
@@ -174,7 +180,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(1067, 498);
-            this.Controls.Add(this.tbRank);
+            this.Controls.Add(this.cbRank);
             this.Controls.Add(this.dtpJoinDate);
             this.Controls.Add(this.numPoint);
             this.Controls.Add(this.label6);
@@ -188,6 +194,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormAssignMember";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAssignMember";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAssignMember_FormClosed);
             this.Load += new System.EventHandler(this.FormAssignMember_Load);
@@ -208,6 +215,6 @@
         private System.Windows.Forms.TextBox tbCustomer;
         private System.Windows.Forms.NumericUpDown numPoint;
         private System.Windows.Forms.DateTimePicker dtpJoinDate;
-        private System.Windows.Forms.TextBox tbRank;
+        private System.Windows.Forms.ComboBox cbRank;
     }
 }

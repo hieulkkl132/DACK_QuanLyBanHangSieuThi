@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DACK_13_BuiXuanHieu.BUS;
 
 namespace DACK_13_BuiXuanHieu
 {
@@ -15,6 +16,10 @@ namespace DACK_13_BuiXuanHieu
         //
         Panel pnlLoadForm;
         FormMain formMain;
+        BusRoles bRoles;
+        //
+        public string Username = FormLogin.UserName;
+        //
 
         public FormManage()
         {
@@ -42,6 +47,18 @@ namespace DACK_13_BuiXuanHieu
             this.pnlShadow4.BackColor = Color.FromArgb(20, Color.Black);
             this.pnlShadow5.BackColor = Color.FromArgb(20, Color.Black);
             this.pnlShadow6.BackColor = Color.FromArgb(20, Color.Black);
+            //
+            bRoles = new BusRoles();
+            bool roles = bRoles.loadRolesByUsername(Username);
+            if (roles == true)
+            {
+                return;
+            }
+            else
+            {
+                btnEmployees.Enabled = false;
+                btnSuppliers.Enabled = false;
+            }
         }
 
         private void btnEmployees_Click(object sender, EventArgs e)

@@ -20,12 +20,15 @@ namespace DACK_13_BuiXuanHieu
             InitializeComponent();
         }
 
+
+        public static string UserName = "";
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             bool check = busLogins.checkAccount(tbUsername, tbPassword);
             //
             if (check==true)
             {
+                UserName = tbUsername.Text;
                 this.Visible = false;
                 FormMain mainForm = new FormMain();
                 mainForm.Show();
@@ -39,13 +42,6 @@ namespace DACK_13_BuiXuanHieu
 
 
         }
-
-        //bool checkAccount(string userName, string passWord)
-        //{
-        //    userName = "abc";
-        //    passWord = "abc";
-        //    return false;   
-        //}
 
         private void FormLogin_Load(object sender, EventArgs e)
         {

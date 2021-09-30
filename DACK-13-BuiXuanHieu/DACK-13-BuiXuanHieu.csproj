@@ -61,6 +61,7 @@
     <Compile Include="BUS\BusProducts.cs" />
     <Compile Include="BUS\BusPromotions.cs" />
     <Compile Include="BUS\BusReceipts.cs" />
+    <Compile Include="BUS\BusRoles.cs" />
     <Compile Include="BUS\BusSuppliers.cs" />
     <Compile Include="BUS\BusEvents.cs" />
     <Compile Include="Category.cs">
@@ -76,6 +77,7 @@
     <Compile Include="DAO\DaoProducts.cs" />
     <Compile Include="DAO\DaoPromotions.cs" />
     <Compile Include="DAO\DaoReceipts.cs" />
+    <Compile Include="DAO\DaoRoles.cs" />
     <Compile Include="DAO\DaoSuppliers.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>Supermarket.tt</DependentUpon>
