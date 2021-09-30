@@ -241,6 +241,7 @@ GO
 CREATE PROC spCheckExistedUsername(@username nvarchar(100)) -- 1851010015-DuongTanBuu
 AS
 BEGIN
+        SET NOCOUNT ON
 	DECLARE @result int
 
 	SELECT
