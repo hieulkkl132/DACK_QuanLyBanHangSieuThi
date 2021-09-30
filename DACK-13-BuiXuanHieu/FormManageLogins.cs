@@ -104,7 +104,7 @@ namespace DACK_13_BuiXuanHieu
             else if (rdbtnEdit.Checked)
             {
                 //
-                int employeeID = int.Parse(dgvEmployees.CurrentRow.Cells["EmployeeID"].Value.ToString());
+                //int employeeID = int.Parse(dgvEmployees.CurrentRow.Cells["EmployeeID"].Value.ToString());
                 busLogins.editLogin(this, employeeID, tbUsername, cbLoginType, tbPassword, tbRetype);
 
                 //
@@ -114,7 +114,7 @@ namespace DACK_13_BuiXuanHieu
             else if (rdbtnRemove.Checked)
             {
                 //
-                int employeeID = int.Parse(dgvEmployees.CurrentRow.Cells["EmployeeID"].Value.ToString());
+                //int employeeID = int.Parse(dgvEmployees.CurrentRow.Cells["EmployeeID"].Value.ToString());
                 busLogins.removeLogin(this, employeeID);
 
                 //

@@ -243,6 +243,7 @@ AS
 BEGIN
         SET NOCOUNT ON
 	DECLARE @result int
+        SET @result = 0
 
 	SELECT
 		@result = COUNT(Username)
