@@ -34,11 +34,6 @@ namespace DACK_13_BuiXuanHieu.BUS
         }
 
         //
-        public void getMemberList(DataGridView dgv)
-        {
-            dgv.DataSource = dCustomer.getMemberList();
-        }
-        //
         public static bool isValidEmail(string inputEmail)
         {
             string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
@@ -78,11 +73,6 @@ namespace DACK_13_BuiXuanHieu.BUS
                 MessageBox.Show("Please, check your Email again !");
                 return false;
             }
-            else if (dtpBirthDate.Value > System.DateTime.Today || dtpBirthDate.Value == System.DateTime.Today)
-            {
-                MessageBox.Show("Please, Don't chose today and future day !");
-                return false;
-            }
             else
             {
                 DialogResult dr = MessageBox.Show("A record will be ADDED! Continue ?", "Action confirm",
@@ -96,15 +86,17 @@ namespace DACK_13_BuiXuanHieu.BUS
                 {
                     try
                     {
-                        Customer c = new Customer();
-                        c.LastName = lastName;
-                        c.FirstName = firstName;
-                        c.BirthDate = birthDate;
-                        c.Address = address;
-                        c.City = city;
-                        c.District = district;
-                        c.Phone = phone;
-                        c.Email = email;
+                        Customer c = new Customer
+                        {
+                            LastName = lastName,
+                            FirstName = firstName,
+                            BirthDate = birthDate,
+                            Address = address,
+                            City = city,
+                            District = district,
+                            Phone = phone,
+                            Email = email
+                        };
 
                         if (dCustomer.addRecord(c))
                         {
@@ -146,11 +138,6 @@ namespace DACK_13_BuiXuanHieu.BUS
                    district = tbDistrict.Text.Trim(),
                    phone = tbPhone.Text.Trim(),
                    email = tbEmail.Text.Trim();
-           if (dtpBirthDate.Value > System.DateTime.Today || dtpBirthDate.Value == System.DateTime.Today)
-            {
-                MessageBox.Show("Please, Don't chose today and future day !");
-                return false;
-            }
             //
             DialogResult dr = MessageBox.Show("Record [ " + CustomerID + " ] will be EDITED! Continue ?", "Action confirm",
                                             MessageBoxButtons.OKCancel,
@@ -230,28 +217,29 @@ namespace DACK_13_BuiXuanHieu.BUS
         }
 
 
+///MEMBER///
 
-        public void displayMemberInfo(int memberID,TextBox tbRank,DateTimePicker dtpJoinDate, NumericUpDown numPoint)
+        public void displayMemberInfo(int memberID,ComboBox cbRank ,DateTimePicker dtpJoinDate, NumericUpDown numPoint)
         {
             //
             Member member= dCustomer.loadMemberByID(memberID);
 
             //
             dtpJoinDate.Value= member.JoinDate;          
-            tbRank.Text = member.Rank;
+            cbRank.Text = member.Rank;
             numPoint.Value = member.Point;
         }
 
 
-        public bool assignMember(FormAssignMember formAssignMember, int memberID, TextBox tbRank , DateTimePicker dtpJoinDate, NumericUpDown numPoint)
+        public bool assignMember(FormAssignMember formAssignMember, int memberID, ComboBox cbRank , DateTimePicker dtpJoinDate, NumericUpDown numPoint)
         {
             //
             DateTime joinDate = dtpJoinDate.Value;
-            int point = Convert.ToInt32(Math.Round(numPoint.Value,0));           
-            String rank = tbRank.Text.Trim();
+            int point = Convert.ToInt32(Math.Round(numPoint.Value,0));
+            string rank = cbRank.GetItemText(cbRank.SelectedItem);
                    
             //
-            if (rank == "")
+            if (rank== "" )
             {
                 MessageBox.Show("Please, fill up ALL attributes !");
                 return false;
@@ -269,10 +257,12 @@ namespace DACK_13_BuiXuanHieu.BUS
                 {
                     try
                     {
-                        Member m = new Member();
-                        m.Rank = rank;
-                        m.JoinDate = joinDate;
-                        m.Point = point;
+                        Member m = new Member
+                        {
+                            Rank = rank,
+                            JoinDate = joinDate,
+                            Point = point
+                        };
 
                         if (dCustomer.assignMember(memberID,m))
                         {
@@ -294,6 +284,7 @@ namespace DACK_13_BuiXuanHieu.BUS
                         MessageBox.Show(e.Message.ToString());
                         return false;
                     }
+
                 }
 
                 return true;

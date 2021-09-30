@@ -7,12 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DACK_13_BuiXuanHieu.BUS;
 
 namespace DACK_13_BuiXuanHieu
 {
     public partial class FormMain : Form
     {
-        
+        //
+        BusRoles bRoles;
+        //
+        public string Username = FormLogin.UserName;
+        //
         public FormMain()
         {
             //
@@ -39,6 +44,19 @@ namespace DACK_13_BuiXuanHieu
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
+            bRoles = new BusRoles();
+            this.MaximizeBox = false;
+            lbUsername.Text = FormLogin.UserName;
+            bool roles = bRoles.loadRolesByUsername(Username);
+            if (roles == true)
+            {
+                lbLoginType.Text = "Manager";
+            }
+            else
+            {
+                lbLoginType.Text = "Staff";
+
+            }
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -119,9 +137,7 @@ namespace DACK_13_BuiXuanHieu
                 
             }
             else
-            {
-                
-                MessageBox.Show("Your login successfully!" , "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            {                
                 this.Close();
                 FormLogin formLogin = new FormLogin();
                 formLogin.Show();
