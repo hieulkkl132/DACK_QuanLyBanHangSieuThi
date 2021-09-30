@@ -238,6 +238,22 @@ BEGIN
 END
 GO
 
+CREATE PROC spCheckExistedUsername(@username nvarchar(100)) -- 1851010015-DuongTanBuu
+AS
+BEGIN
+	DECLARE @result int
+
+	SELECT
+		@result = COUNT(Username)
+	FROM
+		Logins
+	WHERE
+		Username = @username
+
+	RETURN @result
+END
+GO
+
 --____________________________________________________________________________________________________
 INSERT INTO Positions(PositionName)
 	VALUES(N'manager'),
