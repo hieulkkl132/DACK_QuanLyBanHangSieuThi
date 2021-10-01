@@ -1,15 +1,15 @@
 -- 2021-09-18
 -- author: Buu Duong Tan
 
-DROP DATABASE IF EXISTS supermarket
-GO
+--DROP DATABASE IF EXISTS supermarket
+--GO
 CREATE DATABASE supermarket
 GO
-USE supermarket
-GO
+--USE supermarket
+--GO
 
-DROP TABLE IF EXISTS LoginTypes
-GO
+--DROP TABLE IF EXISTS LoginTypes
+--GO
 CREATE TABLE LoginTypes (
 	LoginTypeID int IDENTITY(1, 1) NOT NULL,
 	LoginTypeName nvarchar(100) NOT NULL,
@@ -18,8 +18,8 @@ CREATE TABLE LoginTypes (
 )
 GO
 
-DROP TABLE IF EXISTS Logins
-GO
+--DROP TABLE IF EXISTS Logins
+--GO
 CREATE TABLE Logins (
 	LoginID int IDENTITY(1, 1) NOT NULL,
 	LoginTypeID int NOT NULL,
@@ -31,8 +31,8 @@ CREATE TABLE Logins (
 )
 GO
 
-DROP TABLE IF EXISTS Positions
-GO
+--DROP TABLE IF EXISTS Positions
+--GO
 CREATE TABLE Positions (
 	PositionID int IDENTITY(1, 1) NOT NULL,
 	PositionName nvarchar(100) NOT NULL,
@@ -41,8 +41,8 @@ CREATE TABLE Positions (
 )
 GO
 
-DROP TABLE IF EXISTS Employees
-GO
+--DROP TABLE IF EXISTS Employees
+--GO
 CREATE TABLE Employees (
 	EmployeeID int IDENTITY(1, 1) NOT NULL,
 	LoginID int,
@@ -62,8 +62,8 @@ CREATE TABLE Employees (
 )
 GO
 
-DROP TABLE IF EXISTS Categories
-GO
+--DROP TABLE IF EXISTS Categories
+--GO
 CREATE TABLE Categories (
 	CategoryID int IDENTITY(1, 1) NOT NULL,
 	CategoryName nvarchar(100) NOT NULL,
@@ -72,8 +72,8 @@ CREATE TABLE Categories (
 )
 GO
 
-DROP TABLE IF EXISTS Products
-GO
+--DROP TABLE IF EXISTS Products
+--GO
 CREATE TABLE Products (
 	ProductID int IDENTITY(1, 1) NOT NULL,
 	ProductName nvarchar(100) NOT NULL,
@@ -88,8 +88,8 @@ CREATE TABLE Products (
 )
 GO
 
-DROP TABLE IF EXISTS Suppliers
-GO
+--DROP TABLE IF EXISTS Suppliers
+--GO
 CREATE TABLE Suppliers (
 	SupplierID int IDENTITY(1, 1) NOT NULL,
 	CompanyName nvarchar(100) NOT NULL,
@@ -105,8 +105,8 @@ CREATE TABLE Suppliers (
 )
 GO
 
-DROP TABLE IF EXISTS Importations
-GO
+--DROP TABLE IF EXISTS Importations
+--GO
 CREATE TABLE Importations (
 	ImportID int IDENTITY(1, 1) NOT NULL,
 	SupplierID int NOT NULL,
@@ -120,8 +120,8 @@ CREATE TABLE Importations (
 )
 GO
 
-DROP TABLE IF EXISTS ImportationDetails
-GO
+--DROP TABLE IF EXISTS ImportationDetails
+--GO
 CREATE TABLE ImportationDetails (
 	ImportID int NOT NULL,
 	ProductID int NOT NULL,
@@ -134,8 +134,8 @@ CREATE TABLE ImportationDetails (
 )
 GO
 
-DROP TABLE IF EXISTS Members
-GO
+--DROP TABLE IF EXISTS Members
+--GO
 CREATE TABLE Members (
 	MemberID int IDENTITY(1, 1) NOT NULL,
 	JoinDate date NOT NULL,
@@ -146,8 +146,8 @@ CREATE TABLE Members (
 )
 GO
 
-DROP TABLE IF EXISTS Customers
-GO
+--DROP TABLE IF EXISTS Customers
+--GO
 CREATE TABLE Customers (
 	CustomerID int IDENTITY(1, 1) NOT NULL,
 	MemberID int,
@@ -165,8 +165,8 @@ CREATE TABLE Customers (
 )
 GO
 
-DROP TABLE IF EXISTS Receipts
-GO
+--DROP TABLE IF EXISTS Receipts
+--GO
 CREATE TABLE Receipts (
 	ReceiptID int IDENTITY(1, 1) NOT NULL,
 	EmployeeID int NOT NULL,
@@ -180,8 +180,8 @@ CREATE TABLE Receipts (
 )
 GO
 
-DROP TABLE IF EXISTS ReceiptDetails
-GO
+--DROP TABLE IF EXISTS ReceiptDetails
+--GO
 CREATE TABLE ReceiptDetails (
 	ReceiptID int NOT NULL,
 	ProductID int NOT NULL,
@@ -195,8 +195,8 @@ CREATE TABLE ReceiptDetails (
 )
 GO
 
-DROP TABLE IF EXISTS Promotions
-GO
+--DROP TABLE IF EXISTS Promotions
+--GO
 CREATE TABLE Promotions (
 	PromotionID int IDENTITY(1, 1) NOT NULL,
 	PromotionName nvarchar(100) NOT NULL,
@@ -206,8 +206,8 @@ CREATE TABLE Promotions (
 )
 GO
 
-DROP TABLE IF EXISTS Events
-GO
+--DROP TABLE IF EXISTS Events
+--GO
 CREATE TABLE Events (
 	PromotionID int NOT NULL,
 	ProductID int NOT NULL,
@@ -268,6 +268,7 @@ BEGIN
 	  else select @R = 0;
 	  select @R as alias
 END
+GO
 
 
 CREATE PROCEDURE [dbo].[ProductCheck] 
