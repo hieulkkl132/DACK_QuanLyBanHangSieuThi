@@ -28,6 +28,10 @@ namespace DACK_13_BuiXuanHieu.BUS
             dgvProducts.Columns[5].Width = (int)(dgvProducts.Width * 0.11);
             dgvProducts.Columns[6].Width = (int)(dgvProducts.Width * 0.10);
         }
+        public List<Product> ListProducts()
+        {
+            return daoProduct.LoadListProducts();
+        }
 
         public void displayComboboxCategory(ComboBox cb)
         {
@@ -113,56 +117,41 @@ namespace DACK_13_BuiXuanHieu.BUS
             unitsInStock = nudUnitsInStock.Value.ToString(),
             active = tbActive.Text.Trim();
 
-            if (productName == "" || category == "" || quantityperunit == "" || unitPrice == "" ||
-               unitsInStock == "" || active == "")
-            {
-                MessageBox.Show("Please, fill up ALL attributes !");
-                return false;
-            }
-            else if (int.TryParse(active, out int activeNumeric) == false)
-            {
-                MessageBox.Show("Please, check your ACTIVE number again !");
-                return false;
-            }
-            else 
-            {
+            DialogResult dr = MessageBox.Show("Record [ " + productID + " ] will be EDITED! Continue ?", "Action confirm",
+                                           MessageBoxButtons.OKCancel,
+                                           MessageBoxIcon.Question);
 
-                DialogResult dr = MessageBox.Show("Record [ " + productID + " ] will be EDITED! Continue ?", "Action confirm",
-                                               MessageBoxButtons.OKCancel,
-                                               MessageBoxIcon.Question);
-
-                if (dr == DialogResult.OK)
+            if (dr == DialogResult.OK)
+            {
+                try
                 {
-                    try
-                    {
-                        Product p = new Product();
-                        p.ProductID = int.Parse(productID);
-                        p.ProductName = productName;
-                        p.CategoryID = int.Parse(cbCategory.SelectedValue.ToString());
-                        p.QuantityPerUnit = int.Parse(quantityperunit);
-                        p.UnitPrice = int.Parse(unitPrice);
-                        p.UnitsInStock = int.Parse(unitsInStock);
-                        p.Active = short.Parse(active);
+                    Product p = new Product();
+                    p.ProductID = int.Parse(productID);
+                    p.ProductName = productName;
+                    p.CategoryID = int.Parse(cbCategory.SelectedValue.ToString());
+                    p.QuantityPerUnit = int.Parse(quantityperunit);
+                    p.UnitPrice = int.Parse(unitPrice);
+                    p.UnitsInStock = int.Parse(unitsInStock);
+                    p.Active = short.Parse(active);
 
-                        if (daoProduct.editRecord(p))
-                        {
-                            MessageBox.Show("Successfully !", "Announcement",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement",
-                                            MessageBoxButtons.OK,
-                                            MessageBoxIcon.Error);
-                            return false;
-                        }
-                    }
-                    catch (Exception e)
+                    if (daoProduct.editRecord(p))
                     {
-                        MessageBox.Show(e.Message.ToString());
+                        MessageBox.Show("Successfully !", "Announcement",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
                         return false;
                     }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message.ToString());
+                    return false;
                 }
             }
             return true;

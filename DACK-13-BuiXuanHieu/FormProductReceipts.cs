@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DACK_13_BuiXuanHieu.REPORT;
 namespace DACK_13_BuiXuanHieu
 {
     public partial class FormProductReceipts : Form
@@ -17,10 +17,12 @@ namespace DACK_13_BuiXuanHieu
         DataTable dtdh;
         int index;
         private BusReceipts busReceipts;
+        private BusProducts busProducts;
         public int ReceiptID;
         public FormProductReceipts()
         {
             busReceipts = new BusReceipts();
+            busProducts = new BusProducts();
             InitializeComponent();
         }
 
@@ -154,6 +156,15 @@ namespace DACK_13_BuiXuanHieu
                 tbCategory.Text = p.Category.CategoryName.ToString();
                 tbPrice.Text = p.UnitPrice.ToString();
             }
+        }
+
+        private void btReport_Click(object sender, EventArgs e)
+        {
+            ListProduct l = new ListProduct();
+            FormReport f = new FormReport();
+            l.SetDataSource ( busProducts.ListProducts().ToList());
+            f.crystalReportViewer1.ReportSource = l;
+            f.Show();
         }
     }
 }

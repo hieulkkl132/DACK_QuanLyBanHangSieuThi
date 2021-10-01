@@ -61,6 +61,7 @@
             this.dGSP = new System.Windows.Forms.DataGridView();
             this.btTaoDonHang = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btReport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuddis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSL)).BeginInit();
@@ -117,9 +118,9 @@
             this.groupBox1.Controls.Add(this.hoTenNhanVienLabel);
             this.groupBox1.Controls.Add(this.ngaySinhLabel);
             this.groupBox1.Location = new System.Drawing.Point(73, 50);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(915, 162);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -157,7 +158,7 @@
             // tbReceipt
             // 
             this.tbReceipt.Location = new System.Drawing.Point(584, 15);
-            this.tbReceipt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbReceipt.Margin = new System.Windows.Forms.Padding(4);
             this.tbReceipt.Name = "tbReceipt";
             this.tbReceipt.Size = new System.Drawing.Size(303, 22);
             this.tbReceipt.TabIndex = 14;
@@ -165,7 +166,7 @@
             // tbCategory
             // 
             this.tbCategory.Location = new System.Drawing.Point(140, 90);
-            this.tbCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCategory.Margin = new System.Windows.Forms.Padding(4);
             this.tbCategory.Name = "tbCategory";
             this.tbCategory.Size = new System.Drawing.Size(289, 22);
             this.tbCategory.TabIndex = 21;
@@ -183,7 +184,7 @@
             // tbPrice
             // 
             this.tbPrice.Location = new System.Drawing.Point(723, 59);
-            this.tbPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPrice.Margin = new System.Windows.Forms.Padding(4);
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(163, 22);
             this.tbPrice.TabIndex = 20;
@@ -312,21 +313,22 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btReport);
             this.groupBox2.Controls.Add(this.btSua);
             this.groupBox2.Controls.Add(this.btThem);
             this.groupBox2.Controls.Add(this.btXoa);
-            this.groupBox2.Location = new System.Drawing.Point(413, 222);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(336, 222);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(560, 102);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(637, 102);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             // 
             // btSua
             // 
             this.btSua.Location = new System.Drawing.Point(367, 23);
-            this.btSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btSua.Margin = new System.Windows.Forms.Padding(4);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(100, 71);
             this.btSua.TabIndex = 2;
@@ -337,7 +339,7 @@
             // btThem
             // 
             this.btThem.Location = new System.Drawing.Point(49, 23);
-            this.btThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btThem.Margin = new System.Windows.Forms.Padding(4);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(100, 71);
             this.btThem.TabIndex = 0;
@@ -348,7 +350,7 @@
             // btXoa
             // 
             this.btXoa.Location = new System.Drawing.Point(211, 23);
-            this.btXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(100, 71);
             this.btXoa.TabIndex = 1;
@@ -360,9 +362,9 @@
             // 
             this.groupBox3.Controls.Add(this.dGSP);
             this.groupBox3.Location = new System.Drawing.Point(73, 331);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(901, 272);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
@@ -383,7 +385,7 @@
             // btTaoDonHang
             // 
             this.btTaoDonHang.Location = new System.Drawing.Point(4, 4);
-            this.btTaoDonHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btTaoDonHang.Margin = new System.Windows.Forms.Padding(4);
             this.btTaoDonHang.Name = "btTaoDonHang";
             this.btTaoDonHang.Size = new System.Drawing.Size(119, 68);
             this.btTaoDonHang.TabIndex = 0;
@@ -400,7 +402,18 @@
             this.panel1.Size = new System.Drawing.Size(127, 78);
             this.panel1.TabIndex = 12;
             // 
-            // FormProductReceiptcs
+            // btReport
+            // 
+            this.btReport.Location = new System.Drawing.Point(512, 23);
+            this.btReport.Margin = new System.Windows.Forms.Padding(4);
+            this.btReport.Name = "btReport";
+            this.btReport.Size = new System.Drawing.Size(100, 71);
+            this.btReport.TabIndex = 3;
+            this.btReport.Text = "Report";
+            this.btReport.UseVisualStyleBackColor = true;
+            this.btReport.Click += new System.EventHandler(this.btReport_Click);
+            // 
+            // FormProductReceipts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -410,8 +423,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "FormProductReceiptcs";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "FormProductReceipts";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormProductReceiptcs_Load);
             this.groupBox1.ResumeLayout(false);
@@ -462,6 +475,7 @@
         private System.Windows.Forms.TextBox tbReceipt;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown nuddis;
+        private System.Windows.Forms.Button btReport;
     }
 
 }

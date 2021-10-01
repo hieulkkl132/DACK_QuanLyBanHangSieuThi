@@ -29,6 +29,12 @@ namespace DACK_13_BuiXuanHieu.DAO
             }).ToList();
             return ds;
         }
+        public List<Product> LoadListProducts()
+        {
+            var ds = supmar.Products.Select(s => s).ToList();
+
+            return ds;
+        }
 
         public dynamic loadComboboxCategory()
         {
