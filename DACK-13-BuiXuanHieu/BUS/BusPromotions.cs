@@ -111,17 +111,17 @@ namespace DACK_13_BuiXuanHieu.BUS
             }
             return true;
         }
-        
-       public void removeRecord(Promotion p)
+
+        public void removeRecord(Promotion p)
         {
             if (daoPromotions.removeRecord(p))
             {
                 try
                 {
-                   
+
                     MessageBox.Show("Successfully !", "Announcement");
                 }
-                catch(DbUpdateException ex)
+                catch (DbUpdateException ex)
                 {
                     MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement" + ex.Message);
                 }

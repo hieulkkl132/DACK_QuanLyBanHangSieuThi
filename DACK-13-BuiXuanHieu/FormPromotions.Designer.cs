@@ -323,18 +323,21 @@ namespace DACK_13_BuiXuanHieu
             // 
             // dtpStartDate
             // 
+            this.dtpStartDate.CustomFormat = "dd/MM/yyyy";
             this.dtpStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpStartDate.Location = new System.Drawing.Point(851, 210);
             this.dtpStartDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(351, 34);
             this.dtpStartDate.TabIndex = 86;
+            this.dtpStartDate.ValueChanged += new System.EventHandler(this.dtpStartDate_ValueChanged);
             // 
             // dtpEndDate
             // 
+            this.dtpEndDate.CustomFormat = "dd/MM/yyyy";
             this.dtpEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEndDate.Location = new System.Drawing.Point(851, 270);
             this.dtpEndDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpEndDate.Name = "dtpEndDate";

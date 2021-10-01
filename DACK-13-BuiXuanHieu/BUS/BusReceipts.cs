@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using DACK_13_BuiXuanHieu.DAO;
 using System.Windows.Forms;
+using System.Data.Entity.Infrastructure;
+using System.Data;
+using System.Transactions;
 
 namespace DACK_13_BuiXuanHieu.BUS
 {
@@ -35,12 +38,12 @@ namespace DACK_13_BuiXuanHieu.BUS
             cb.DisplayMember = "LastName";
             cb.ValueMember = "CustomerID";
         }
-        public bool addRecord(TextBox tbEmployee, TextBox tbCustumer, TextBox tbMethod, DateTimePicker dtpReceiveDate)
+        public bool addRecord(ComboBox tbEmployee, ComboBox tbCustumer, TextBox tbMethod, DateTimePicker dtpReceiveDate)
         {
-            String employee = tbEmployee.Text.Trim(),
-                   custumer = tbCustumer.Text.Trim(),
+            String employee = tbEmployee.SelectedValue.ToString(),
+                   custumer = tbCustumer.SelectedValue.ToString(),
                    method = tbMethod.Text.Trim();
-            if (dtpReceiveDate.Value < System.DateTime.Now)
+            if (dtpReceiveDate.Value < System.DateTime.Today)
             {
                 MessageBox.Show("Please, Don't chose past day !");
                 return false;
@@ -96,14 +99,19 @@ namespace DACK_13_BuiXuanHieu.BUS
                 return true;
             }
         }
-        public bool editRecord(DataGridView dgvReceipts, TextBox tbEmployee, TextBox tbCustumer, TextBox tbMethod, DateTimePicker dtpReceiveDate)
+        public bool editRecord(DataGridView dgvReceipts, ComboBox cbEmployee, ComboBox cbCustumer, TextBox tbMethod, DateTimePicker dtpReceiveDate)
         {
             //
             String receiptID = dgvReceipts.CurrentRow.Cells["ReceiptID"].Value.ToString();
             String
-                   employee = tbEmployee.Text.Trim(),
-                   custumer = tbCustumer.Text.Trim(),
+                   employee = cbEmployee.SelectedValue.ToString(),
+                   custumer = cbCustumer.SelectedValue.ToString(),
                    method = tbMethod.Text.Trim();
+            if (employee == "" || custumer == "" || method == "")
+            {
+                MessageBox.Show("Please, fill up ALL attributes !");
+                return false;
+            }
 
             //
             DialogResult dr = MessageBox.Show("Record [ " + receiptID + " ] will be EDITED! Continue ?", "Action confirm",
@@ -151,11 +159,14 @@ namespace DACK_13_BuiXuanHieu.BUS
             DialogResult dr = MessageBox.Show("Record [ " + receiptID + " ] will be REMOVED! Continue ?", "Action confrim",
                                             MessageBoxButtons.OKCancel,
                                             MessageBoxIcon.Question);
+
             if (dr == DialogResult.OK)
             {
                 try
                 {
-                    if (daoReceipts.removeRecord(int.Parse(receiptID)))
+                    Receipt d = new Receipt();
+                    d.ReceiptID = int.Parse(receiptID);
+                    if (daoReceipts.removeRecord(d))
                     {
                         MessageBox.Show("Successfully !", "Announcement",
                                         MessageBoxButtons.OK,
@@ -176,6 +187,94 @@ namespace DACK_13_BuiXuanHieu.BUS
                 }
             }
             return true;
+        }
+
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////// RECEIPT DETAILS //////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public void showRDetails(DataGridView dg, int Rid)
+        {
+            dg.DataSource = daoReceipts.loadRDetails(Rid);
+
+        }
+
+        public void RemoveRDetails(ReceiptDetail dh)
+        {
+            try
+            {
+                daoReceipts.RemoveRDetails(dh);
+                MessageBox.Show("Xóa thành công");
+            }
+            catch (DbUpdateException ex)
+            {
+                MessageBox.Show("Xóa thất bại\n" + ex.Message);
+            }
+        }
+
+        public void AddRDetails(int Rid, DataTable dtdh)
+        {
+            using (var tran = new TransactionScope())
+            {
+                try
+                {
+                    foreach (DataRow item in dtdh.Rows)
+                    {
+                        ReceiptDetail d = new ReceiptDetail();
+                        d.ReceiptID = Rid;
+                        d.ProductID = int.Parse(item[0].ToString());
+                        d.UnitPrice = float.Parse(item[1].ToString());
+                        d.Quantity = int.Parse(item[2].ToString());
+                        d.Discount = float.Parse(item[3].ToString());
+                        if (daoReceipts.ProductCheck(d))
+                        {
+                            daoReceipts.AddRDetails(d);
+                        }
+                        else
+                        {
+                            throw new Exception("Sản phẩm đã tồn tại" + d.ProductID);
+                        }
+                    }
+                    tran.Complete();
+                    MessageBox.Show("Them Thanh Cong");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Them That Bai\n" + ex.Message);
+                }
+            }
+        }
+
+
+        public void EditRDetails(ReceiptDetail dh)
+        {
+            try
+            {
+                daoReceipts.EditRDetails(dh);
+                MessageBox.Show("Sua thanh cong");
+            }
+            catch (DbUpdateException ex)
+            {
+                MessageBox.Show("Sua that bai\n" + ex.Message);
+            }
+        }
+
+        //// =============================================================================================
+        ////=============================== DANH MUC SAN PHAM ============================================
+        //// =============================================================================================
+
+        public void loadListProduct(ComboBox cb)
+        {
+            cb.DataSource = daoReceipts.loadListProduct();
+            cb.DisplayMember = "ProductName";
+            cb.ValueMember = "ProductID";
+        }
+
+        public Product LoadDetails(int maSP)
+        {
+            return daoReceipts.loadPDetails(maSP);
         }
 
     }

@@ -44,7 +44,7 @@ namespace DACK_13_BuiXuanHieu.DAO
                 Promotion oldRecord = supmar.Promotions.First(s => s.PromotionID == newRecord.PromotionID);
                 oldRecord.PromotionName = newRecord.PromotionName;
                 oldRecord.Description = newRecord.Description;
-               
+
 
                 supmar.SaveChanges();
                 return true;
@@ -74,7 +74,7 @@ namespace DACK_13_BuiXuanHieu.DAO
                 return true;
             else
                 return false;
-            
+
         }
     }
 }

@@ -16,6 +16,7 @@ namespace DACK_13_BuiXuanHieu
         Panel pnlLoadForm;
         BusPromotions busPromotions;
         BusEvents busEvents;
+
         public FormPromotions()
         {
             InitializeComponent();
@@ -55,7 +56,7 @@ namespace DACK_13_BuiXuanHieu
             tbPromotionName.Enabled = true;
         }
         private void tbtnManageEvents_CheckedChanged(object sender, EventArgs e)
-        {       
+        {
             if (tbtnManageEvents.Checked) // ON
             {
                 dgvEvents.DataSource = null;
@@ -74,7 +75,7 @@ namespace DACK_13_BuiXuanHieu
                 tbPromotionName.Clear();
             }
             else // OFF
-            {             
+            {
                 dgvPromotions.DataSource = null;
                 dgvEvents.Columns.Clear();
                 busPromotions.displayTablePromotions(dgvPromotions);
@@ -115,12 +116,15 @@ namespace DACK_13_BuiXuanHieu
             btnAdd.FlatAppearance.BorderSize = 1;
             if (e.RowIndex >= 0 && e.RowIndex < dgvEvents.Rows.Count)
             {
+                cbProduct.Enabled = false;
+                cbPromotion.Enabled = false;
+                dtpStartDate.Enabled = false;
                 cbPromotion.Text = dgvEvents.Rows[e.RowIndex].Cells[1].Value.ToString();
                 cbProduct.Text = dgvEvents.Rows[e.RowIndex].Cells[2].Value.ToString();
                 dtpStartDate.Text = dgvEvents.Rows[e.RowIndex].Cells["StartDate"].Value.ToString();
                 dtpEndDate.Text = dgvEvents.Rows[e.RowIndex].Cells["EndDate"].Value.ToString();
-                nudLimitQuantity.Text = dgvEvents.Rows[e.RowIndex].Cells["LimitQuantity"].Value.ToString();
-                nudDiscount.Text = dgvEvents.Rows[e.RowIndex].Cells["Discount"].Value.ToString();
+                nudLimitQuantity.Value = Int32.Parse(dgvEvents.Rows[e.RowIndex].Cells["LimitQuantity"].Value.ToString());
+                nudDiscount.Value = Convert.ToDecimal(dgvEvents.Rows[e.RowIndex].Cells["Discount"].Value.ToString());
                 tbDescription.Text = dgvEvents.Rows[e.RowIndex].Cells["Description"].Value.ToString();
             }
         }
@@ -129,7 +133,10 @@ namespace DACK_13_BuiXuanHieu
         {
             if (tbtnManageEvents.Checked) // ON
             {
-                cbProduct.SelectedIndex = -1; ;
+                cbProduct.Enabled = true;
+                cbPromotion.Enabled = true;
+                dtpStartDate.Enabled = true;
+                cbProduct.SelectedIndex = -1;
                 nudLimitQuantity.Value = 0;
                 nudDiscount.Value = 0;
                 cbPromotion.SelectedIndex = -1;
@@ -146,13 +153,13 @@ namespace DACK_13_BuiXuanHieu
                 btnAdd.Enabled = true;
                 btnAdd.FlatAppearance.BorderSize = 2;
             }
-        } 
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (tbtnManageEvents.Checked) // ON
             {
-                bool success = busEvents.addRecord(cbPromotion, cbProduct, dtpStartDate , dtpEndDate, nudLimitQuantity , nudDiscount, tbDescription);
+                bool success = busEvents.addRecord(cbPromotion, cbProduct, dtpStartDate, dtpEndDate, nudLimitQuantity, nudDiscount, tbDescription);
                 dgvEvents.Columns.Clear();
                 busEvents.displayTableEvents(dgvEvents);
                 if (success)
@@ -177,7 +184,7 @@ namespace DACK_13_BuiXuanHieu
         {
             if (tbtnManageEvents.Checked) // ON
             {
-                busEvents.editRecord(cbPromotion, dgvEvents, dtpStartDate, dtpEndDate, nudLimitQuantity, nudDiscount, tbDescription);
+                busEvents.editRecord(cbPromotion, cbProduct, dgvEvents, dtpStartDate, dtpEndDate, nudLimitQuantity, nudDiscount, tbDescription);
                 dgvEvents.Columns.Clear();
                 busEvents.displayTableEvents(dgvEvents);
                 btnAdd.Enabled = false;
@@ -197,7 +204,7 @@ namespace DACK_13_BuiXuanHieu
         {
             if (tbtnManageEvents.Checked) // ON
             {
-                busEvents.removeRecord(dgvEvents);
+                busEvents.removeRecord(cbProduct, cbPromotion, dtpStartDate);
                 dgvEvents.Columns.Clear();
                 busEvents.displayTableEvents(dgvEvents);
                 btnAdd.Enabled = false;
@@ -214,6 +221,11 @@ namespace DACK_13_BuiXuanHieu
                 btnAdd.FlatAppearance.BorderSize = 1;
             }
         }
-    } 
+
+        private void dtpStartDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
 

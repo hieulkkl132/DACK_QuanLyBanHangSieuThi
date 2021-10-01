@@ -256,6 +256,32 @@ BEGIN
 END
 GO
 
+CREATE PROCEDURE [dbo].[DReceipt]
+@Receipt_ID int
+AS
+BEGIN
+	   Set nocount on
+	   declare @R int;
+       delete from [dbo].ReceiptDetails where ReceiptID=@Receipt_ID;
+       delete from [dbo].Receipts where ReceiptID=@Receipt_ID;
+      if (@@ROWCOUNT > 0) select @R = 1;
+	  else select @R = 0;
+	  select @R as alias
+END
+
+
+CREATE PROCEDURE [dbo].[ProductCheck] 
+@RID int, 
+@PID int
+as
+begin
+	SET NOCOUNT ON 
+	declare @sl int
+	select @sl = count(*) from [ReceiptDetails]
+	where ReceiptID=@RID and ProductID=@PID
+	select @sl as alias
+end
+
 --____________________________________________________________________________________________________
 INSERT INTO Positions(PositionName)
 	VALUES(N'manager'),

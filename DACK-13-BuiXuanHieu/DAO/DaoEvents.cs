@@ -28,7 +28,7 @@ namespace DACK_13_BuiXuanHieu.DAO
             }).ToList();
 
             return suppliers;
-      }
+        }
         public dynamic loadComboboxPromotions()
         {
             var ds = supmar.Promotions.Select(s => new
@@ -64,7 +64,7 @@ namespace DACK_13_BuiXuanHieu.DAO
         {
             try
             {
-                Event oldRecord = supmar.Events.First(s => s.PromotionID == newRecord.PromotionID);
+                Event oldRecord = supmar.Events.Find(newRecord.PromotionID, newRecord.ProductID, newRecord.StartDate);
                 oldRecord.ProductID = newRecord.ProductID;
                 oldRecord.StartDate = newRecord.StartDate;
                 oldRecord.EndDate = newRecord.EndDate;
@@ -80,11 +80,11 @@ namespace DACK_13_BuiXuanHieu.DAO
                 return false;
             }
         }
-        public bool removeRecord(int PromotionID)
+        public bool removeRecord(Event d)
         {
             try
             {
-                Event chosenRecord = supmar.Events.First(s => s.PromotionID == PromotionID);
+                Event chosenRecord = supmar.Events.Find(d.PromotionID, d.ProductID, d.StartDate);
                 supmar.Events.Remove(chosenRecord);
                 supmar.SaveChanges();
                 return true;

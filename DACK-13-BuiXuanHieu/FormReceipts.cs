@@ -24,6 +24,8 @@ namespace DACK_13_BuiXuanHieu
         public void UpdateGv()
         {
             dgvReceipts.DataSource = null;
+            busReceipts.displayComboboxCustomer(cbCustomer);
+            busReceipts.displayComboboxEmployee(cbEmployee);
             busReceipts.displayTableReceipts(dgvReceipts);
             dgvReceipts.Columns[0].Width = (int)(0.17 * dgvReceipts.Width);
             dgvReceipts.Columns[1].Width = (int)(0.18 * dgvReceipts.Width);
@@ -56,9 +58,7 @@ namespace DACK_13_BuiXuanHieu
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            String x = tbEmployee.Text;
-
-            bool success = busReceipts.addRecord(tbEmployee, tbCustomer, tbReceiveMethod, dtpReceiveDate);
+            bool success = busReceipts.addRecord(cbEmployee, cbCustomer, tbReceiveMethod, dtpReceiveDate);
             //
             dgvReceipts.Columns.Clear();
             UpdateGv();
@@ -68,7 +68,7 @@ namespace DACK_13_BuiXuanHieu
                 //btnAdd.Enabled = false;
                 btnAdd.FlatAppearance.BorderSize = 1;
             }
-           
+
         }
 
         private void dgvReceipts_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -78,8 +78,8 @@ namespace DACK_13_BuiXuanHieu
             //
             if (e.RowIndex >= 0 && e.RowIndex < dgvReceipts.Rows.Count)
             {
-                tbEmployee.Text = dgvReceipts.Rows[e.RowIndex].Cells["FirstName"].Value.ToString();
-                tbCustomer.Text = dgvReceipts.Rows[e.RowIndex].Cells["LastName"].Value.ToString();
+                cbEmployee.Text = dgvReceipts.Rows[e.RowIndex].Cells["FirstName"].Value.ToString();
+                cbCustomer.Text = dgvReceipts.Rows[e.RowIndex].Cells["LastName"].Value.ToString();
                 tbReceiveMethod.Text = dgvReceipts.Rows[e.RowIndex].Cells["ReceiveMethod"].Value.ToString();
                 dtpReceiveDate.Text = dgvReceipts.Rows[e.RowIndex].Cells["ReceiveDate"].Value.ToString();
             }
@@ -87,7 +87,7 @@ namespace DACK_13_BuiXuanHieu
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            busReceipts.editRecord(dgvReceipts, tbEmployee, tbCustomer, tbReceiveMethod, dtpReceiveDate);
+            busReceipts.editRecord(dgvReceipts, cbEmployee, cbCustomer, tbReceiveMethod, dtpReceiveDate);
             //
             dgvReceipts.Columns.Clear();
             UpdateGv();
@@ -98,8 +98,8 @@ namespace DACK_13_BuiXuanHieu
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            tbCustomer.Clear();
-            tbEmployee.Clear();
+            cbCustomer.SelectedIndex = 0;
+            cbEmployee.SelectedIndex = 0;
             tbReceiveMethod.Clear();
             dtpReceiveDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 5, 30, 0);
 
@@ -117,6 +117,18 @@ namespace DACK_13_BuiXuanHieu
             //
             btnAdd.Enabled = false;
             btnAdd.FlatAppearance.BorderSize = 1;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvReceipts_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FormReceiptDetails f = new FormReceiptDetails();
+            f.ReceiptID = int.Parse(dgvReceipts.CurrentRow.Cells[0].Value.ToString());
+            f.ShowDialog();
         }
     }
 }

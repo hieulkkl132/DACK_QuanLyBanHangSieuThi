@@ -32,11 +32,9 @@ namespace DACK_13_BuiXuanHieu
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReceipts));
             this.dgvReceipts = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbEmployee = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbCustomer = new System.Windows.Forms.TextBox();
             this.tbReceiveMethod = new System.Windows.Forms.TextBox();
             this.dtpReceiveDate = new System.Windows.Forms.DateTimePicker();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -46,6 +44,8 @@ namespace DACK_13_BuiXuanHieu
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.cbEmployee = new System.Windows.Forms.ComboBox();
+            this.cbCustomer = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceipts)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +61,7 @@ namespace DACK_13_BuiXuanHieu
             this.dgvReceipts.Size = new System.Drawing.Size(1069, 657);
             this.dgvReceipts.TabIndex = 2;
             this.dgvReceipts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReceipts_CellClick);
+            this.dgvReceipts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReceipts_CellDoubleClick);
             // 
             // label2
             // 
@@ -73,17 +74,6 @@ namespace DACK_13_BuiXuanHieu
             this.label2.Size = new System.Drawing.Size(122, 29);
             this.label2.TabIndex = 18;
             this.label2.Text = "Employee";
-            // 
-            // tbEmployee
-            // 
-            this.tbEmployee.BackColor = System.Drawing.Color.White;
-            this.tbEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEmployee.ForeColor = System.Drawing.Color.Black;
-            this.tbEmployee.Location = new System.Drawing.Point(200, 150);
-            this.tbEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbEmployee.Name = "tbEmployee";
-            this.tbEmployee.Size = new System.Drawing.Size(351, 34);
-            this.tbEmployee.TabIndex = 17;
             // 
             // label3
             // 
@@ -121,17 +111,6 @@ namespace DACK_13_BuiXuanHieu
             this.label5.TabIndex = 21;
             this.label5.Text = "Method";
             // 
-            // tbCustomer
-            // 
-            this.tbCustomer.BackColor = System.Drawing.Color.White;
-            this.tbCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCustomer.ForeColor = System.Drawing.Color.Black;
-            this.tbCustomer.Location = new System.Drawing.Point(200, 210);
-            this.tbCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbCustomer.Name = "tbCustomer";
-            this.tbCustomer.Size = new System.Drawing.Size(351, 34);
-            this.tbCustomer.TabIndex = 22;
-            // 
             // tbReceiveMethod
             // 
             this.tbReceiveMethod.BackColor = System.Drawing.Color.White;
@@ -145,8 +124,9 @@ namespace DACK_13_BuiXuanHieu
             // 
             // dtpReceiveDate
             // 
+            this.dtpReceiveDate.CustomFormat = "dd/MM/yyyy";
             this.dtpReceiveDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpReceiveDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpReceiveDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpReceiveDate.Location = new System.Drawing.Point(851, 150);
             this.dtpReceiveDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpReceiveDate.Name = "dtpReceiveDate";
@@ -256,12 +236,33 @@ namespace DACK_13_BuiXuanHieu
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // cbEmployee
+            // 
+            this.cbEmployee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEmployee.FormattingEnabled = true;
+            this.cbEmployee.Location = new System.Drawing.Point(256, 150);
+            this.cbEmployee.Name = "cbEmployee";
+            this.cbEmployee.Size = new System.Drawing.Size(319, 24);
+            this.cbEmployee.TabIndex = 37;
+            this.cbEmployee.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // cbCustomer
+            // 
+            this.cbCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCustomer.FormattingEnabled = true;
+            this.cbCustomer.Location = new System.Drawing.Point(256, 210);
+            this.cbCustomer.Name = "cbCustomer";
+            this.cbCustomer.Size = new System.Drawing.Size(319, 24);
+            this.cbCustomer.TabIndex = 38;
+            // 
             // FormReceipts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 967);
+            this.Controls.Add(this.cbCustomer);
+            this.Controls.Add(this.cbEmployee);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEdit);
@@ -270,12 +271,10 @@ namespace DACK_13_BuiXuanHieu
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.dtpReceiveDate);
             this.Controls.Add(this.tbReceiveMethod);
-            this.Controls.Add(this.tbCustomer);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.tbEmployee);
             this.Controls.Add(this.dgvReceipts);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -296,11 +295,9 @@ namespace DACK_13_BuiXuanHieu
 
         private System.Windows.Forms.DataGridView dgvReceipts;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbEmployee;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbCustomer;
         private System.Windows.Forms.TextBox tbReceiveMethod;
         private System.Windows.Forms.DateTimePicker dtpReceiveDate;
         private System.Windows.Forms.Button btnEdit;
@@ -310,5 +307,7 @@ namespace DACK_13_BuiXuanHieu
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.ComboBox cbEmployee;
+        private System.Windows.Forms.ComboBox cbCustomer;
     }
 }

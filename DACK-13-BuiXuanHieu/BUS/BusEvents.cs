@@ -79,8 +79,9 @@ namespace DACK_13_BuiXuanHieu.BUS
                         s.EndDate = dtpenday.Value;
                         s.ProductID = int.Parse(cbproduct.SelectedValue.ToString());
                         s.PromotionID = int.Parse(cbpromotion.SelectedValue.ToString());
-                        s.Discount = System.Convert.ToInt32(nudlimitquatity.Text);
-                        s.LimitQuantity = (System.Convert.ToInt32(nudlimitquatity.Text));
+                        s.Discount = System.Convert.ToDouble(nuddiscount.Value);
+                        s.LimitQuantity = (System.Convert.ToInt32(nudlimitquatity.Value));
+
                         if (daoEvents.addRecord(s))
                         {
                             MessageBox.Show("Successfully !", "Announcement",
@@ -104,22 +105,22 @@ namespace DACK_13_BuiXuanHieu.BUS
                 return true;
             }
         }
-        public bool editRecord(ComboBox cbpromotion,DataGridView dgvEvents, DateTimePicker dtpstarday, DateTimePicker dtpenday, NumericUpDown nudlimitquatity, NumericUpDown nuddiscount, TextBox tbdescription)
+        public bool editRecord(ComboBox cbpromotion, ComboBox cbproduct, DataGridView dgvEvents, DateTimePicker dtpstarday, DateTimePicker dtpenday, NumericUpDown nudlimitquatity, NumericUpDown nuddiscount, TextBox tbdescription)
         {
             String discripton = tbdescription.Text.Trim();
             //String promotionID = dgvEvents.Rows[dgvEvents.CurrentRow.Index].Cells["PromotionID"].Value.ToString();
             String productID = dgvEvents.CurrentRow.Cells["ProductID"].Value.ToString();
 
-            if (dtpenday.Value < dtpstarday.Value)
-            {
-                MessageBox.Show("Please, Startdate < Enddate !");
-                return false;
-            }
-            else if (dtpenday.Value == dtpstarday.Value)
-            {
-                MessageBox.Show("Please, Startdate and Enddate are not the same !");
-                return false;
-            }
+            //if (dtpenday.Value < dtpstarday.Value)
+            //{
+            //    MessageBox.Show("Please, Startdate < Enddate !");
+            //    return false;
+            //}
+            //else if (dtpenday.Value == dtpstarday.Value)
+            //{
+            //    MessageBox.Show("Please, Startdate and Enddate are not the same !");
+            //    return false;
+            //}
             DialogResult dr = MessageBox.Show("  Record [ " + productID + " ] " + " will be EDITED! Continue ?", "Action confirm",
                                                 MessageBoxButtons.OKCancel,
                                                 MessageBoxIcon.Question);
@@ -132,10 +133,10 @@ namespace DACK_13_BuiXuanHieu.BUS
                     s.Description = discripton;
                     s.StartDate = dtpstarday.Value;
                     s.EndDate = dtpenday.Value;
-                    s.ProductID = int.Parse(productID);
+                    s.ProductID = int.Parse(cbproduct.SelectedValue.ToString());
                     s.PromotionID = int.Parse(cbpromotion.SelectedValue.ToString());
-                    s.Discount = System.Convert.ToInt32(nudlimitquatity.Text);
-                    s.LimitQuantity = (System.Convert.ToInt32(nudlimitquatity.Text));
+                    s.Discount = System.Convert.ToDouble(nuddiscount.Value);
+                    s.LimitQuantity = System.Convert.ToInt32(nudlimitquatity.Value);
                     if (daoEvents.editRecord(s))
                     {
                         MessageBox.Show("Successfully !", "Announcement",
@@ -158,9 +159,9 @@ namespace DACK_13_BuiXuanHieu.BUS
             }
             return true;
         }
-        public bool removeRecord(DataGridView dgvEvents)
+        public bool removeRecord(ComboBox cbProduct, ComboBox cbPromotion, DateTimePicker StartDate)
         {
-            String productID = dgvEvents.CurrentRow.Cells["ProductID"].Value.ToString();
+            String productID = cbProduct.SelectedValue.ToString();
             DialogResult dr = MessageBox.Show("Record [ " + productID + " ] will be REMOVED! Continue ?", "Action confrim",
                                             MessageBoxButtons.OKCancel,
                                             MessageBoxIcon.Question);
@@ -168,7 +169,11 @@ namespace DACK_13_BuiXuanHieu.BUS
             {
                 try
                 {
-                    if (daoEvents.removeRecord(int.Parse(productID)))
+                    Event e = new Event();
+                    e.ProductID = int.Parse(productID);
+                    e.PromotionID = int.Parse(cbPromotion.SelectedValue.ToString());
+                    e.StartDate = StartDate.Value;
+                    if (daoEvents.removeRecord(e))
                     {
                         MessageBox.Show("Successfully !", "Announcement",
                                         MessageBoxButtons.OK,

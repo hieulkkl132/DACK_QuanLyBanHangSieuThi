@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DACK_13_BuiXuanHieu.DAO
 {
@@ -55,9 +56,9 @@ namespace DACK_13_BuiXuanHieu.DAO
                 supmar.SaveChanges();
                 return true;
             }
-            catch //(Exception e)
+            catch (Exception e)
             {
-                //MessageBox.Show(e.Message.ToString());
+                MessageBox.Show(e.Message.ToString());
                 return false;
             }
         }
@@ -75,28 +76,99 @@ namespace DACK_13_BuiXuanHieu.DAO
                 supmar.SaveChanges();
                 return true;
             }
-            catch //(Exception e)
+            catch (Exception e)
             {
-                //MessageBox.Show(e.Message.ToString());
+                MessageBox.Show(e.Message.ToString());
                 return false;
             }
         }
-        public bool removeRecord(int ReceiptID)
+        public bool removeRecord(Receipt p)
         {
-            //
-            try
-            {
-                Receipt chosenRecord = supmar.Receipts.First(s => s.ReceiptID == ReceiptID);
-                supmar.Receipts.Remove(chosenRecord);
-                supmar.SaveChanges();
+            int? sl;
+            sl = supmar.DReceipt(p.ReceiptID).FirstOrDefault();
+            supmar.SaveChanges();
+            if (sl != 0)
+
                 return true;
-            }
-            catch //(Exception e)
-            {
-                //MessageBox.Show(e.Message.ToString());
+            else
                 return false;
-            }
+
         }
 
+        ///////////////////// RECEIPT DETAILS /////////////////////////////
+
+        public dynamic loadRDetails(int Rid)
+        {
+            var ds = supmar.ReceiptDetails.Where(s => s.ReceiptID == Rid)
+                    .Select(s => new
+                    {
+                        s.ReceiptID,
+                        s.ProductID,
+                        s.UnitPrice,
+                        s.Quantity
+                    }).ToList();
+            return ds;
+        }
+
+        public void EditRDetails(ReceiptDetail dh)
+        {
+            ReceiptDetail o = supmar.ReceiptDetails.Find(dh.ReceiptID, dh.ProductID);
+            o.UnitPrice = dh.UnitPrice;
+            o.Quantity = dh.Quantity;
+            supmar.SaveChanges();
+        }
+
+        public void RemoveRDetails(ReceiptDetail dh)
+        {
+            ReceiptDetail o = supmar.ReceiptDetails.Find(dh.ReceiptID, dh.ProductID);
+            supmar.ReceiptDetails.Remove(o);
+            supmar.SaveChanges();
+        }
+
+
+        //////////////////// PRODUCT RECEIPTS /////////////////////////
+
+        public Product loadPDetails(int maSP)
+        {
+            Product p = supmar.Products.Where(S => S.ProductID == maSP)
+                                                .FirstOrDefault();
+            return p;
+        }
+
+        public bool ProductCheck(ReceiptDetail d)
+        {
+            int? sl;
+            sl = supmar.ProductCheck(d.ReceiptID, d.ProductID).FirstOrDefault();
+            if (sl != 0)
+                return false;
+            else
+                return true;
+        }
+
+        public void AddRDetails(ReceiptDetail d)
+        {
+            supmar.ReceiptDetails.Add(d);
+            supmar.SaveChanges();
+        }
+
+        public dynamic loadPCategories()
+        {
+            var ds = supmar.Categories.Select(s => new { s.CategoryID, s.CategoryName }).ToList();
+            return ds;
+        }
+
+        public dynamic loadListProduct()
+        {
+            var ds = supmar.Products.Select(s => new
+            {
+                s.ProductID,
+                s.ProductName,
+                s.UnitPrice,
+                s.UnitsInStock,
+                s.Category.CategoryName
+            }
+                ).ToList();
+            return ds;
+        }
     }
 }
