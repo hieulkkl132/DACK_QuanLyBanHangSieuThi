@@ -33,14 +33,14 @@ namespace DACK_13_BuiXuanHieu
             this.pnlNavbar = new System.Windows.Forms.Panel();
             this.lbUsername = new System.Windows.Forms.Label();
             this.lbLoginType = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnSignOut = new System.Windows.Forms.Button();
             this.btnManage = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.pnlLoadForm = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pnlNavbar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,25 +64,41 @@ namespace DACK_13_BuiXuanHieu
             // 
             // lbUsername
             // 
-            this.lbUsername.AutoSize = true;
-            this.lbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUsername.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.lbUsername.Location = new System.Drawing.Point(120, 40);
+            this.lbUsername.Location = new System.Drawing.Point(110, 40);
             this.lbUsername.Name = "lbUsername";
-            this.lbUsername.Size = new System.Drawing.Size(150, 36);
+            this.lbUsername.Size = new System.Drawing.Size(180, 36);
             this.lbUsername.TabIndex = 7;
             this.lbUsername.Text = "Username";
             // 
             // lbLoginType
             // 
             this.lbLoginType.AutoSize = true;
-            this.lbLoginType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLoginType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLoginType.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.lbLoginType.Location = new System.Drawing.Point(120, 90);
+            this.lbLoginType.Location = new System.Drawing.Point(110, 90);
             this.lbLoginType.Name = "lbLoginType";
-            this.lbLoginType.Size = new System.Drawing.Size(114, 25);
+            this.lbLoginType.Size = new System.Drawing.Size(105, 25);
             this.lbLoginType.TabIndex = 6;
             this.lbLoginType.Text = "LoginType";
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(20, 40);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(70, 70);
+            this.panel2.TabIndex = 9;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 150);
+            this.panel1.TabIndex = 8;
             // 
             // btnAbout
             // 
@@ -183,23 +199,6 @@ namespace DACK_13_BuiXuanHieu
             this.pnlLoadForm.Name = "pnlLoadForm";
             this.pnlLoadForm.Size = new System.Drawing.Size(1280, 953);
             this.pnlLoadForm.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 150);
-            this.panel1.TabIndex = 8;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(20, 40);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(70, 70);
-            this.panel2.TabIndex = 9;
             // 
             // FormMain
             // 
