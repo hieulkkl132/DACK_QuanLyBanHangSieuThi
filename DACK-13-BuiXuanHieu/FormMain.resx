@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="panel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHYAAAB2CAYAAAAdp2cRAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
+        EQAAFxEByibzPwAABBNJREFUeF7tndFx4kAQRAnhQrgQCOFCuBAcwoVwGdynC+6DEBwCISgEQtCnz/aH
+        j9ZIBkMLA0JiZ6a76lXZYxvQNrs7O7vIs3B6Xc5n/xa/Zm9//2y/Xm+ptmy21Hvg+2r2tnyavSx+N7+P
+        v5MK0vvq2+z58cfWmFVr2vsgYPbr8qF9dGlyPT9+b3vlcDP7wOPjeaQJhCFzbEMPQS+WwSMJQ+7Uhh6C
+        55duKJtDkfDwBp+Wunk90kBZxnq/XtoHsmnpCmHotUyXN2wZrNtXK52lZj5tlh2sMUtD5p4lX6Z2yNwv
+        ZZkva7yywZtR6pElSrzhfKCK1ZFQeCgx+70c1Zw/ZBkwCvasobyxaa9KCjAEf0Zr3K2st0YYgvdBdSp5
+        bRnvbt44vkldV7beWkoN+NbU7VUm1MviJ2mQSCRd/virMF1G2qJF3GG4I+FwbHusrDFigekmlaKtXftI
+        t6Ytf6/1NqSbZ+OUEL8iWYkxfuLUkSyBkrFBxRshJqmEdzJrhIikUp6hOF3yhE/BsYaIRtVecRJ5PbR2
+        KenWsVH3YQ9Jty8bf8vOSFcrjnkk5hhcZzpFrxcn3o99OGqMWCQ+QB53PVvnHIY76ZRiUFkSxRvHLzpX
+        3Char013auKU4pQYN7nn1kNh6OIN5QvdeITI+wG39AnTKfk9RL5qr0Dqlb+DbpXm1XPlx1yZerHKH5bX
+        MvValbohj9clUwfKbjxSSk25zrfHOqbQO+67zVc3U4N66Uiy3ju1wUjkdJufSTS+wTjdIUPvKmxo3yaD
+        NjNRAdOQW5iQ2FhpEr0ZPQ5J1/7ZKnwNEMfPV+3u0lxmSpIkSZIkSZIkSaPK6sfzj7Wr7QRhbQrYf6Hc
+        Bz+ztawVN2w9C3BuSWeXJhAMREPvzINpMGe/ajQWm8Z4e158JEUlxquFxttVj6Y08Xxgdte7pR7tjMQQ
+        Wp6J5wCj7RqS92i8061GG/FeFHUzdKfpzbHNPMUqnslIfHKaybEkzPFwjXeoXYTPOXN8qmZOdqFuWaLe
+        eRk2Hxf4sUsYahmhDB0CMusi5uKdoajg8BcrrmF9H4MtIcJ9mmTomFgPnmiI1hw6PZiDRxNSdLyD2BOL
+        qbjh7YUw7GrZUhLV8OFZw27JXNF71Uu9cMGn6GGq7bKwBxLlccYHr81ULWH8ceKGYeqp3un53wO2A8P+
+        QHgBy9FPsuxXiVIM9rYEVXiIRPtfQ+Aw/wXhlSaRst0Z/gvCJ80GvobheDRJlNatEalhrLLhiNCg8A8N
+        Cv/QoPAPDQr/0KDwDw0K/9Cg8A8NCv/QoPAPDQr/0KDwDw0K/9Cg8A8NCv/QoPAPDQr/0KDwDw0K/9Cg
+        8A8NCv/QoPAPDQr/0KDwDw0K/9Cg8A8NCv/QoPAPDQrnLN//A9bXo5Lz5c/rAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

@@ -337,6 +337,13 @@
         <Function Name="DPromotion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Promotion_ID" Type="int" Mode="In" />
         </Function>
+        <Function Name="DReceipt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Receipt_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RID" Type="int" Mode="In" />
+          <Parameter Name="PID" Type="int" Mode="In" />
+        </Function>
         <Function Name="spCheckExistedUsername" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="username" Type="nvarchar" Mode="In" />
         </Function>
@@ -852,6 +859,13 @@
           <FunctionImport Name="spCheckExistedUsername" ReturnType="Collection(Int32)">
           <Parameter Name="username" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="DReceipt" ReturnType="Collection(Int32)">
+            <Parameter Name="Receipt_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ProductCheck" ReturnType="Collection(Int32)">
+            <Parameter Name="RID" Mode="In" Type="Int32" />
+            <Parameter Name="PID" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -1032,6 +1046,8 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="DPromotion" FunctionName="SupermarketModel.Store.DPromotion" />
           <FunctionImportMapping FunctionImportName="spCheckExistedUsername" FunctionName="SupermarketModel.Store.spCheckExistedUsername" />
+          <FunctionImportMapping FunctionImportName="DReceipt" FunctionName="SupermarketModel.Store.DReceipt" />
+          <FunctionImportMapping FunctionImportName="ProductCheck" FunctionName="SupermarketModel.Store.ProductCheck" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

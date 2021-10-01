@@ -435,5 +435,12 @@
     <FunctionImport Name="spCheckExistedUsername" ReturnType="Collection(Int32)">
       <Parameter Name="username" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="DReceipt" ReturnType="Collection(Int32)">
+      <Parameter Name="Receipt_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProductCheck" ReturnType="Collection(Int32)">
+      <Parameter Name="RID" Mode="In" Type="Int32" />
+      <Parameter Name="PID" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
 </Schema>

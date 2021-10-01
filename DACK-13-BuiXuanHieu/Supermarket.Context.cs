@@ -60,5 +60,27 @@ namespace DACK_13_BuiXuanHieu
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("spCheckExistedUsername", usernameParameter);
         }
+    
+        public virtual ObjectResult<Nullable<int>> DReceipt(Nullable<int> receipt_ID)
+        {
+            var receipt_IDParameter = receipt_ID.HasValue ?
+                new ObjectParameter("Receipt_ID", receipt_ID) :
+                new ObjectParameter("Receipt_ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("DReceipt", receipt_IDParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> ProductCheck(Nullable<int> rID, Nullable<int> pID)
+        {
+            var rIDParameter = rID.HasValue ?
+                new ObjectParameter("RID", rID) :
+                new ObjectParameter("RID", typeof(int));
+    
+            var pIDParameter = pID.HasValue ?
+                new ObjectParameter("PID", pID) :
+                new ObjectParameter("PID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("ProductCheck", rIDParameter, pIDParameter);
+        }
     }
 }

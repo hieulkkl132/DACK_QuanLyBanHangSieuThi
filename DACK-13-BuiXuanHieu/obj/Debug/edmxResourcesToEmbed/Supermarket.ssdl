@@ -332,6 +332,13 @@
   <Function Name="DPromotion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Promotion_ID" Type="int" Mode="In" />
   </Function>
+  <Function Name="DReceipt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Receipt_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ProductCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RID" Type="int" Mode="In" />
+    <Parameter Name="PID" Type="int" Mode="In" />
+  </Function>
   <Function Name="spCheckExistedUsername" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="username" Type="nvarchar" Mode="In" />
   </Function>
