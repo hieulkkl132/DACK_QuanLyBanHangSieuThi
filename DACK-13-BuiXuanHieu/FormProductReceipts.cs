@@ -28,7 +28,11 @@ namespace DACK_13_BuiXuanHieu
 
         private void btTaoDonHang_Click(object sender, EventArgs e)
         {
-            busReceipts.AddRDetails(ReceiptID, dtdh);
+            bool result = busReceipts.AddRDetails(ReceiptID, dtdh);
+            if (result)
+            {
+                this.Close();
+            }
         }
 
         private void btThem_Click(object sender, EventArgs e)

@@ -214,7 +214,7 @@ namespace DACK_13_BuiXuanHieu.BUS
             }
         }
 
-        public void AddRDetails(int Rid, DataTable dtdh)
+        public bool AddRDetails(int Rid, DataTable dtdh)
         {
             using (var tran = new TransactionScope())
             {
@@ -239,10 +239,12 @@ namespace DACK_13_BuiXuanHieu.BUS
                     }
                     tran.Complete();
                     MessageBox.Show("Them Thanh Cong");
+                    return true;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Them That Bai\n" + ex.Message);
+                    return false;
                 }
             }
         }
