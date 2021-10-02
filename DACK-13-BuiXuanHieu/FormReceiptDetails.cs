@@ -41,7 +41,6 @@ namespace DACK_13_BuiXuanHieu
                 p.ProductID = Int32.Parse(tbProduct.Text);
                 busReceipts.RemoveRDetails(p);
                 busReceipts.showRDetails(gVCTDH, p.ReceiptID);
-                MessageBox.Show("Delete Success!!!");
             }
             catch (FormatException)
             {
@@ -60,7 +59,6 @@ namespace DACK_13_BuiXuanHieu
                 o.Quantity = short.Parse(tbQuantity.Text);
                 busReceipts.EditRDetails(o);
                 busReceipts.showRDetails(gVCTDH, o.ReceiptID);
-                MessageBox.Show("Edit Success!!!");
             }
             catch (FormatException)
             {
