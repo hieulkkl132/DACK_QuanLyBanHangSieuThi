@@ -73,11 +73,11 @@ namespace DACK_13_BuiXuanHieu
             try
             {
                 dGSP.Rows.RemoveAt(index);
-                MessageBox.Show("Xoa thanh cong");
+                MessageBox.Show("Delete Success!!!");
             }
             catch (Exception)
             {
-                MessageBox.Show("Xoa that bai\nVui long chon dong muon xoa");
+                MessageBox.Show("Please fill into the blank and only number is alow.");
             }
         }
 
@@ -93,7 +93,7 @@ namespace DACK_13_BuiXuanHieu
                 dGSP.Rows[r].Cells[3].Value = Convert.ToDecimal(nuddis.Value);
                 MessageBox.Show("Edit Success!!!");
             }
-            catch (FormatException)
+            catch (Exception)
             {
                 MessageBox.Show("Please fill into the blank and only number is alow.");
             }
