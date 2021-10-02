@@ -116,11 +116,6 @@ namespace DACK_13_BuiXuanHieu.BUS
                 MessageBox.Show("Please, Don't chose past day !");
                 return false;
             }
-            else if (dtpenday.Value < dtpstarday.Value)
-            {
-                MessageBox.Show("Please, Startdate < Enddate !");
-                return false;
-            }
             else if (dtpenday.Value == dtpstarday.Value)
             {
                 MessageBox.Show("Please, Startdate and Enddate are not the same !");

@@ -98,8 +98,8 @@ namespace DACK_13_BuiXuanHieu
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            cbCustomer.SelectedIndex = 0;
-            cbEmployee.SelectedIndex = 0;
+            cbCustomer.SelectedValue = -1;
+            cbEmployee.SelectedValue = -1;
             tbReceiveMethod.Clear();
             dtpReceiveDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 5, 30, 0);
 

@@ -112,40 +112,46 @@ namespace DACK_13_BuiXuanHieu.BUS
                 MessageBox.Show("Please, fill up ALL attributes !");
                 return false;
             }
-
-            //
-            DialogResult dr = MessageBox.Show("Record [ " + receiptID + " ] will be EDITED! Continue ?", "Action confirm",
-                                            MessageBoxButtons.OKCancel,
-                                            MessageBoxIcon.Question);
-            if (dr == DialogResult.OK)
+            else if (dtpReceiveDate.Value < System.DateTime.Today)
             {
-                try
+                MessageBox.Show("Please, Don't chose past day !");
+                return false;
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Record [ " + receiptID + " ] will be EDITED! Continue ?", "Action confirm",
+                                MessageBoxButtons.OKCancel,
+                                MessageBoxIcon.Question);
+                if (dr == DialogResult.OK)
                 {
-                    Receipt s = new Receipt();
-                    s.ReceiptID = int.Parse(receiptID);
-                    s.ReceiveMethod = method;
-                    s.ReceiveDate = dtpReceiveDate.Value;
-                    s.EmployeeID = int.Parse(employee);
-                    s.CustomerID = int.Parse(custumer);
+                    try
+                    {
+                        Receipt s = new Receipt();
+                        s.ReceiptID = int.Parse(receiptID);
+                        s.ReceiveMethod = method;
+                        s.ReceiveDate = dtpReceiveDate.Value;
+                        s.EmployeeID = int.Parse(employee);
+                        s.CustomerID = int.Parse(custumer);
 
-                    if (daoReceipts.editRecord(s))
-                    {
-                        MessageBox.Show("Successfully !", "Announcement",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement",
+                        if (daoReceipts.editRecord(s))
+                        {
+                            MessageBox.Show("Successfully !", "Announcement",
                                         MessageBoxButtons.OK,
-                                        MessageBoxIcon.Error);
+                                        MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                            return false;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message.ToString());
                         return false;
                     }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message.ToString());
-                    return false;
                 }
             }
             return true;
