@@ -77,36 +77,44 @@ namespace DACK_13_BuiXuanHieu.BUS
             String promotionName = tbPromotionName.Text.Trim(),
                    description = tbDescription.Text.Trim();
             String promotionID = dgvPromotions.CurrentRow.Cells["PromotionID"].Value.ToString();
-            DialogResult dr = MessageBox.Show("Record [ " + promotionID + " ] will be EDITED! Continue ?", "Action confirm",
-                                            MessageBoxButtons.OKCancel,
-                                            MessageBoxIcon.Question);
-            if (dr == DialogResult.OK)
+            if (promotionName == "" || description == "")
             {
-                try
+                MessageBox.Show("Please, fill up ALL attributes !");
+                return false;
+            }
+            else 
+            {
+                DialogResult dr = MessageBox.Show("Record [ " + promotionID + " ] will be EDITED! Continue ?", "Action confirm",
+                                MessageBoxButtons.OKCancel,
+                                MessageBoxIcon.Question);
+                if (dr == DialogResult.OK)
                 {
+                    try
+                    {
 
-                    Promotion s = new Promotion();
-                    s.Description = description;
-                    s.PromotionName = promotionName;
-                    s.PromotionID = int.Parse(promotionID);
-                    if (daoPromotions.editRecord(s))
-                    {
-                        MessageBox.Show("Successfully !", "Announcement",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement",
+                        Promotion s = new Promotion();
+                        s.Description = description;
+                        s.PromotionName = promotionName;
+                        s.PromotionID = int.Parse(promotionID);
+                        if (daoPromotions.editRecord(s))
+                        {
+                            MessageBox.Show("Successfully !", "Announcement",
                                         MessageBoxButtons.OK,
-                                        MessageBoxIcon.Error);
+                                        MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail ! Something crashed in DataAccessLayer ?!!", "Announcement",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                            return false;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message.ToString());
                         return false;
                     }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message.ToString());
-                    return false;
                 }
             }
             return true;

@@ -108,19 +108,29 @@ namespace DACK_13_BuiXuanHieu.BUS
         public bool editRecord(ComboBox cbpromotion, ComboBox cbproduct, DataGridView dgvEvents, DateTimePicker dtpstarday, DateTimePicker dtpenday, NumericUpDown nudlimitquatity, NumericUpDown nuddiscount, TextBox tbdescription)
         {
             String discripton = tbdescription.Text.Trim();
-            //String promotionID = dgvEvents.Rows[dgvEvents.CurrentRow.Index].Cells["PromotionID"].Value.ToString();
-            String productID = dgvEvents.CurrentRow.Cells["ProductID"].Value.ToString();
-
-            //if (dtpenday.Value < dtpstarday.Value)
-            //{
-            //    MessageBox.Show("Please, Startdate < Enddate !");
-            //    return false;
-            //}
-            //else if (dtpenday.Value == dtpstarday.Value)
-            //{
-            //    MessageBox.Show("Please, Startdate and Enddate are not the same !");
-            //    return false;
-            //}
+            String productID = dgvEvents.CurrentRow.Cells["ProductID"].Value.ToString(),
+                   promotion = cbpromotion.Text.Trim(),
+                   product = cbproduct.Text.Trim();
+            if (dtpenday.Value < System.DateTime.Today || dtpstarday.Value < System.DateTime.Today)
+            {
+                MessageBox.Show("Please, Don't chose past day !");
+                return false;
+            }
+            else if (dtpenday.Value < dtpstarday.Value)
+            {
+                MessageBox.Show("Please, Startdate < Enddate !");
+                return false;
+            }
+            else if (dtpenday.Value == dtpstarday.Value)
+            {
+                MessageBox.Show("Please, Startdate and Enddate are not the same !");
+                return false;
+            }
+            else if (promotion == "" || product == "" || discripton == "")
+            {
+                MessageBox.Show("Please, fill up ALL attributes !");
+                return false;
+            }
             DialogResult dr = MessageBox.Show("  Record [ " + productID + " ] " + " will be EDITED! Continue ?", "Action confirm",
                                                 MessageBoxButtons.OKCancel,
                                                 MessageBoxIcon.Question);
