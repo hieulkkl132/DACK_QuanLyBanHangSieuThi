@@ -34,6 +34,7 @@
             this.dienThoaiLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbProduct = new System.Windows.Forms.TextBox();
             this.tbReceipt = new System.Windows.Forms.TextBox();
             this.tbQuantity = new System.Windows.Forms.TextBox();
             this.tbPrice = new System.Windows.Forms.TextBox();
@@ -56,7 +57,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gVCTDH = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.tbProduct = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -79,9 +79,9 @@
             this.ngaySinhLabel.Location = new System.Drawing.Point(25, 92);
             this.ngaySinhLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ngaySinhLabel.Name = "ngaySinhLabel";
-            this.ngaySinhLabel.Size = new System.Drawing.Size(72, 17);
+            this.ngaySinhLabel.Size = new System.Drawing.Size(74, 17);
             this.ngaySinhLabel.TabIndex = 4;
-            this.ngaySinhLabel.Text = "Productid:";
+            this.ngaySinhLabel.Text = "ProductID:";
             // 
             // diaChiLabel
             // 
@@ -133,6 +133,14 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Details";
+            // 
+            // tbProduct
+            // 
+            this.tbProduct.Location = new System.Drawing.Point(155, 87);
+            this.tbProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.tbProduct.Name = "tbProduct";
+            this.tbProduct.Size = new System.Drawing.Size(265, 22);
+            this.tbProduct.TabIndex = 14;
             // 
             // tbReceipt
             // 
@@ -191,6 +199,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -324,14 +333,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1019, 24);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // tbProduct
-            // 
-            this.tbProduct.Location = new System.Drawing.Point(155, 87);
-            this.tbProduct.Margin = new System.Windows.Forms.Padding(4);
-            this.tbProduct.Name = "tbProduct";
-            this.tbProduct.Size = new System.Drawing.Size(265, 22);
-            this.tbProduct.TabIndex = 14;
             // 
             // FormReceiptDetails
             // 

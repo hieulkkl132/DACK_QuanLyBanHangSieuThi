@@ -54,6 +54,7 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btReport = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
@@ -61,7 +62,6 @@
             this.dGSP = new System.Windows.Forms.DataGridView();
             this.btTaoDonHang = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btReport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuddis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSL)).BeginInit();
@@ -99,9 +99,9 @@
             this.label1.Location = new System.Drawing.Point(424, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 25);
+            this.label1.Size = new System.Drawing.Size(214, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "DANH MỤC SẢN PHẨM";
+            this.label1.Text = "PRODUCT RECEIPTS";
             // 
             // groupBox1
             // 
@@ -124,7 +124,7 @@
             this.groupBox1.Size = new System.Drawing.Size(915, 162);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin chi tiết";
+            this.groupBox1.Text = "Details Information";
             // 
             // nuddis
             // 
@@ -151,9 +151,9 @@
             this.label3.Location = new System.Drawing.Point(481, 18);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 17);
+            this.label3.Size = new System.Drawing.Size(73, 17);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Receipt id:";
+            this.label3.Text = "ReceiptID:";
             // 
             // tbReceipt
             // 
@@ -257,6 +257,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -324,6 +325,17 @@
             this.groupBox2.Size = new System.Drawing.Size(637, 102);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
+            // 
+            // btReport
+            // 
+            this.btReport.Location = new System.Drawing.Point(512, 23);
+            this.btReport.Margin = new System.Windows.Forms.Padding(4);
+            this.btReport.Name = "btReport";
+            this.btReport.Size = new System.Drawing.Size(100, 71);
+            this.btReport.TabIndex = 3;
+            this.btReport.Text = "Report";
+            this.btReport.UseVisualStyleBackColor = true;
+            this.btReport.Click += new System.EventHandler(this.btReport_Click);
             // 
             // btSua
             // 
@@ -401,17 +413,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(127, 78);
             this.panel1.TabIndex = 12;
-            // 
-            // btReport
-            // 
-            this.btReport.Location = new System.Drawing.Point(512, 23);
-            this.btReport.Margin = new System.Windows.Forms.Padding(4);
-            this.btReport.Name = "btReport";
-            this.btReport.Size = new System.Drawing.Size(100, 71);
-            this.btReport.TabIndex = 3;
-            this.btReport.Text = "Report";
-            this.btReport.UseVisualStyleBackColor = true;
-            this.btReport.Click += new System.EventHandler(this.btReport_Click);
             // 
             // FormProductReceipts
             // 

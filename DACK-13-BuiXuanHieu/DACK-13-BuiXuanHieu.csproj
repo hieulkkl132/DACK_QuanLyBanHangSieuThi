@@ -273,11 +273,17 @@
     <EmbeddedResource Include="FormManageLogins.resx">
       <DependentUpon>FormManageLogins.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormProductReceipts.resx">
+      <DependentUpon>FormProductReceipts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormProducts.resx">
       <DependentUpon>FormProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPromotions.resx">
       <DependentUpon>FormPromotions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReceiptDetails.resx">
+      <DependentUpon>FormReceiptDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReceipts.resx">
       <DependentUpon>FormReceipts.cs</DependentUpon>
