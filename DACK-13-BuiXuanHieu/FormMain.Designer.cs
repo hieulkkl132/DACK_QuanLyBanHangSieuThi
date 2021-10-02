@@ -36,7 +36,6 @@ namespace DACK_13_BuiXuanHieu
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAbout = new System.Windows.Forms.Button();
-            this.btnReport = new System.Windows.Forms.Button();
             this.btnSignOut = new System.Windows.Forms.Button();
             this.btnManage = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
@@ -53,7 +52,6 @@ namespace DACK_13_BuiXuanHieu
             this.pnlNavbar.Controls.Add(this.panel2);
             this.pnlNavbar.Controls.Add(this.panel1);
             this.pnlNavbar.Controls.Add(this.btnAbout);
-            this.pnlNavbar.Controls.Add(this.btnReport);
             this.pnlNavbar.Controls.Add(this.btnSignOut);
             this.pnlNavbar.Controls.Add(this.btnManage);
             this.pnlNavbar.Controls.Add(this.btnHome);
@@ -108,7 +106,7 @@ namespace DACK_13_BuiXuanHieu
             this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbout.ForeColor = System.Drawing.Color.White;
-            this.btnAbout.Location = new System.Drawing.Point(0, 450);
+            this.btnAbout.Location = new System.Drawing.Point(0, 347);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
             this.btnAbout.Size = new System.Drawing.Size(300, 100);
@@ -117,24 +115,6 @@ namespace DACK_13_BuiXuanHieu
             this.btnAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAbout.UseVisualStyleBackColor = false;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
-            // 
-            // btnReport
-            // 
-            this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReport.FlatAppearance.BorderSize = 0;
-            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReport.ForeColor = System.Drawing.Color.White;
-            this.btnReport.Location = new System.Drawing.Point(0, 350);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnReport.Size = new System.Drawing.Size(300, 100);
-            this.btnReport.TabIndex = 4;
-            this.btnReport.Text = "Report";
-            this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.UseVisualStyleBackColor = false;
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnSignOut
             // 
@@ -225,7 +205,6 @@ namespace DACK_13_BuiXuanHieu
 
         private System.Windows.Forms.Panel pnlNavbar;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnSignOut;
         private System.Windows.Forms.Button btnManage;
         private System.Windows.Forms.Button btnAbout;
