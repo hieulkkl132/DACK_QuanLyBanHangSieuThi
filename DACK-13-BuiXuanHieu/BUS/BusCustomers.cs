@@ -272,6 +272,11 @@ namespace DACK_13_BuiXuanHieu.BUS
                 MessageBox.Show("Please, fill up ALL attributes !");
                 return false;
             }
+            else if (dtpJoinDate.Value < System.DateTime.Today || dtpJoinDate.Value > System.DateTime.Today)
+            {
+                MessageBox.Show("Please, Don't chose past day and future day !");
+                return false;
+            }
             else 
             {
                 DialogResult dr = MessageBox.Show("A member will be ASSIGNED! Continue ?", "Action confirm",
