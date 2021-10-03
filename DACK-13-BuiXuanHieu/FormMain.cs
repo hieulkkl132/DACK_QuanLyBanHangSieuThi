@@ -33,8 +33,6 @@ namespace DACK_13_BuiXuanHieu
             btnHome.BackColor = Color.White;
             btnManage.ForeColor = Color.Gray;
             btnManage.BackColor = Color.FromArgb(40, 40, 40);
-            btnReport.ForeColor = Color.Gray;
-            btnReport.BackColor = Color.FromArgb(40, 40, 40);
             btnAbout.ForeColor = Color.Gray;
             btnAbout.BackColor = Color.FromArgb(40, 40, 40);
             btnSignOut.ForeColor = Color.OrangeRed;
@@ -72,8 +70,6 @@ namespace DACK_13_BuiXuanHieu
             btnHome.BackColor = Color.White;
             btnManage.ForeColor = Color.Gray;
             btnManage.BackColor = Color.FromArgb(40, 40, 40);
-            btnReport.ForeColor = Color.Gray;
-            btnReport.BackColor = Color.FromArgb(40, 40, 40);
             btnAbout.ForeColor = Color.Gray;
             btnAbout.BackColor = Color.FromArgb(40, 40, 40);
             btnSignOut.ForeColor = Color.OrangeRed;
@@ -93,19 +89,11 @@ namespace DACK_13_BuiXuanHieu
             btnHome.BackColor = Color.FromArgb(40, 40, 40);
             btnManage.ForeColor = Color.Black;
             btnManage.BackColor = Color.White;
-            btnReport.ForeColor = Color.Gray;
-            btnReport.BackColor = Color.FromArgb(40, 40, 40);
             btnAbout.ForeColor = Color.Gray;
             btnAbout.BackColor = Color.FromArgb(40, 40, 40);
             btnSignOut.ForeColor = Color.OrangeRed;
             btnSignOut.BackColor = Color.FromArgb(40, 40, 40);
         }
-
-        private void btnReport_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAbout_Click(object sender, EventArgs e)
         {
             //
@@ -119,8 +107,6 @@ namespace DACK_13_BuiXuanHieu
             btnHome.BackColor = Color.FromArgb(40, 40, 40);
             btnManage.ForeColor = Color.Gray;
             btnManage.BackColor = Color.FromArgb(40, 40, 40);
-            btnReport.ForeColor = Color.Gray;
-            btnReport.BackColor = Color.FromArgb(40, 40, 40);
             btnAbout.ForeColor = Color.Black;
             btnAbout.BackColor = Color.White;
             btnSignOut.ForeColor = Color.OrangeRed;

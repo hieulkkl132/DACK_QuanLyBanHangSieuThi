@@ -28,6 +28,10 @@ namespace DACK_13_BuiXuanHieu.BUS
             dgvProducts.Columns[5].Width = (int)(dgvProducts.Width * 0.11);
             dgvProducts.Columns[6].Width = (int)(dgvProducts.Width * 0.10);
         }
+        public List<Product> ListProducts()
+        {
+            return daoProduct.LoadListProducts();
+        }
 
         public void displayComboboxCategory(ComboBox cb)
         {
@@ -112,9 +116,8 @@ namespace DACK_13_BuiXuanHieu.BUS
             unitPrice = nudUnitPrice.Value.ToString(),
             unitsInStock = nudUnitsInStock.Value.ToString(),
             active = tbActive.Text.Trim();
-
             if (productName == "" || category == "" || quantityperunit == "" || unitPrice == "" ||
-               unitsInStock == "" || active == "")
+                unitsInStock == "" || active == "")
             {
                 MessageBox.Show("Please, fill up ALL attributes !");
                 return false;
@@ -126,10 +129,9 @@ namespace DACK_13_BuiXuanHieu.BUS
             }
             else 
             {
-
                 DialogResult dr = MessageBox.Show("Record [ " + productID + " ] will be EDITED! Continue ?", "Action confirm",
-                                               MessageBoxButtons.OKCancel,
-                                               MessageBoxIcon.Question);
+                               MessageBoxButtons.OKCancel,
+                               MessageBoxIcon.Question);
 
                 if (dr == DialogResult.OK)
                 {

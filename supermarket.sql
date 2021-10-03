@@ -3,7 +3,7 @@
 
 --DROP DATABASE IF EXISTS supermarket
 --GO
-CREATE DATABASE supermarket
+CREATE DATABASE Supermarket
 GO
 --USE supermarket
 --GO

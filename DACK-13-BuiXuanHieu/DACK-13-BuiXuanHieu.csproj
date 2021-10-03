@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -171,6 +175,12 @@
     <Compile Include="FormReceipts.Designer.cs">
       <DependentUpon>FormReceipts.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReport.Designer.cs">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSuppliers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +218,12 @@
     </Compile>
     <Compile Include="ReceiptDetail.cs">
       <DependentUpon>Supermarket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REPORT\ListProduct1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListProduct.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Supermarket.Context.cs">
       <AutoGen>True</AutoGen>
@@ -257,14 +273,23 @@
     <EmbeddedResource Include="FormManageLogins.resx">
       <DependentUpon>FormManageLogins.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormProductReceipts.resx">
+      <DependentUpon>FormProductReceipts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormProducts.resx">
       <DependentUpon>FormProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPromotions.resx">
       <DependentUpon>FormPromotions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReceiptDetails.resx">
+      <DependentUpon>FormReceiptDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormReceipts.resx">
       <DependentUpon>FormReceipts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReport.resx">
+      <DependentUpon>FormReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSuppliers.resx">
       <DependentUpon>FormSuppliers.cs</DependentUpon>
@@ -279,6 +304,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="REPORT\ListProduct.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListProduct1.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -302,6 +331,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="resources\" />
