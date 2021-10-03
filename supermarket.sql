@@ -130,7 +130,8 @@ CREATE TABLE ImportationDetails (
 	UnitPrice float NOT NULL,
 
 	PRIMARY KEY(ImportID, ProductID, ImportDate),
-	FOREIGN KEY(ProductID) REFERENCES Products(ProductID)
+	FOREIGN KEY(ProductID) REFERENCES Products(ProductID),
+        FOREIGN KEY(ImportID) REFERENCES Importations(ImportID)
 )
 GO
 
